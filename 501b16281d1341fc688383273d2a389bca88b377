@@ -1,0 +1,8 @@
+Code-Review+2: Dan Willemsen <dwillemsen@google.com>
+Autosubmit+1: Hridya Valsaraju <hridya@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Tue, 18 Jun 2019 16:10:38 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/976671
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
