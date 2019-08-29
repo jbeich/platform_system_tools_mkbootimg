@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "f9aede27_1e97c66a",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1120612
+      },
+      "writtenOn": "2019-08-29T18:00:54Z",
+      "side": 1,
+      "message": "nit: Similar to DTB, should we also size check vendor-ramdisk here rather than in write_vendor_boot_data()?",
+      "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aaa1fba4_afecc15c",
         "filename": "mkbootimg.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2019-08-28T18:52:36Z",
       "side": 1,
       "message": "I\u0027ll change this to return an error here if args.header_version \u003e 2 and args.vendor_boot or args.vendor_ramdisk are None",
+      "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7d8b1d5_c255951b",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1120612
+      },
+      "writtenOn": "2019-08-29T18:00:54Z",
+      "side": 1,
+      "message": "Makes sense.",
+      "parentUuid": "aaa1fba4_afecc15c",
       "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
