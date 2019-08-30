@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4c4eb3e2_c53983eb",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-08-30T21:34:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9aede27_1e97c66a",
+      "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aaa1fba4_afecc15c",
         "filename": "mkbootimg.py",
         "patchSetId": 1
@@ -51,6 +69,24 @@
       "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52637646_6a3fbb5c",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-08-30T21:34:18Z",
+      "side": 1,
+      "message": "Forgot I was using args.vendor_boot to know whether to output the vendor_boot image, so it is allowed to be empty. Added a couple other error checks though.",
+      "parentUuid": "d7d8b1d5_c255951b",
+      "revId": "f74ca44bccc8c22a7f130af23973def1e437a274",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
