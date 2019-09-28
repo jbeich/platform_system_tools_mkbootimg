@@ -127,16 +127,93 @@ def unpack_bootimage(args):
                       os.path.join(args.out, image_info[2]))
 
 
+def unpack_bootimage_v3(args):
+    """extracts kernel, ramdisk, vendor_ramdisk and dtb"""
+    boot_magic = unpack('8s', args.boot_img.read(8))[0].decode()
+    print('boot_magic: %s' % boot_magic)
+    kernel_ramdisk_second_info = unpack('9I', args.boot_img.read(9 * 4))
+    print('kernel_size: %s' % kernel_ramdisk_second_info[0])
+    print('ramdisk size: %s' % kernel_ramdisk_second_info[1])
+    print('os version and patch level: %s' % kernel_ramdisk_second_info[2])
+    print('boot image header version: %s' % kernel_ramdisk_second_info[8])
+
+    cmdline = unpack('1536s', args.boot_img.read(1536))[0].decode()
+    print('command line args: %s' % cmdline)
+
+    vendor_boot_magic = unpack('8s', args.vendor_boot_img.read(8))[0].decode()
+    print('vendor_boot_magic: %s' % vendor_boot_magic)
+    vendor_kernel_ramdisk_second_info = unpack('5I', args.vendor_boot_img.read(5 * 4))
+    print('vendor boot image header version: %s' % vendor_kernel_ramdisk_second_info[0])
+    print('kernel load address: %#x' % vendor_kernel_ramdisk_second_info[2])
+    print('ramdisk load address: %#x' % vendor_kernel_ramdisk_second_info[3])
+    print('vendor ramdisk size: %s' % vendor_kernel_ramdisk_second_info[4])
+
+    vendor_cmdline = unpack('2048s', args.vendor_boot_img.read(2048))[0].decode()
+    print('vendor command line args: %s' % vendor_cmdline)
+
+    vendor_kernel_ramdisk_third_info = unpack('I', args.vendor_boot_img.read(1 * 4))
+    print('kernel tags load address: %#x' % vendor_kernel_ramdisk_third_info[0])
+
+    product_name = unpack('16s', args.boot_img.read(16))[0].decode()
+    print('product name: %s' % product_name)
+
+    dtb_size = unpack('2I', args.vendor_boot_img.read(2 * 4))[1]
+    print('dtb size: %s' % dtb_size)
+    dtb_load_address = unpack('Q', args.vendor_boot_img.read(8))[0]
+    print('dtb address: %#x' % dtb_load_address)
+
+    kernel_size = kernel_ramdisk_second_info[0]
+    ramdisk_size = kernel_ramdisk_second_info[1]
+    vendor_ramdisk_size = vendor_kernel_ramdisk_second_info[4]
+    page_size = vendor_kernel_ramdisk_second_info[1]
+
+    # The first page contains the boot header
+    num_boot_header_pages = 1
+
+    num_boot_kernel_pages = get_number_of_pages(kernel_size, page_size)
+    kernel_offset = page_size * num_boot_header_pages  # header occupies a page
+    image_info_list = [(kernel_offset, kernel_size, 'kernel')]
+
+    num_boot_ramdisk_pages = get_number_of_pages(ramdisk_size, page_size)
+    ramdisk_offset = page_size * (num_boot_header_pages + num_boot_kernel_pages
+                                 ) # header + kernel
+    image_info_list.append((ramdisk_offset, ramdisk_size, 'ramdisk'))
+
+    for image_info in image_info_list:
+        extract_image(image_info[0], image_info[1], args.boot_img,
+                      os.path.join(args.out, image_info[2]))
+
+    # The first page contains the vendor boot header
+    num_vendor_boot_header_pages = 1
+
+    num_vendor_boot_ramdisk_pages = get_number_of_pages(vendor_ramdisk_size, page_size)
+    vendor_ramdisk_offset = page_size * num_vendor_boot_header_pages # header occupies a page
+    vendor_image_info_list = [(vendor_ramdisk_offset, vendor_ramdisk_size, 'vendor_ramdisk')]
+
+    num_vendor_boot_dtb_pages = get_number_of_pages(dtb_size, page_size)
+    dtb_offset = page_size * ( num_vendor_boot_header_pages + num_vendor_boot_ramdisk_pages
+                             ) # header + vendor_ramdisk
+    vendor_image_info_list.append((dtb_offset, dtb_size, 'dtb'))
+
+    for vendor_image_info in vendor_image_info_list:
+        extract_image(vendor_image_info[0], vendor_image_info[1], args.vendor_boot_img,
+                      os.path.join(args.out, vendor_image_info[2]))
+
 def parse_cmdline():
     """parse command line arguments"""
     parser = ArgumentParser(
-        description='Unpacks boot.img/recovery.img, extracts the kernel,'
-        'ramdisk, second bootloader, recovery dtbo and dtb')
+        description='Unpacks boot.img/vendor_boot.img/recovery.img, extracts the kernel,'
+        'ramdisk, vendor ramdisk, second bootloader, recovery dtbo and dtb')
     parser.add_argument(
         '--boot_img',
         help='path to boot image',
         type=FileType('rb'),
         required=True)
+    parser.add_argument(
+        '--vendor_boot_img',
+        help='path to vendor_boot image',
+        type=FileType('rb'),
+        required=False)
     parser.add_argument('--out', help='path to out binaries', default='out')
     return parser.parse_args()
 
@@ -145,7 +222,10 @@ def main():
     """parse arguments and unpack boot image"""
     args = parse_cmdline()
     create_out_dir(args.out)
-    unpack_bootimage(args)
+    if not args.vendor_boot_img:
+        unpack_bootimage(args)
+    else:
+        unpack_bootimage_v3(args)
 
 
 if __name__ == '__main__':
