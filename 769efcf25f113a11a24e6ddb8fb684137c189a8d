@@ -1,0 +1,9 @@
+Code-Review+2: Hridya Valsaraju <hridya@google.com>
+Code-Review+1: Luca Stefani <luca.stefani.ge1@gmail.com>
+Autosubmit+1: Steve Muckle <smuckle@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Mon, 30 Sep 2019 21:59:26 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1130617
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
