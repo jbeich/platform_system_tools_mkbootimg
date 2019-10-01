@@ -22,6 +22,24 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e94ac10_5f475217",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-10-01T15:35:17Z",
+      "side": 1,
+      "message": "I could, but almost every command will have to be conditionally checked\nI think in this case it\u0027s cleaner to create 2 different cases",
+      "parentUuid": "22104ee9_126a8017",
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
