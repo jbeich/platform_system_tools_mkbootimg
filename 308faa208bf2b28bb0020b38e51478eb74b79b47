@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "29a262b6_6eb75e8c",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2019-10-01T17:07:03Z",
+      "side": 1,
+      "message": "Please don\u0027t. It\u0027s a simple fix that would make the code more readable (to clearly tell the matching parentheses).",
+      "parentUuid": "bbbc7b56_d00c1ab4",
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0d9c7cd_a2ff1b72",
         "filename": "unpack_bootimg.py",
         "patchSetId": 8
@@ -122,6 +140,24 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b1a0dc7_fd2dd9b6",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2019-10-01T17:07:03Z",
+      "side": 1,
+      "message": "Why? It\u0027s essentially making the \"v3\" more confused.",
+      "parentUuid": "c3faa725_778c0f56",
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
