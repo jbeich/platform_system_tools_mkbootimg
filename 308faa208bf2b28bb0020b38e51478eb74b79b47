@@ -40,6 +40,52 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "119bc018_4a824d28",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2019-10-01T16:50:56Z",
+      "side": 1,
+      "message": "clean up the indentation (if you use `repo upload` without skipping repohooks, it would have shown warnings from pylint)\n\n    C:181, 0: Wrong continued indentation (add 20 spaces).\n                                     ) # header + kernel\n                                     ^                   | (bad-continuation)\n    C:196, 0: No space allowed after bracket\n        dtb_offset \u003d vendor_page_size * ( num_vendor_boot_header_pages + num_vendor_boot_ramdisk_pages\n                                        ^ (bad-whitespace)\n    C:197, 0: Wrong continued indentation (add 7 spaces).\n                                 ) # header + vendor_ramdisk\n                                 ^      | (bad-continuation)\n    W:179, 4: Unused variable \u0027num_boot_ramdisk_pages\u0027 (unused-variable)\n    W:195, 4: Unused variable \u0027num_vendor_boot_dtb_pages\u0027 (unused-variable)",
+      "range": {
+        "startLine": 181,
+        "startChar": 33,
+        "endLine": 181,
+        "endChar": 52
+      },
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0d9c7cd_a2ff1b72",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2019-10-01T16:50:56Z",
+      "side": 1,
+      "message": "Steve, does \"v3\" mandate the use of vendor_boot? For example, can we generate a v3 boot.img, but without using vendor_boot? At least mkbootimg and build/make/core/Makefile seem to allow that.\n\n(Based on the current code, seems \"boot_img_hdr_v3\" and \"vendor_boot_img_hdr_v3\" are just two separate structs, but happen to be called the same as \"v3\"?)",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 231,
+        "endChar": 0
+      },
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
