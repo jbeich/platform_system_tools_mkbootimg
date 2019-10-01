@@ -66,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "bbbc7b56_d00c1ab4",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-10-01T16:55:59Z",
+      "side": 1,
+      "message": "I kept them for possible re-use, I may add a pylint exception because it makes the core more clear imo",
+      "parentUuid": "119bc018_4a824d28",
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0d9c7cd_a2ff1b72",
         "filename": "unpack_bootimg.py",
         "patchSetId": 8
@@ -86,6 +104,24 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3faa725_778c0f56",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-10-01T16:55:59Z",
+      "side": 1,
+      "message": "With the latest CL made in mkbootimg it\u0027s possible because boot.img is agnostic.\nFor now it made more sense to make it support both only.",
+      "parentUuid": "",
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
