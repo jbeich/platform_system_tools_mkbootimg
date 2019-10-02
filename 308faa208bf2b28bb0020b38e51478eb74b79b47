@@ -182,6 +182,30 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef624986_fc493aa0",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1056365
+      },
+      "writtenOn": "2019-10-02T17:49:02Z",
+      "side": 1,
+      "message": "Thanks, that\u0027s helpful! Feels like we should mention the same in the code (either mkbootimg or bootimg.h).\n\nFor this CL, I\u0027d still prefer dumping boot.img and vendor_boot.img separately, since we allow that in mkbootimg. With the current CL, it\u0027s error-prone when user only provides a v3 boot.img. Because the code would invoke non-v3 unpack_bootimage(), and may produce invalid artifacts silently.",
+      "parentUuid": "fe6ecec5_663badaf",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 231,
+        "endChar": 0
+      },
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
