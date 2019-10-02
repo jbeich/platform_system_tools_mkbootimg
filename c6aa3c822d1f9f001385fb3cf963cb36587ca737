@@ -22,6 +22,30 @@
       "revId": "c6aa3c822d1f9f001385fb3cf963cb36587ca737",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "224e4b40_8d813053",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-02T18:08:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dc6c61d_00ca5d1e",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 193,
+        "endChar": 39
+      },
+      "revId": "c6aa3c822d1f9f001385fb3cf963cb36587ca737",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
