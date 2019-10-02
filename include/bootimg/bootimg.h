@@ -178,8 +178,8 @@ struct boot_img_hdr_v2 : public boot_img_hdr_v1 {
  *
  * Note that in version 3 of the boot image header, page size is fixed at 4096 bytes.
  *
- * and the structure of the vendor boot image (introduced with version 3) is as
- * follows:
+ * and the structure of the vendor boot image (introduced with version 3 and
+ * required to be present when a v3 boot image is used) is as follows:
  *
  * +---------------------+
  * | vendor boot header  | 1 page
