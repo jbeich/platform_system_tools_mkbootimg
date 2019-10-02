@@ -158,6 +158,30 @@
       "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe6ecec5_663badaf",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-02T16:59:29Z",
+      "side": 1,
+      "message": "A v3 boot.img cannot be used standalone. There\u0027s information essential to boot (kernel and ramdisk load addresses, DTB and dtb load address) in vendor boot. Mkbootimg allows generating either image by itself, in case there\u0027s a reason to only rebuild one of the two (just modifying vendor kernel modules for example).\n\nI introduced the vendor boot header at v3, rather than v1, to try and keep things simpler and make it clear that the boot and vendor boot headers are versioned together.",
+      "parentUuid": "c0d9c7cd_a2ff1b72",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 231,
+        "endChar": 0
+      },
+      "revId": "308faa208bf2b28bb0020b38e51478eb74b79b47",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
