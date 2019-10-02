@@ -1,0 +1,9 @@
+Autosubmit+1: Steve Muckle <smuckle@google.com>
+Code-Review+2: Tao Bao <tbao@google.com>
+Code-Review+1: Luca Stefani <luca.stefani.ge1@gmail.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Wed, 02 Oct 2019 20:18:15 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1132576
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
