@@ -67,6 +67,30 @@
     },
     {
       "key": {
+        "uuid": "bd29bee6_4b8c3405",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-03T20:17:13Z",
+      "side": 1,
+      "message": "Yes please update the names, \"second\" refers to the information fields in the boot header regarding the second stage bootloader, which doesn\u0027t apply here in vendor boot",
+      "parentUuid": "7c9f688b_6fc09314",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 30
+      },
+      "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06e6c6bf_e22bf038",
         "filename": "unpack_bootimg.py",
         "patchSetId": 9
