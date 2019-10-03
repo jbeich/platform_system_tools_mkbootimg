@@ -40,6 +40,53 @@
       "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c9f688b_6fc09314",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-03T20:11:44Z",
+      "side": 1,
+      "message": "I guess since we read further information elsewhere such as commandline, we can\u0027t generalize to vendor_boot_header_fields. Just kernel_ramdisk_info I guess...",
+      "parentUuid": "e52718c3_31a2063c",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 30
+      },
+      "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06e6c6bf_e22bf038",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-03T20:11:44Z",
+      "side": 1,
+      "message": "\"second\" used to refer to second bootloader fields IIUC, recommend changing this to tags_load_address",
+      "range": {
+        "startLine": 138,
+        "startChar": 4,
+        "endLine": 138,
+        "endChar": 29
+      },
+      "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
