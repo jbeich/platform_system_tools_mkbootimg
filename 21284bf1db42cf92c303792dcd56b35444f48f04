@@ -22,6 +22,24 @@
       "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2dc2166_e7c62979",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1081223
+      },
+      "writtenOn": "2019-10-03T20:09:36Z",
+      "side": 1,
+      "message": "I just followed original variable naming\ncan change if you want, but it matches other functions",
+      "parentUuid": "e52718c3_31a2063c",
+      "revId": "21284bf1db42cf92c303792dcd56b35444f48f04",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
