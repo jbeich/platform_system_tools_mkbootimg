@@ -16,6 +16,41 @@
       "revId": "c499535fabc3af858c8d5bbb4689f1de2804dad4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b2ce206_a16b8b63",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-03T20:00:20Z",
+      "side": 1,
+      "message": "Let\u0027s just check for that here.",
+      "parentUuid": "9d0059d3_48d51c4a",
+      "revId": "c499535fabc3af858c8d5bbb4689f1de2804dad4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9391a518_c76f1517",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2019-10-03T20:00:20Z",
+      "side": 1,
+      "message": "Can you also add the boot image header version here similar to the \u003c 3 case above",
+      "revId": "c499535fabc3af858c8d5bbb4689f1de2804dad4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
