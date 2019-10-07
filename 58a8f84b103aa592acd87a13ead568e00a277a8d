@@ -1,0 +1,7 @@
+Code-Review+2: Hridya Valsaraju <hridya@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-by: Tao Bao <tbao@google.com>
+Submitted-at: Mon, 07 Oct 2019 22:48:38 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1135139
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
