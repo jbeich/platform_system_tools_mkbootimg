@@ -1,0 +1,10 @@
+Verified+1: Luca Stefani <luca.stefani.ge1@gmail.com>
+Code-Review+1: Luca Stefani <luca.stefani.ge1@gmail.com>
+Code-Review+2: Steve Muckle <smuckle@google.com>
+Presubmit-Verified+1: Treehugger Robot <treehugger-gerrit@google.com>
+Autosubmit+1: Steve Muckle <smuckle@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Fri, 11 Oct 2019 18:52:15 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1132757
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
