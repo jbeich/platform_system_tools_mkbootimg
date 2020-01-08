@@ -90,11 +90,12 @@ def unpack_bootimage(args):
 
     print('boot image header version: %s' % version)
 
+    cmdline = ''
     if version < 3:
         product_name = cstr(unpack('16s', args.boot_img.read(16))[0].decode())
         print('product name: %s' % product_name)
-        cmdline = cstr(unpack('512s', args.boot_img.read(512))[0].decode())
-        print('command line args: %s' % cmdline)
+        # First half of cmdline. Second half will be appended below.
+        cmdline = unpack('512s', args.boot_img.read(512))[0].decode()
     else:
         cmdline = cstr(unpack('1536s', args.boot_img.read(1536))[0].decode())
         print('command line args: %s' % cmdline)
@@ -103,9 +104,9 @@ def unpack_bootimage(args):
         args.boot_img.read(32)  # ignore SHA
 
     if version < 3:
-        extra_cmdline = cstr(unpack('1024s',
-                                    args.boot_img.read(1024))[0].decode())
-        print('additional command line args: %s' % extra_cmdline)
+        cmdline += unpack('1024s', args.boot_img.read(1024))[0].decode()
+        cmdline = cstr(cmdline)
+        print('command line args: %s' % cmdline)
 
     if version < 3:
         kernel_size = kernel_ramdisk_second_info[0]
