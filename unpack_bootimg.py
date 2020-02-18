@@ -24,6 +24,7 @@ from struct import unpack
 import os
 
 BOOT_IMAGE_HEADER_V3_PAGESIZE = 4096
+VENDOR_BOOT_IMAGE_HEADER_V3_SIZE = 2108
 
 def create_out_dir(dir_path):
     """creates a directory 'dir_path' if it does not exist"""
@@ -197,7 +198,7 @@ def unpack_vendor_bootimage(args):
     page_size = kernel_ramdisk_info[1]
 
     # The first page contains the boot header
-    num_boot_header_pages = 1
+    num_boot_header_pages = (VENDOR_BOOT_IMAGE_HEADER_V3_SIZE + page_size - 1)/page_size
 
     num_boot_ramdisk_pages = get_number_of_pages(ramdisk_size, page_size)
     ramdisk_offset = page_size * num_boot_header_pages # header occupies a page
