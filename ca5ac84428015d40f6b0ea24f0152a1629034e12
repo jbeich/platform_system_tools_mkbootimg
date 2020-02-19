@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfcb17f0_ac551c69",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2020-02-19T03:46:55Z",
+      "side": 1,
+      "message": "nit: add a space before and after the \"/\"",
+      "range": {
+        "startLine": 201,
+        "startChar": 78,
+        "endLine": 201,
+        "endChar": 79
+      },
+      "revId": "ca5ac84428015d40f6b0ea24f0152a1629034e12",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
+    }
+  ]
+}
