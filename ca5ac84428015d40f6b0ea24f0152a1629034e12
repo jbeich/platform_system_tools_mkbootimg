@@ -22,6 +22,29 @@
       "revId": "ca5ac84428015d40f6b0ea24f0152a1629034e12",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6722b74_1443e814",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1120612
+      },
+      "writtenOn": "2020-02-19T18:23:14Z",
+      "side": 1,
+      "message": "Can we use get_number_of_pages() here Steve?",
+      "range": {
+        "startLine": 201,
+        "startChar": 28,
+        "endLine": 201,
+        "endChar": 29
+      },
+      "revId": "ca5ac84428015d40f6b0ea24f0152a1629034e12",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": true
     }
   ]
 }
