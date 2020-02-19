@@ -69,6 +69,30 @@
       "revId": "ca5ac84428015d40f6b0ea24f0152a1629034e12",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faa2ff6_2cb1f32e",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-02-19T20:22:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfcb17f0_ac551c69",
+      "range": {
+        "startLine": 201,
+        "startChar": 78,
+        "endLine": 201,
+        "endChar": 79
+      },
+      "revId": "ca5ac84428015d40f6b0ea24f0152a1629034e12",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889",
+      "unresolved": false
     }
   ]
 }
