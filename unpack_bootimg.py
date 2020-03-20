@@ -24,6 +24,7 @@ from struct import unpack
 import os
 
 BOOT_IMAGE_HEADER_V3_PAGESIZE = 4096
+VENDOR_BOOT_IMAGE_HEADER_V3_SIZE = 2112
 
 def create_out_dir(dir_path):
     """creates a directory 'dir_path' if it does not exist"""
@@ -43,6 +44,32 @@ def get_number_of_pages(image_size, page_size):
     return (image_size + page_size - 1) // page_size
 
 
+def cstr(s):
+    """Remove first NULL character and any character beyond."""
+    return s.split('\0', 1)[0]
+
+
+def format_os_version(os_version):
+    a = os_version >> 14
+    b = os_version >> 7 & ((1<<7) - 1)
+    c = os_version & ((1<<7) - 1)
+    return '{}.{}.{}'.format(a, b, c)
+
+
+def format_os_patch_level(os_patch_level):
+    y = os_patch_level >> 4
+    y += 2000
+    m = os_patch_level & ((1<<4) - 1)
+    return '{:04d}-{:02d}'.format(y, m)
+
+
+def print_os_version_patch_level(value):
+    os_version = value >> 11
+    os_patch_level = value & ((1<<11) - 1)
+    print('os version: %s' % format_os_version(os_version))
+    print('os patch level: %s' % format_os_patch_level(os_patch_level))
+
+
 def unpack_bootimage(args):
     """extracts kernel, ramdisk, second bootloader and recovery dtbo"""
     kernel_ramdisk_second_info = unpack('9I', args.boot_img.read(9 * 4))
@@ -56,29 +83,29 @@ def unpack_bootimage(args):
         print('second bootloader load address: %#x' % kernel_ramdisk_second_info[5])
         print('kernel tags load address: %#x' % kernel_ramdisk_second_info[6])
         print('page size: %s' % kernel_ramdisk_second_info[7])
-        os_version_patch_level = unpack('I', args.boot_img.read(1 * 4))[0]
-        print('os version and patch level: %s' % os_version_patch_level)
+        print_os_version_patch_level(unpack('I', args.boot_img.read(1 * 4))[0])
     else:
         print('kernel_size: %s' % kernel_ramdisk_second_info[0])
         print('ramdisk size: %s' % kernel_ramdisk_second_info[1])
-        print('os version and patch level: %s' % kernel_ramdisk_second_info[2])
+        print_os_version_patch_level(kernel_ramdisk_second_info[2])
 
     print('boot image header version: %s' % version)
 
     if version < 3:
-        product_name = unpack('16s', args.boot_img.read(16))[0].decode()
+        product_name = cstr(unpack('16s', args.boot_img.read(16))[0].decode())
         print('product name: %s' % product_name)
-        cmdline = unpack('512s', args.boot_img.read(512))[0].decode()
+        cmdline = cstr(unpack('512s', args.boot_img.read(512))[0].decode())
         print('command line args: %s' % cmdline)
     else:
-        cmdline = unpack('1536s', args.boot_img.read(1536))[0].decode()
+        cmdline = cstr(unpack('1536s', args.boot_img.read(1536))[0].decode())
         print('command line args: %s' % cmdline)
 
     if version < 3:
         args.boot_img.read(32)  # ignore SHA
 
     if version < 3:
-        extra_cmdline = unpack('1024s', args.boot_img.read(1024))[0].decode()
+        extra_cmdline = cstr(unpack('1024s',
+                                    args.boot_img.read(1024))[0].decode())
         print('additional command line args: %s' % extra_cmdline)
 
     if version < 3:
@@ -153,13 +180,13 @@ def unpack_vendor_bootimage(args):
     print('ramdisk load address: %#x' % kernel_ramdisk_info[3])
     print('vendor ramdisk size: %s' % kernel_ramdisk_info[4])
 
-    cmdline = unpack('2048s', args.boot_img.read(2048))[0].decode()
+    cmdline = cstr(unpack('2048s', args.boot_img.read(2048))[0].decode())
     print('vendor command line args: %s' % cmdline)
 
     tags_load_address = unpack('I', args.boot_img.read(1 * 4))[0]
     print('kernel tags load address: %#x' % tags_load_address)
 
-    product_name = unpack('16s', args.boot_img.read(16))[0].decode()
+    product_name = cstr(unpack('16s', args.boot_img.read(16))[0].decode())
     print('product name: %s' % product_name)
 
     dtb_size = unpack('2I', args.boot_img.read(2 * 4))[1]
@@ -170,11 +197,10 @@ def unpack_vendor_bootimage(args):
     ramdisk_size = kernel_ramdisk_info[4]
     page_size = kernel_ramdisk_info[1]
 
-    # The first page contains the boot header
-    num_boot_header_pages = 1
-
+    # The first pages contain the boot header
+    num_boot_header_pages = get_number_of_pages(VENDOR_BOOT_IMAGE_HEADER_V3_SIZE, page_size)
     num_boot_ramdisk_pages = get_number_of_pages(ramdisk_size, page_size)
-    ramdisk_offset = page_size * num_boot_header_pages # header occupies a page
+    ramdisk_offset = page_size * num_boot_header_pages
     image_info_list = [(ramdisk_offset, ramdisk_size, 'vendor_ramdisk')]
 
     dtb_offset = page_size * (num_boot_header_pages + num_boot_ramdisk_pages
