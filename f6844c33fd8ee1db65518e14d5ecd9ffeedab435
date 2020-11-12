@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aa738d4_590e8b37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-11-12T23:40:06Z",
+      "side": 1,
+      "message": "LGTM aside from the one style question",
+      "revId": "f6844c33fd8ee1db65518e14d5ecd9ffeedab435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5872f80c_305675cf",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-11-12T23:40:06Z",
+      "side": 1,
+      "message": "Is it possible to define this using the same syntax as the others, but with no additional fields? Just thinking of trying to keep the types defined the same way for consistency.",
+      "revId": "f6844c33fd8ee1db65518e14d5ecd9ffeedab435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
