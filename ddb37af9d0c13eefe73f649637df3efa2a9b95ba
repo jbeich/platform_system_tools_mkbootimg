@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3064a4a3_a8863242",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-11-13T07:01:59Z",
+      "side": 1,
+      "message": "Guess we might need to rewrite all this with python3 syntax someday...",
+      "revId": "ddb37af9d0c13eefe73f649637df3efa2a9b95ba",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
