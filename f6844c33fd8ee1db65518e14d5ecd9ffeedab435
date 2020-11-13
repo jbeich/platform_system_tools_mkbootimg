@@ -33,6 +33,24 @@
       "message": "Is it possible to define this using the same syntax as the others, but with no additional fields? Just thinking of trying to keep the types defined the same way for consistency.",
       "revId": "f6844c33fd8ee1db65518e14d5ecd9ffeedab435",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce71b64f_fb9d79a7",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-11-13T06:41:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5872f80c_305675cf",
+      "revId": "f6844c33fd8ee1db65518e14d5ecd9ffeedab435",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
