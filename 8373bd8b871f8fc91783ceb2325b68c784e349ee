@@ -46,6 +46,30 @@
       },
       "revId": "8373bd8b871f8fc91783ceb2325b68c784e349ee",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cddddbd_13f2cd0e",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2020-11-20T23:27:09Z",
+      "side": 1,
+      "message": "This is not for the recovery ramdisk, but for a set of binaries that belongs to platform, including tune2fs, resize2fs, and snapuserd. Recovery resources + fstab do NOT belong to this.\n\nSorry, I didn\u0027t notice that this is a unit32_t. I just want to reserve an ID for generic platform stuff.",
+      "parentUuid": "476fede0_bfacab12",
+      "range": {
+        "startLine": 383,
+        "startChar": 0,
+        "endLine": 383,
+        "endChar": 64
+      },
+      "revId": "8373bd8b871f8fc91783ceb2325b68c784e349ee",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
