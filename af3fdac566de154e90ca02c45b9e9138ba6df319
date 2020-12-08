@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4eb9274_24b44028",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2020-12-08T19:03:56Z",
+      "side": 1,
+      "message": "nit:\n\n  if header_version \u003d\u003d 4:\n    ...\n  else if header_version \u003d\u003d 3:\n    ...\n  else:\n    raise...",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 31
+      },
+      "revId": "af3fdac566de154e90ca02c45b9e9138ba6df319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
