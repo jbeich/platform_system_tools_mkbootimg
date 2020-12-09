@@ -16,6 +16,46 @@
       "message": "Is this ready to be reviewed?",
       "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11faef6f_21e99a4f",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-12-09T01:25:10Z",
+      "side": 1,
+      "message": "Not a big issue but I recommend using \"type\" instead of \"kind\" here and elsewhere. I\u0027m okay with both though if you want to stay with what you have.",
+      "range": {
+        "startLine": 346,
+        "startChar": 28,
+        "endLine": 346,
+        "endChar": 32
+      },
+      "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e84b3b4_39c932c7",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-12-09T01:25:10Z",
+      "side": 1,
+      "message": "Instead of VENDOR_RAMDISK_KIND_VENDOR we\u0027ll need VENDOR_RAMDISK_KIND_DLKM (or something like that) to specify that the ramdisk contains kernel modules only.",
+      "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
