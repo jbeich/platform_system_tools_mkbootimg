@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c8ea6f5_c819028c",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-09T06:10:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11faef6f_21e99a4f",
+      "range": {
+        "startLine": 346,
+        "startChar": 28,
+        "endLine": 346,
+        "endChar": 32
+      },
+      "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e84b3b4_39c932c7",
@@ -54,6 +78,24 @@
       "writtenOn": "2020-12-09T01:25:10Z",
       "side": 1,
       "message": "Instead of VENDOR_RAMDISK_KIND_VENDOR we\u0027ll need VENDOR_RAMDISK_KIND_DLKM (or something like that) to specify that the ramdisk contains kernel modules only.",
+      "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b60c3cd_7ab576d8",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-09T06:10:39Z",
+      "side": 1,
+      "message": "SG, Done",
+      "parentUuid": "0e84b3b4_39c932c7",
       "revId": "6d2f0378abdae45bc274818f399cb5f964a2a1c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
