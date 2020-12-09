@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c15752e_8521e2a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1131915
+      },
+      "writtenOn": "2020-12-09T01:30:53Z",
+      "side": 1,
+      "message": "LGTM mod the comment about kind/type in the other change",
+      "revId": "bdc438073033d6bd619eae7bd0fa693245ddc8f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
