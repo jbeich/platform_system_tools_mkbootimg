@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e1209b63_85341569",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-10T03:59:32Z",
+      "side": 1,
+      "message": "I\u0027ll add this in another CL, following the small CL pattern",
+      "parentUuid": "0b9af11b_3d774cc2",
+      "revId": "af3fdac566de154e90ca02c45b9e9138ba6df319",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "a4eb9274_24b44028",
         "filename": "mkbootimg.py",
         "patchSetId": 4
