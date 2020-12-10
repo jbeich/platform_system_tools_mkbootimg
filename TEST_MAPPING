@@ -1,0 +1,8 @@
+{
+  "presubmit": [
+    {
+      "name": "mkbootimg_test",
+      "host": true
+    }
+  ]
+}
