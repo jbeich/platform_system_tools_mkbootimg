@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "299ccd9d_8cf6bab4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-10T12:20:35Z",
+      "side": 1,
+      "message": "duh\nTEST_MAPPING DOESNT work as I expect...",
+      "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
