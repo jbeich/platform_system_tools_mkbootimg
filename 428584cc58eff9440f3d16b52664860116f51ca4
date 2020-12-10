@@ -16,6 +16,52 @@
       "message": "duh\nTEST_MAPPING DOESNT work as I expect...",
       "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7be422b_dc5da52f",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2020-12-10T20:47:32Z",
+      "side": 1,
+      "message": "Instead of doing this, why not just \n\n    expected_output \u003d \"\"\"boot_magic: VNDRBOOT\nvendor boot image header version: 4\nvendor ramdisk total size: 12288\n...\n\"\"\"\n    output \u003d \"\\n\".join(line.strip() for line in result.stdout.splitlines())\n    self.assertIn(expectedOutput, output)\n\nIt is not the exact substitute of subsequence_of, but I think it is more straightforward.",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 33
+      },
+      "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce715d06_0ba9ef43",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2020-12-10T20:47:32Z",
+      "side": 1,
+      "message": "nit: self.assertTrue(msg, ...)?",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 30
+      },
+      "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
