@@ -67,6 +67,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d917f455_10a5457f",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2020-12-11T20:39:22Z",
+      "side": 1,
+      "message": "I see, I misread \"subsequence_of\".\n\nMaybe add some comments / doctests / unittests for subsequence_of? e.g. \n\n   \u003e\u003e\u003e subsequence_of([1, 3], [1, 2, 3])\n   True\n\n(Previously I thought this returns false)",
+      "parentUuid": "220a11a6_3e8a2e34",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 33
+      },
+      "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ce715d06_0ba9ef43",
         "filename": "tests/mkbootimg_test.py",
         "patchSetId": 1
