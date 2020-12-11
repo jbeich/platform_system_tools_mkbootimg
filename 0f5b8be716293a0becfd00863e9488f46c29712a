@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36fec37e_2bd11088",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-11T11:16:07Z",
+      "side": 1,
+      "message": "I give up making TEST_MAPPING work. It\u0027s just too messy and I don\u0027t think it\u0027s worth the effort. ",
+      "revId": "0f5b8be716293a0becfd00863e9488f46c29712a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
