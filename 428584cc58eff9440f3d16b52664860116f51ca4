@@ -91,6 +91,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4e34e755_7c677abb",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2020-12-14T10:37:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d917f455_10a5457f",
+      "range": {
+        "startLine": 90,
+        "startChar": 19,
+        "endLine": 90,
+        "endChar": 33
+      },
+      "revId": "428584cc58eff9440f3d16b52664860116f51ca4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ce715d06_0ba9ef43",
         "filename": "tests/mkbootimg_test.py",
         "patchSetId": 1
