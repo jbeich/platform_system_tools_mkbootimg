@@ -133,6 +133,7 @@ def write_vendor_boot_header(args):
             vendor_ramdisk_table_size,                  # vendor ramdisk table size in bytes
             args.vendor_ramdisk_table_entry_num,        # number of vendor ramdisk table entries
             VENDOR_RAMDISK_TABLE_ENTRY_V4_SIZE))        # vendor ramdisk table entry size in bytes
+        args.vendor_boot.write(pack('I', filesize(args.vendor_bootconfig)))
     pad_file(args.vendor_boot, args.pagesize)
 
 
@@ -438,6 +439,8 @@ def parse_cmdline():
     parser.add_argument('-o', '--output', help='output file name', type=FileType('wb'))
     parser.add_argument('--vendor_boot', help='vendor boot output file name', type=FileType('wb'))
     parser.add_argument('--vendor_ramdisk', help='path to the vendor ramdisk', type=FileType('rb'))
+    parser.add_argument('--vendor_bootconfig', help='path to the vendor bootconfig file',
+                        type=FileType('rb'))
 
     args, extra_args = parser.parse_known_args()
     if args.vendor_boot is not None and args.header_version > 3:
@@ -464,6 +467,7 @@ def write_vendor_boot_data(args):
         builder.write_ramdisks_padded(args.vendor_boot, args.pagesize)
         write_padded_file(args.vendor_boot, args.dtb, args.pagesize)
         builder.write_entries_padded(args.vendor_boot, args.pagesize)
+        write_padded_file(args.vendor_boot, args.vendor_bootconfig, args.pagesize)
     else:
         write_padded_file(args.vendor_boot, args.vendor_ramdisk, args.pagesize)
         write_padded_file(args.vendor_boot, args.dtb, args.pagesize)
