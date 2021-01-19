@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e632ff_d695b1af",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-01-19T19:09:21Z",
+      "side": 1,
+      "message": "nit: maybe ramdisk_idx_str? it is not a real ramdisk name now",
+      "range": {
+        "startLine": 238,
+        "startChar": 12,
+        "endLine": 238,
+        "endChar": 31
+      },
+      "revId": "e38be23dbfefac1a36597ced30423df9bd228796",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
