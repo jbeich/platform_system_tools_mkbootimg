@@ -22,6 +22,30 @@
       },
       "revId": "e38be23dbfefac1a36597ced30423df9bd228796",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02920ee4_a0ffeaf2",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-01-20T06:50:18Z",
+      "side": 1,
+      "message": "It is used as the filename of the ramdisk dumped from the boot image, hence the \"output_\" prefix.\nI agree it\u0027s not elegant... I would probably do a py2 to py3 rewrite of this tool some day. And we need to refactor this tool eventually to support http://b/176789512",
+      "parentUuid": "37e632ff_d695b1af",
+      "range": {
+        "startLine": 238,
+        "startChar": 12,
+        "endLine": 238,
+        "endChar": 31
+      },
+      "revId": "e38be23dbfefac1a36597ced30423df9bd228796",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
