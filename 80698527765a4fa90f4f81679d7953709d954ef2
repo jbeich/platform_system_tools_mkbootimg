@@ -22,6 +22,30 @@
       },
       "revId": "80698527765a4fa90f4f81679d7953709d954ef2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92bc1326_b892f661",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1415877
+      },
+      "writtenOn": "2021-01-22T13:07:40Z",
+      "side": 1,
+      "message": "\u003e Would this need to be updated again when \"S\" is finalized to some numerical value?\n\nNo, \"S\" can be used even after finalization.\n\nBtw, I found that the target apex(com.android.virt) is not going to be updatable in S. So, we don\u0027t need to set this property, at least for now.\n\nThanks for the idea.",
+      "parentUuid": "00563441_6c000d84",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 24
+      },
+      "revId": "80698527765a4fa90f4f81679d7953709d954ef2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
