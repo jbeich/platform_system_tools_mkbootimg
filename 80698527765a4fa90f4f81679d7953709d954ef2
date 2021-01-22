@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00563441_6c000d84",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-01-22T11:58:31Z",
+      "side": 1,
+      "message": "Would this need to be updated again when \"S\" is finalized to some numerical value?\n\nHow about setting this to \"current\" or \"minimum\"? I suppose the value doesn\u0027t really matter, it just have to be set to some non-empty value for the APEX to not complain?",
+      "range": {
+        "startLine": 24,
+        "startChar": 21,
+        "endLine": 24,
+        "endChar": 24
+      },
+      "revId": "80698527765a4fa90f4f81679d7953709d954ef2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
