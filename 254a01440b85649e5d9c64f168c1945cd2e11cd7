@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2727212_dad88b9a",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:39:11Z",
+      "side": 1,
+      "message": "Just save_bootimage_v3_args() or save_bootimage_v3_mkbootimg_args(), these are not \"Make\" arguments, but arguments for the mkbootimg command.\n\nor get_bootimage_v3_args() that returns a dict.\n\nnit: I think ..._boot_image_... \u0026 ..._vendor_boot_image_... looks nicer and makes more sense, but I understand you may want to keep the style consistent to existing code...",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 31
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "812e9654_2ebcf3cd",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:39:11Z",
+      "side": 1,
+      "message": "mkbootimg_args.json or mkbootimg_info.json? I think we can give it a more specific name here, as we already have too many files, variables named like .*boot.*",
+      "range": {
+        "startLine": 127,
+        "startChar": 36,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30288d45_57cabf74",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:39:11Z",
+      "side": 1,
+      "message": "v4",
+      "range": {
+        "startLine": 204,
+        "startChar": 23,
+        "endLine": 204,
+        "endChar": 28
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86b5245e_db439cd1",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:39:11Z",
+      "side": 1,
+      "message": "you would need to dump the vendor_ramdisk_table as an json array too",
+      "range": {
+        "startLine": 205,
+        "startChar": 36,
+        "endLine": 207,
+        "endChar": 52
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
