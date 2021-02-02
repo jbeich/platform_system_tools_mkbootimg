@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a102fac1_dfa61936",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:40:28Z",
+      "side": 1,
+      "message": "Add these to the unittest?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a2727212_dad88b9a",
         "filename": "unpack_bootimg.py",
         "patchSetId": 1
