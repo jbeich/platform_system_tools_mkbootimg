@@ -51,6 +51,20 @@ python_defaults {
     },
 }
 
+python_defaults {
+    name: "mkbootimg_py3_defaults",
+
+    version: {
+        py2: {
+            enabled: false,
+        },
+        py3: {
+            enabled: true,
+            embedded_launcher: true,
+        },
+    },
+}
+
 python_binary_host {
     name: "mkbootimg",
     defaults: ["mkbootimg_defaults"],
@@ -64,6 +78,21 @@ python_binary_host {
     defaults: ["mkbootimg_defaults"],
     srcs: [
         "unpack_bootimg.py",
+    ],
+}
+
+
+python_binary_host {
+    name: "import_ramdisk_file",
+    defaults: ["mkbootimg_py3_defaults"],
+    srcs: [
+        "import_ramdisk_file.py",
+    ],
+    required: [
+        "lz4",
+        "mkbootfs",
+        "mkbootimg",
+        "unpack_bootimg",
     ],
 }
 
