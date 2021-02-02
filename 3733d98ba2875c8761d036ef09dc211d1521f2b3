@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc504d17_89096b22",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:43:33Z",
+      "side": 1,
+      "message": "I haven\u0027t entirely reviewed this yet, just drop a small comment.",
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eed2a00b_dc4375a2",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-02T13:43:33Z",
+      "side": 1,
+      "message": "replace with \"mkbootimg_py3_defaults\"",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 120,
+        "endChar": 6
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
