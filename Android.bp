@@ -47,6 +47,20 @@ python_defaults {
     },
 }
 
+python_defaults {
+    name: "mkbootimg_py3_defaults",
+
+    version: {
+        py2: {
+            enabled: false,
+        },
+        py3: {
+            enabled: true,
+            embedded_launcher: true,
+        },
+    },
+}
+
 python_binary_host {
     name: "mkbootimg",
     defaults: ["mkbootimg_defaults"],
@@ -60,5 +74,21 @@ python_binary_host {
     defaults: ["mkbootimg_defaults"],
     srcs: [
         "unpack_bootimg.py",
+    ],
+}
+
+python_binary_host {
+    name: "repack_bootimg",
+    defaults: ["mkbootimg_py3_defaults"],
+    srcs: [
+        "repack_bootimg.py",
+    ],
+    required: [
+        "lz4",
+        "minigzip",
+        "mkbootfs",
+        "mkbootimg",
+        "toybox",
+        "unpack_bootimg",
     ],
 }
