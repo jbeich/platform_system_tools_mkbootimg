@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "30a95693_24c68eaa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T10:30:56Z",
+      "side": 1,
+      "message": "Sure, thanks for adding \u0027mkbootimg_test.py\u0027 before.",
+      "parentUuid": "a102fac1_dfa61936",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 47
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2727212_dad88b9a",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-02-02T13:39:11Z",
       "side": 1,
       "message": "Just save_bootimage_v3_args() or save_bootimage_v3_mkbootimg_args(), these are not \"Make\" arguments, but arguments for the mkbootimg command.\n\nor get_bootimage_v3_args() that returns a dict.\n\nnit: I think ..._boot_image_... \u0026 ..._vendor_boot_image_... looks nicer and makes more sense, but I understand you may want to keep the style consistent to existing code...",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 31
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fb39ed0_ec41342a",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T10:30:56Z",
+      "side": 1,
+      "message": "\u003e I think ..._boot_image_... \u0026 ..._vendor_boot_image_... looks nicer and makes more\n\n+1, let\u0027s use \u0027get_boot_image_v3_args()\u0027 then!",
+      "parentUuid": "a2727212_dad88b9a",
       "range": {
         "startLine": 75,
         "startChar": 4,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa516d2c_9a1a3e8a",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T10:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "812e9654_2ebcf3cd",
+      "range": {
+        "startLine": 127,
+        "startChar": 36,
+        "endLine": 127,
+        "endChar": 45
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30288d45_57cabf74",
@@ -93,6 +165,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceec7a02_6052cae3",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T10:30:56Z",
+      "side": 1,
+      "message": "I\u0027ll do v3 in this CL first (without multiple vendor ramdisk).",
+      "parentUuid": "30288d45_57cabf74",
+      "range": {
+        "startLine": 204,
+        "startChar": 23,
+        "endLine": 204,
+        "endChar": 28
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86b5245e_db439cd1",
@@ -106,6 +202,30 @@
       "writtenOn": "2021-02-02T13:39:11Z",
       "side": 1,
       "message": "you would need to dump the vendor_ramdisk_table as an json array too",
+      "range": {
+        "startLine": 205,
+        "startChar": 36,
+        "endLine": 207,
+        "endChar": 52
+      },
+      "revId": "254a01440b85649e5d9c64f168c1945cd2e11cd7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9e16ba2_344ff207",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T10:30:56Z",
+      "side": 1,
+      "message": "Will do that in a separate CL, see the comment at L269.",
+      "parentUuid": "86b5245e_db439cd1",
       "range": {
         "startLine": 205,
         "startChar": 36,
