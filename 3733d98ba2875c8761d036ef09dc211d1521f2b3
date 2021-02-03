@@ -112,6 +112,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4d9e42d5_23a27547",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T16:07:15Z",
+      "side": 1,
+      "message": "for compression_type, compression_util in [(LZ4, \u0027lz4\u0027), (GZIP, \u0027minigzip\u0027)]:\n  ...\n  self._ramdisk_format \u003d compression_type",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 61
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "660d50cb_407d2b52",
         "filename": "import_ramdisk_file.py",
         "patchSetId": 1
