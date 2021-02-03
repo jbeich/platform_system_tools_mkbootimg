@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7b5e45b_78b5d67f",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-03T14:30:19Z",
+      "side": 1,
+      "message": "Just using assertEqual() should be fine. \n\nIt can also print the diff nicely.\n\ne.g.,\n\n  {\u0027base\u0027: \u00270x00000000\u0027,\n   \u0027board\u0027: \u0027product_name\u0027,\n-  \u0027dtb_offset\u0027: \u00270x0000000001f00000\u0027,\n?                   --------\n\n+  \u0027dtb_offset\u0027: \u00270x01f00000\u0027,\n   \u0027header_version\u0027: \u00273\u0027,\n   \u0027kernel_offset\u0027: \u00270x00008000\u0027,\n   \u0027pagesize\u0027: \u00270x00001000\u0027,\n   \u0027ramdisk_offset\u0027: \u00270x01000000\u0027,\n   \u0027tags_offset\u0027: \u00270x00000100\u0027,\n   \u0027vendor_cmdline\u0027: \u0027test-vendor_cmdline\u0027}\n\n----------------------------------------------------------------------",
+      "range": {
+        "startLine": 147,
+        "startChar": 21,
+        "endLine": 147,
+        "endChar": 32
+      },
+      "revId": "f1bcdc015a7af1499a75e1e99c15cfc113d974db",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
