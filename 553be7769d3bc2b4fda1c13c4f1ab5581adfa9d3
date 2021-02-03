@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81e9e632_8c2c4a05",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T10:56:23Z",
+      "side": 1,
+      "message": "dtb_offset is a quad-word, so \u0027{:#018x}\u0027\n\nhttps://cs.android.com/android/platform/superproject/+/master:system/tools/mkbootimg/include/bootimg/bootimg.h;l\u003d306",
+      "range": {
+        "startLine": 218,
+        "startChar": 35,
+        "endLine": 218,
+        "endChar": 45
+      },
+      "revId": "553be7769d3bc2b4fda1c13c4f1ab5581adfa9d3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
