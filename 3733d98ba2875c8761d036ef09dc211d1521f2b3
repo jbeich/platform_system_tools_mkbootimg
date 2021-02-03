@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fbee9c7_403f8b33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T15:58:55Z",
+      "side": 1,
+      "message": "It seems odd to me that the program name is \"import_ramdisk_file\", but it actually reads/writes a boot image.\nHow about some generic name like \"repack_bootimg.py\" or \"modify_bootimg.py\" ... etc?\nAnd support generic operations such as:\n  ./repack_bootimg.py \u003cinput/output filename args\u003e --ramdisk_add \u003cfilename\u003e\n  ./repack_bootimg.py \u003cinput/output filename args\u003e --ramdisk_remove \u003cfilename\u003e\n# Right now only --ramdisk_add is needed, --ramdisk_remove could be added later if we ever need it",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "bc504d17_89096b22",
@@ -14,6 +37,29 @@
       "writtenOn": "2021-02-02T13:43:33Z",
       "side": 1,
       "message": "I haven\u0027t entirely reviewed this yet, just drop a small comment.",
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52f7c03f_86e598b3",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T15:58:55Z",
+      "side": 1,
+      "message": "Add the complete list of required tools, lz4, minigzip, toybox(cpio), etc etc",
+      "range": {
+        "startLine": 91,
+        "startChar": 10,
+        "endLine": 92,
+        "endChar": 14
+      },
       "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -36,6 +82,75 @@
         "startChar": 4,
         "endLine": 120,
         "endChar": 6
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e326f24_62b2411a",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T15:58:55Z",
+      "side": 1,
+      "message": "Add a brief, top-level docstring describing the purpose of this file.\n\nDon\u0027t need to be too verbose here, simple explanation is enough, as the actual usage would be shown by --help.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "660d50cb_407d2b52",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T15:58:55Z",
+      "side": 1,
+      "message": "\"filename to ...\" or \"pathname to ...\"",
+      "range": {
+        "startLine": 253,
+        "startChar": 31,
+        "endLine": 253,
+        "endChar": 36
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77fe88bb_20c4db30",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-03T15:58:55Z",
+      "side": 1,
+      "message": "I think our coding style requires the last line to be\n\nif __name__ \u003d\u003d \u0027__main__\u0027:\n    main()\n\nThese lines and content of _parse_args() can be merged into main().",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 31
       },
       "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
