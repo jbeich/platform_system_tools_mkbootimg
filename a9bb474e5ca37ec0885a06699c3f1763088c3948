@@ -135,6 +135,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0058f5de_8376b158",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T16:00:35Z",
+      "side": 1,
+      "message": "Ah, SG then.\n\n\u003e and export/append ./otatoolz/bin/ to $PATH\n\nYour use case sounds more reasonable then mine.",
+      "parentUuid": "123707f4_a3c5cf26",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e230d0c_b5a3d5a8",
@@ -243,6 +267,30 @@
       "side": 1,
       "message": "Oh you\u0027re right! Interesting... Our host toybox is configured to support `cpio` and our build system uses this symlink (https://cs.android.com/android/platform/superproject/+/master:prebuilts/build-tools/path/linux-x86/cpio;bpv\u003d0). But I suppose, based on your findings, the \"prebuilts/build-tools/path/linux-x86/\" directory is not exposed to $PATH",
       "parentUuid": "2a641185_707d30b4",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eec1562d_9e7f859c",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T16:00:35Z",
+      "side": 1,
+      "message": "sidenote: toybox provides gzip too 🤔\nhttps://cs.android.com/android/platform/superproject/+/master:prebuilts/build-tools/path/linux-x86/gzip;bpv\u003d0",
+      "parentUuid": "8a85dd93_6fcf213f",
       "range": {
         "startLine": 116,
         "startChar": 32,
