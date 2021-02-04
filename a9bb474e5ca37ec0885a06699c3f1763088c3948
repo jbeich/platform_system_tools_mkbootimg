@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db29125e_239e0979",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T15:00:01Z",
+      "side": 1,
+      "message": "thanks for doing this! Overall looks good, just some minor nits about style/case",
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1e2d8fdb_84eba880",
