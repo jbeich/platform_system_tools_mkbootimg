@@ -96,6 +96,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7cadff22_97fd3162",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:46:00Z",
+      "side": 1,
+      "message": "\u0027\u0027",
+      "range": {
+        "startLine": 125,
+        "startChar": 22,
+        "endLine": 127,
+        "endChar": 56
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "313bc6d4_015606b9",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
@@ -107,6 +130,30 @@
       "writtenOn": "2021-02-04T14:40:59Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 125,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 58
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d530f1fc_580d4f2c",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:46:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "313bc6d4_015606b9",
       "range": {
         "startLine": 125,
         "startChar": 16,
@@ -142,6 +189,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "45f2575c_ee7bb39c",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:46:00Z",
+      "side": 1,
+      "message": "Oh just realized the \u0027{}\u0027 within the string, that must be a valid reason. For this one (L149) I think it\u0027s alright, but (L147) should be \u0027\u0027",
+      "parentUuid": "10ec7973_4fab0eaa",
+      "range": {
+        "startLine": 147,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 0
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "280da84b_6b50e880",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
@@ -153,6 +224,30 @@
       "writtenOn": "2021-02-04T14:40:59Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 180,
+        "startChar": 14,
+        "endLine": 180,
+        "endChar": 16
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63f46cf1_1e83d836",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:46:00Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "280da84b_6b50e880",
       "range": {
         "startLine": 180,
         "startChar": 14,
