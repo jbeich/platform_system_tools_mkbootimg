@@ -231,6 +231,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a85dd93_6fcf213f",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T15:49:41Z",
+      "side": 1,
+      "message": "Oh you\u0027re right! Interesting... Our host toybox is configured to support `cpio` and our build system uses this symlink (https://cs.android.com/android/platform/superproject/+/master:prebuilts/build-tools/path/linux-x86/cpio;bpv\u003d0). But I suppose, based on your findings, the \"prebuilts/build-tools/path/linux-x86/\" directory is not exposed to $PATH",
+      "parentUuid": "2a641185_707d30b4",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7cadff22_97fd3162",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
