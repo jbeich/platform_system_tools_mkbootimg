@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b1b5af08_6a46147a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done, looks better!",
+      "parentUuid": "5fbee9c7_403f8b33",
+      "range": {
+        "startLine": 7,
+        "startChar": 7,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "bc504d17_89096b22",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -64,6 +88,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6660927_560eddb6",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52f7c03f_86e598b3",
+      "range": {
+        "startLine": 91,
+        "startChar": 10,
+        "endLine": 92,
+        "endChar": 14
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eed2a00b_dc4375a2",
@@ -77,6 +125,30 @@
       "writtenOn": "2021-02-02T13:43:33Z",
       "side": 1,
       "message": "replace with \"mkbootimg_py3_defaults\"",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 120,
+        "endChar": 6
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb1c7882_b9a9fbb0",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eed2a00b_dc4375a2",
       "range": {
         "startLine": 112,
         "startChar": 4,
@@ -110,6 +182,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3176b906_0eca8e7b",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e326f24_62b2411a",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d9e42d5_23a27547",
@@ -123,6 +219,30 @@
       "writtenOn": "2021-02-03T16:07:15Z",
       "side": 1,
       "message": "for compression_type, compression_util in [(LZ4, \u0027lz4\u0027), (GZIP, \u0027minigzip\u0027)]:\n  ...\n  self._ramdisk_format \u003d compression_type",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 61
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dfe1ec8_cf187b63",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d9e42d5_23a27547",
       "range": {
         "startLine": 91,
         "startChar": 8,
@@ -156,6 +276,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca847158_663d5450",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "660d50cb_407d2b52",
+      "range": {
+        "startLine": 253,
+        "startChar": 31,
+        "endLine": 253,
+        "endChar": 36
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "77fe88bb_20c4db30",
@@ -169,6 +313,30 @@
       "writtenOn": "2021-02-03T15:58:55Z",
       "side": 1,
       "message": "I think our coding style requires the last line to be\n\nif __name__ \u003d\u003d \u0027__main__\u0027:\n    main()\n\nThese lines and content of _parse_args() can be merged into main().",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 31
+      },
+      "revId": "3733d98ba2875c8761d036ef09dc211d1521f2b3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b82ab3f_18fed342",
+        "filename": "import_ramdisk_file.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T12:20:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77fe88bb_20c4db30",
       "range": {
         "startLine": 248,
         "startChar": 0,
