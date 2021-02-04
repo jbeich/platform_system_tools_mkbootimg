@@ -113,6 +113,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "123707f4_a3c5cf26",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T15:35:41Z",
+      "side": 1,
+      "message": "\u003e and running this script alone (out-of-tree)?\n\nActually this is my plan (sorry, forgot to mention this in advance).\n\nCurrently \u0027lz4\u0027, \u0027minigzip\u0027, \u0027mkbootfs\u0027, \u0027mkbootimg\u0027 and \u0027toybox\u0027 are all in the otatools.zip (under otatools/bin/.*), which is built by `make otatools-package`.\n\nFor the out-of-tree use case, the plan is to\n1) download the otatools.zip\n2) unzip it, and export/append ./otatoolz/bin/ to $PATH\n\nAfter that, we can use \u0027repack_bootimg\u0027 in a standalone manner. (that\u0027s actually how our offline signing process works).\n\nI\u0027ll send another CL to include \u0027repack_bootimg\u0027 into \u0027INTERNAL_OTATOOLS_MODULES\u0027, so it will be included into otatools.zip.\n\nhttps://cs.android.com/android/platform/superproject/+/master:build/make/core/Makefile;l\u003d4061;drc\u003d3608148612c3392b52ff5df2529ebfee597b538d\n\nAs \u0027minigzip\u0027 is already in otatools.zip, we probably don\u0027t need to try \u0027gzip\u0027 ?",
+      "parentUuid": "07455576_a2a43acd",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5e230d0c_b5a3d5a8",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
@@ -171,6 +195,30 @@
       "side": 1,
       "message": "I think just \"cpio\" is alright.\nWe don\u0027t really care which cpio implementation we\u0027re using (do we?), it just happen so that our in-tree cpio command is provided by toybox, hence we add \"required: [\"toybox\"]\" to the Android.bp.",
       "parentUuid": "d77dbd2a_5a0c3d2b",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a641185_707d30b4",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T15:35:41Z",
+      "side": 1,
+      "message": "I used \u0027toybox cpip\u0027 because it\u0027s in the otatools.zip (for out-of-tree use case).\n\n\u003e it just happen so that our in-tree cpio command is provided by toybox,\n\nThat seems not the case. I tried `whereis cpio` but the path is not within the Android tree.",
+      "parentUuid": "2ce152f9_578eaad1",
       "range": {
         "startLine": 116,
         "startChar": 32,
@@ -288,6 +336,30 @@
       "side": 1,
       "message": "Oh just realized the \u0027{}\u0027 within the string, that must be a valid reason. For this one (L149) I think it\u0027s alright, but (L147) should be \u0027\u0027",
       "parentUuid": "10ec7973_4fab0eaa",
+      "range": {
+        "startLine": 147,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 0
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e636986_90121f80",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-04T15:35:41Z",
+      "side": 1,
+      "message": "Yup, my preference is using \u0027str\u0027, but \u0027{}\u0027 forces me to use double-quote instead.\n\nAgree that L147 can keep using single quote, as there is no \u0027{}\u0027.\n\n\nWill change that in next PS.",
+      "parentUuid": "45f2575c_ee7bb39c",
       "range": {
         "startLine": 147,
         "startChar": 8,
