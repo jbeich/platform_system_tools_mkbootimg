@@ -49,6 +49,53 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "07455576_a2a43acd",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:53:44Z",
+      "side": 1,
+      "message": "it just hit my head that with the current design (cheers!), this would be very easy to implement, we could do this\n\n[(RamdiskFormat.LZ4, \u0027lz4\u0027),\n(RamdiskFormat.GZIP, \u0027minigzip\u0027),\n(RamdiskFormat.GZIP, \u0027gzip\u0027)]\n\nand the rest of the code should do its thing.",
+      "parentUuid": "bad282a9_97ae0506",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 42
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e230d0c_b5a3d5a8",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:53:44Z",
+      "side": 1,
+      "message": ".format",
+      "range": {
+        "startLine": 103,
+        "startChar": 50,
+        "endLine": 103,
+        "endChar": 53
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d77dbd2a_5a0c3d2b",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
