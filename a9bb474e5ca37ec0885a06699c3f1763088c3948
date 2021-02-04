@@ -26,6 +26,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "363973c6_dacabdde",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-04T14:58:58Z",
+      "side": 1,
+      "message": "nit: could just capture the stdout of the inflation command as a bytes object, and pass it to the stdin of cpio command, then we would be able to drop this temp file, and drop the \"shell\u003dTrue\" option",
+      "range": {
+        "startLine": 94,
+        "startChar": 7,
+        "endLine": 94,
+        "endChar": 29
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "bad282a9_97ae0506",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
