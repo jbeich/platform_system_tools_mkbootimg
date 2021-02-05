@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f4653336_e6ce2fcd",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e2d8fdb_84eba880",
+      "range": {
+        "startLine": 17,
+        "startChar": 3,
+        "endLine": 17,
+        "endChar": 4
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "363973c6_dacabdde",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
@@ -54,6 +78,30 @@
       "writtenOn": "2021-02-04T14:58:58Z",
       "side": 1,
       "message": "nit: could just capture the stdout of the inflation command as a bytes object, and pass it to the stdin of cpio command, then we would be able to drop this temp file, and drop the \"shell\u003dTrue\" option",
+      "range": {
+        "startLine": 94,
+        "startChar": 7,
+        "endLine": 94,
+        "endChar": 29
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca00feeb_f387d2ae",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Great, nice suggestion!",
+      "parentUuid": "363973c6_dacabdde",
       "range": {
         "startLine": 94,
         "startChar": 7,
@@ -184,6 +232,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3253e89f_3ac57090",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Done, no need this anymore with shell\u003dFalse.",
+      "parentUuid": "5e230d0c_b5a3d5a8",
+      "range": {
+        "startLine": 103,
+        "startChar": 50,
+        "endLine": 103,
+        "endChar": 53
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d77dbd2a_5a0c3d2b",
         "filename": "repack_bootimg.py",
         "patchSetId": 2
@@ -301,6 +373,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b13000dd_6c2164c5",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "I see, but we also have \u0027minigzip\u0027 in otatools.zip, let me use that now and see if we need to switch to `toybox gzip` in the future.",
+      "parentUuid": "eec1562d_9e7f859c",
+      "range": {
+        "startLine": 116,
+        "startChar": 32,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7cadff22_97fd3162",
@@ -314,6 +410,30 @@
       "writtenOn": "2021-02-04T14:46:00Z",
       "side": 1,
       "message": "\u0027\u0027",
+      "range": {
+        "startLine": 125,
+        "startChar": 22,
+        "endLine": 127,
+        "endChar": 56
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0a09b5b_52174809",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cadff22_97fd3162",
       "range": {
         "startLine": 125,
         "startChar": 22,
@@ -442,6 +562,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ea586c8_c1325c09",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e636986_90121f80",
+      "range": {
+        "startLine": 147,
+        "startChar": 8,
+        "endLine": 150,
+        "endChar": 0
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "280da84b_6b50e880",
@@ -502,6 +646,30 @@
       "writtenOn": "2021-02-04T14:40:59Z",
       "side": 1,
       "message": "a list (consistent case)",
+      "range": {
+        "startLine": 277,
+        "startChar": 31,
+        "endLine": 277,
+        "endChar": 32
+      },
+      "revId": "a9bb474e5ca37ec0885a06699c3f1763088c3948",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e1c6df9_b22e8967",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T09:55:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbeeb838_9de752b9",
       "range": {
         "startLine": 277,
         "startChar": 31,
