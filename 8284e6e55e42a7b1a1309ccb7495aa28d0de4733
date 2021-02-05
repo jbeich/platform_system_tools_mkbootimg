@@ -72,6 +72,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "bcf32d3a_3f21e7f9",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T15:06:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9df8ea22_e5cfe967",
+      "range": {
+        "startLine": 139,
+        "startChar": 28,
+        "endLine": 139,
+        "endChar": 49
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "db64e794_2634fe66",
         "filename": "repack_bootimg.py",
         "patchSetId": 3
@@ -83,6 +107,30 @@
       "writtenOn": "2021-02-05T11:07:07Z",
       "side": 1,
       "message": "nit: self.ramdisk_dir",
+      "range": {
+        "startLine": 250,
+        "startChar": 36,
+        "endLine": 250,
+        "endChar": 61
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f818a13_e56ba07b",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-02-05T15:06:39Z",
+      "side": 1,
+      "message": "Nice, good catch.",
+      "parentUuid": "db64e794_2634fe66",
       "range": {
         "startLine": 250,
         "startChar": 36,
