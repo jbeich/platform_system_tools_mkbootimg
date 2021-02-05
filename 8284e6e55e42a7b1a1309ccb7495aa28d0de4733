@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8468e9a5_66c6da4e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-05T11:07:07Z",
+      "side": 1,
+      "message": "nit (low-importance): normally I\u0027d add this to unittest, but in this case it would just be testing the underlying tools this script is calling (cpio, lz4, etc), so I\u0027m fine for not making this a testcase",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 6
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db64e794_2634fe66",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-05T11:07:07Z",
+      "side": 1,
+      "message": "nit: self.ramdisk_dir",
+      "range": {
+        "startLine": 250,
+        "startChar": 36,
+        "endLine": 250,
+        "endChar": 61
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
