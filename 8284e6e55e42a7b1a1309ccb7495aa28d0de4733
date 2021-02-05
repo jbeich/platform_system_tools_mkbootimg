@@ -26,6 +26,52 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "8e73147d_c523476b",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-05T11:15:40Z",
+      "side": 1,
+      "message": "nit: .format (missed this one in the previous patchset)",
+      "range": {
+        "startLine": 139,
+        "startChar": 50,
+        "endLine": 139,
+        "endChar": 53
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9df8ea22_e5cfe967",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-05T11:15:40Z",
+      "side": 1,
+      "message": "Ideally we\u0027d use two two subprocess calls and pipe the result between the two commands like in _unpack_ramdisk()",
+      "range": {
+        "startLine": 139,
+        "startChar": 28,
+        "endLine": 139,
+        "endChar": 49
+      },
+      "revId": "8284e6e55e42a7b1a1309ccb7495aa28d0de4733",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "db64e794_2634fe66",
         "filename": "repack_bootimg.py",
         "patchSetId": 3
