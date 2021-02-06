@@ -1,0 +1,11 @@
+Open-Source-Licensing+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Verified+1: Bowgo Tsai <bowgotsai@google.com>
+Code-Review+2: Yo Chiang <yochiang@google.com>
+Presubmit-Verified+2: Treehugger Robot <treehugger-gerrit@google.com>
+Lint+1: Lint 🤖 <ayeaye-gerrit@google.com>
+Autosubmit+1: Bowgo Tsai <bowgotsai@google.com>
+Submitted-by: Treehugger Robot <treehugger-gerrit@google.com>
+Submitted-at: Sat, 06 Feb 2021 08:00:53 +0000
+Reviewed-on: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1569405
+Project: platform/system/tools/mkbootimg
+Branch: refs/heads/master
