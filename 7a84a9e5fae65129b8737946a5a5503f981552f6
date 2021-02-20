@@ -1,0 +1,56 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000008329652",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1597454?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "015b945b_2b0d34aa",
+        "filename": "pylintrc",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-02-20T09:42:28Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027complex\u0027, \u0027unexpected\u0027, or \u0027placeholder\u0027; see https://developers.google.com/style/inclusive-documentation#ableist-language for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 321,
+        "startChar": 44,
+        "endLine": 321,
+        "endChar": 49
+      },
+      "revId": "7a84a9e5fae65129b8737946a5a5503f981552f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000008329652",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1597454?revision\u003d1",
+      "fixSuggestions": [],
+      "key": {
+        "uuid": "f2710b51_e046b222",
+        "filename": "pylintrc",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-02-20T09:42:28Z",
+      "side": 1,
+      "message": "Prefer to use inclusive terms like \u0027complex\u0027, \u0027unexpected\u0027, or \u0027placeholder\u0027; see https://developers.google.com/style/inclusive-documentation#ableist-language for more details. In the case of a false positive add BYPASS_INCLUSIVE_LANGUAGE_REASON\u003dmy_reason_here to your commit message to disable this check.",
+      "range": {
+        "startLine": 323,
+        "startChar": 0,
+        "endLine": 323,
+        "endChar": 5
+      },
+      "revId": "7a84a9e5fae65129b8737946a5a5503f981552f6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
