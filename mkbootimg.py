@@ -24,12 +24,16 @@ from struct import pack
 import array
 import collections
 import re
+import subprocess
+import tempfile
 
 BOOT_MAGIC = 'ANDROID!'
 BOOT_IMAGE_HEADER_V1_SIZE = 1648
 BOOT_IMAGE_HEADER_V2_SIZE = 1660
 BOOT_IMAGE_HEADER_V3_SIZE = 1580
 BOOT_IMAGE_HEADER_V3_PAGESIZE = 4096
+BOOT_IMAGE_HEADER_V4_SIZE = 1584
+BOOT_IMAGE_V4_DIGEST_SIZE = 4096
 
 VENDOR_BOOT_MAGIC = 'VNDRBOOT'
 VENDOR_BOOT_IMAGE_HEADER_V3_SIZE = 2112
@@ -86,7 +90,7 @@ def get_recovery_dtbo_offset(args):
     return dtbo_offset
 
 
-def write_header_v3(args):
+def write_header_v3(args, header_size):
     args.output.write(pack('8s', BOOT_MAGIC.encode()))
     # kernel size in bytes
     args.output.write(pack('I', filesize(args.kernel)))
@@ -94,12 +98,15 @@ def write_header_v3(args):
     args.output.write(pack('I', filesize(args.ramdisk)))
     # os version and patch level
     args.output.write(pack('I', (args.os_version << 11) | args.os_patch_level))
-    args.output.write(pack('I', BOOT_IMAGE_HEADER_V3_SIZE))
+    args.output.write(pack('I', header_size))
     # reserved
     args.output.write(pack('4I', 0, 0, 0, 0))
     # version of boot image header
     args.output.write(pack('I', args.header_version))
     args.output.write(pack('1536s', args.cmdline.encode()))
+    if args.header_version >= 4:
+        # The digest used to verify boot image v4.
+        args.output.write(pack('I', BOOT_IMAGE_V4_DIGEST_SIZE))
     pad_file(args.output, BOOT_IMAGE_HEADER_V3_PAGESIZE)
 
 
@@ -158,7 +165,11 @@ def write_header(args):
         raise ValueError(
             f'Boot header version {args.header_version} not supported')
     if args.header_version in {3, 4}:
-        return write_header_v3(args)
+        header_size = {
+            3: BOOT_IMAGE_HEADER_V3_SIZE,
+            4: BOOT_IMAGE_HEADER_V4_SIZE,
+        }
+        return write_header_v3(args, header_size[args.header_version])
 
     ramdisk_load_address = ((args.base + args.ramdisk_offset)
                             if filesize(args.ramdisk) > 0 else 0)
@@ -485,6 +496,12 @@ def parse_cmdline():
                         help='boot image header version')
     parser.add_argument('-o', '--output', type=FileType('wb'),
                         help='output file name')
+    parser.add_argument('--gki_signing_algorithm',
+                        help='GKI signing algorithm to use')
+    parser.add_argument('--gki_signing_key',
+                        help='path to RSA private key file')
+    parser.add_argument('--gki_signing_hash_args',
+                        help='other hash arguments passed to avbtool')
     parser.add_argument('--vendor_boot', type=FileType('wb'),
                         help='vendor boot output file name')
     parser.add_argument('--vendor_ramdisk', type=FileType('rb'),
@@ -500,6 +517,39 @@ def parse_cmdline():
     return args
 
 
+def add_boot_image_digest(args, pagesize):
+    """Adds the boot image digest."""
+    # Appends zeros if the signing key is not specified.
+    if not args.gki_signing_key:
+        zeros = b'\x00' * BOOT_IMAGE_V4_DIGEST_SIZE
+        args.output.write(zeros)
+        pad_file(args.output, pagesize)
+        return
+
+    # Need to specify a value of --partition_size for avbtool to work.
+    # We use 64 MB below, but avbtool will not resize the boot image to
+    # this size because --do_not_append_vbmeta_image is also specified.
+    avbtool_cmd = [
+        'avbtool', 'add_hash_footer',
+        '--partition_name', 'boot',
+        '--partition_size', str(64 * 1024 * 1024),
+        '--image', args.output.name,
+        '--algorithm', args.gki_signing_algorithm,
+        '--key', args.gki_signing_key,
+        '--salt', 'd00df00d']  # TODO: use a hash of kernel/ramdisk as the salt.
+
+    # Additional arguments passed to avbtool.
+    if args.gki_signing_hash_args:
+        avbtool_cmd += args.gki_signing_hash_args.split()
+    # Outputs the signed vbmeta to a separate file, then append to boot.img.
+    with tempfile.NamedTemporaryFile() as boot_vbmeta:
+        avbtool_cmd += ['--do_not_append_vbmeta_image',
+                        '--output_vbmeta_image', boot_vbmeta.name]
+        subprocess.check_call(avbtool_cmd)
+        boot_vbmeta.seek(0)
+        write_padded_file(args.output, boot_vbmeta, pagesize)
+
+
 def write_data(args, pagesize):
     write_padded_file(args.output, args.kernel, pagesize)
     write_padded_file(args.output, args.ramdisk, pagesize)
@@ -509,6 +559,9 @@ def write_data(args, pagesize):
         write_padded_file(args.output, args.recovery_dtbo, pagesize)
     if args.header_version == 2:
         write_padded_file(args.output, args.dtb, pagesize)
+    if args.header_version >= 4:
+        args.output.flush()  # Flush the buffer for digest calculation.
+        add_boot_image_digest(args, pagesize)
 
 
 def write_vendor_boot_data(args):
