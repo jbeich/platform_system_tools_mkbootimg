@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "514e2bff_ae181ea6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Added --vendor_bootconfig to the testcase and ran it. done.",
+      "parentUuid": "f9ba0b72_16e5e3e2",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 6
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e062473f_703b0c72",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-02-23T18:31:21Z",
       "side": 1,
       "message": "also update this to 2128",
+      "range": {
+        "startLine": 341,
+        "startChar": 8,
+        "endLine": 341,
+        "endChar": 12
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b595656a_23e9b2d6",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e062473f_703b0c72",
       "range": {
         "startLine": 341,
         "startChar": 8,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b66b344e_9330239a",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Yes. Done.",
+      "parentUuid": "3f2bac0c_d05bfdff",
+      "range": {
+        "startLine": 373,
+        "startChar": 13,
+        "endLine": 373,
+        "endChar": 31
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "368a6129_1da58896",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-02-23T18:31:21Z",
       "side": 1,
       "message": "I don\u0027t see the need, as for the producer (mkbootimg) and consumer (bootloader) of this struct, the bootconfig object is just an opaque blob? (correct me if I\u0027m wrong though)\nBut feel free to include it here (or in the commit message) if you see the need.\n\nwhichever option you chose, do remove the FIXME before submitting this",
+      "range": {
+        "startLine": 375,
+        "startChar": 3,
+        "endLine": 375,
+        "endChar": 11
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c876d3_cd751559",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "I think you\u0027re right. Removed.",
+      "parentUuid": "368a6129_1da58896",
       "range": {
         "startLine": 375,
         "startChar": 3,
@@ -116,6 +212,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fbe1274_d5edae64",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Yes. Done.",
+      "parentUuid": "75386aa8_316119ba",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 71
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d5fcb1f_e5cfd5e1",
@@ -139,6 +259,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7e4053b_ed16bed7",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d5fcb1f_e5cfd5e1",
+      "range": {
+        "startLine": 400,
+        "startChar": 55,
+        "endLine": 400,
+        "endChar": 66
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc18b5dd_cee026d5",
@@ -152,6 +296,30 @@
       "writtenOn": "2021-02-23T18:31:21Z",
       "side": 1,
       "message": "2128 (i should probably add a test for this so we don\u0027t have to manually check this everytime... 😕)",
+      "range": {
+        "startLine": 36,
+        "startChar": 35,
+        "endLine": 36,
+        "endChar": 39
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b63ce4b_1b0ff136",
+        "filename": "mkbootimg.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc18b5dd_cee026d5",
       "range": {
         "startLine": 36,
         "startChar": 35,
@@ -187,6 +355,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b077e18a_26c2e72e",
+        "filename": "mkbootimg.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64cfcea5_11eaa154",
+      "range": {
+        "startLine": 492,
+        "startChar": 24,
+        "endLine": 494,
+        "endChar": 44
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "9e3a46d5_bc63d4b1",
         "filename": "unpack_bootimg.py",
         "patchSetId": 5
@@ -198,6 +390,30 @@
       "writtenOn": "2021-02-23T18:31:21Z",
       "side": 1,
       "message": "nit: I\u0027d prefer num_vendor_ramdisk_table_pages to match the naming, but looking at Line 276, the naming convention is already... self-conflicting 😮, so either is fine to me.",
+      "range": {
+        "startLine": 287,
+        "startChar": 8,
+        "endLine": 287,
+        "endChar": 36
+      },
+      "revId": "71d5ca7aaac8b7c425bcb6f910c51b4856aebf02",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1e355e3_a3bec9fc",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1644679
+      },
+      "writtenOn": "2021-02-23T19:31:21Z",
+      "side": 1,
+      "message": "I think it should be num_vendor_ramdisk_table_pages like you suggested. Might as well add this one with that naming. Done.",
+      "parentUuid": "9e3a46d5_bc63d4b1",
       "range": {
         "startLine": 287,
         "startChar": 8,
