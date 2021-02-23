@@ -46,6 +46,30 @@
       },
       "revId": "cc1cecc96b1f13d7009d7f16c7844d7d28b785c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8432693b_40f171cf",
+        "filename": "mkbootimg.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-02-23T08:27:42Z",
+      "side": 1,
+      "message": "yeah using f-string (go/python-tips/043) saves us a few bytes for every .format(), which means a lot less line breaks",
+      "parentUuid": "c16ee290_18b5d3f4",
+      "range": {
+        "startLine": 244,
+        "startChar": 15,
+        "endLine": 244,
+        "endChar": 16
+      },
+      "revId": "cc1cecc96b1f13d7009d7f16c7844d7d28b785c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
