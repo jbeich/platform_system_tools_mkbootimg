@@ -26,12 +26,19 @@ import collections
 import re
 
 BOOT_MAGIC = 'ANDROID!'
+BOOT_MAGIC_SIZE = 8
+BOOT_NAME_SIZE = 16
+BOOT_ARGS_SIZE = 512
+BOOT_EXTRA_ARGS_SIZE = 1024
 BOOT_IMAGE_HEADER_V1_SIZE = 1648
 BOOT_IMAGE_HEADER_V2_SIZE = 1660
 BOOT_IMAGE_HEADER_V3_SIZE = 1580
 BOOT_IMAGE_HEADER_V3_PAGESIZE = 4096
 
 VENDOR_BOOT_MAGIC = 'VNDRBOOT'
+VENDOR_BOOT_MAGIC_SIZE = 8
+VENDOR_BOOT_NAME_SIZE = BOOT_NAME_SIZE
+VENDOR_BOOT_ARGS_SIZE = 2048
 VENDOR_BOOT_IMAGE_HEADER_V3_SIZE = 2112
 VENDOR_BOOT_IMAGE_HEADER_V4_SIZE = 2128
 
@@ -87,7 +94,7 @@ def get_recovery_dtbo_offset(args):
 
 
 def write_header_v3(args):
-    args.output.write(pack('8s', BOOT_MAGIC.encode()))
+    args.output.write(pack(f'{BOOT_MAGIC_SIZE}s', BOOT_MAGIC.encode()))
     # kernel size in bytes
     args.output.write(pack('I', filesize(args.kernel)))
     # ramdisk size in bytes
@@ -99,7 +106,8 @@ def write_header_v3(args):
     args.output.write(pack('4I', 0, 0, 0, 0))
     # version of boot image header
     args.output.write(pack('I', args.header_version))
-    args.output.write(pack('1536s', args.cmdline.encode()))
+    args.output.write(pack(f'{BOOT_ARGS_SIZE + BOOT_EXTRA_ARGS_SIZE}s',
+                           args.cmdline.encode()))
     pad_file(args.output, BOOT_IMAGE_HEADER_V3_PAGESIZE)
 
 
@@ -114,7 +122,8 @@ def write_vendor_boot_header(args):
         vendor_ramdisk_size = filesize(args.vendor_ramdisk)
         vendor_boot_header_size = VENDOR_BOOT_IMAGE_HEADER_V3_SIZE
 
-    args.vendor_boot.write(pack('8s', VENDOR_BOOT_MAGIC.encode()))
+    args.vendor_boot.write(pack(f'{VENDOR_BOOT_MAGIC_SIZE}s',
+                                VENDOR_BOOT_MAGIC.encode()))
     # version of boot image header
     args.vendor_boot.write(pack('I', args.header_version))
     # flash page size
@@ -125,11 +134,13 @@ def write_vendor_boot_header(args):
     args.vendor_boot.write(pack('I', args.base + args.ramdisk_offset))
     # ramdisk size in bytes
     args.vendor_boot.write(pack('I', vendor_ramdisk_size))
-    args.vendor_boot.write(pack('2048s', args.vendor_cmdline.encode()))
+    args.vendor_boot.write(pack(f'{VENDOR_BOOT_ARGS_SIZE}s',
+                                args.vendor_cmdline.encode()))
     # kernel tags physical load address
     args.vendor_boot.write(pack('I', args.base + args.tags_offset))
     # asciiz product name
-    args.vendor_boot.write(pack('16s', args.board.encode()))
+    args.vendor_boot.write(pack(f'{VENDOR_BOOT_NAME_SIZE}s',
+                                args.board.encode()))
 
     # header size in bytes
     args.vendor_boot.write(pack('I', vendor_boot_header_size))
@@ -165,7 +176,7 @@ def write_header(args):
     second_load_address = ((args.base + args.second_offset)
                            if filesize(args.second) > 0 else 0)
 
-    args.output.write(pack('8s', BOOT_MAGIC.encode()))
+    args.output.write(pack(f'{BOOT_MAGIC_SIZE}s', BOOT_MAGIC.encode()))
     # kernel size in bytes
     args.output.write(pack('I', filesize(args.kernel)))
     # kernel physical load address
@@ -187,8 +198,9 @@ def write_header(args):
     # os version and patch level
     args.output.write(pack('I', (args.os_version << 11) | args.os_patch_level))
     # asciiz product name
-    args.output.write(pack('16s', args.board.encode()))
-    args.output.write(pack('512s', args.cmdline[:512].encode()))
+    args.output.write(pack(f'{BOOT_NAME_SIZE}s', args.board.encode()))
+    args.output.write(pack(f'{BOOT_ARGS_SIZE}s',
+                           args.cmdline[:BOOT_ARGS_SIZE].encode()))
 
     sha = sha1()
     update_sha(sha, args.kernel)
@@ -203,7 +215,8 @@ def write_header(args):
     img_id = pack('32s', sha.digest())
 
     args.output.write(img_id)
-    args.output.write(pack('1024s', args.cmdline[512:].encode()))
+    args.output.write(pack(f'{BOOT_EXTRA_ARGS_SIZE}s',
+                           args.cmdline[BOOT_ARGS_SIZE:].encode()))
 
     if args.header_version > 0:
         if args.recovery_dtbo:
