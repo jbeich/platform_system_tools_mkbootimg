@@ -23,6 +23,15 @@ import tempfile
 import unittest
 
 
+BOOT_ARGS_OFFSET = 64
+BOOT_ARGS_SIZE = 512
+BOOT_EXTRA_ARGS_OFFSET = 608
+BOOT_EXTRA_ARGS_SIZE = 1024
+BOOT_V3_ARGS_OFFSET = 44
+VENDOR_BOOT_ARGS_OFFSET = 28
+VENDOR_BOOT_ARGS_SIZE = 2048
+
+
 def create_blank_file(pathname, size):
     """Creates a zero-filled file and returns its pathname."""
     with open(pathname, 'wb') as f:
@@ -207,6 +216,90 @@ class MkbootimgTest(unittest.TestCase):
                 actual_mkbootimg_args = json.load(json_fd)
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
+
+    def test_boot_image_v2_cmdline_null_terminator(self):
+        """Tests that kernel commandline is null-terminated."""
+        with tempfile.TemporaryDirectory() as temp_out_dir:
+            dtb = create_blank_file(os.path.join(temp_out_dir, 'dtb'), 0x1000)
+            kernel = create_blank_file(os.path.join(temp_out_dir, 'kernel'),
+                                       0x1000)
+            ramdisk = create_blank_file(os.path.join(temp_out_dir, 'ramdisk'),
+                                        0x1000)
+            cmdline = (BOOT_ARGS_SIZE - 1) * 'x'
+            extra_cmdline = (BOOT_EXTRA_ARGS_SIZE - 1) * 'y'
+            boot_img = os.path.join(temp_out_dir, 'boot.img')
+            mkbootimg_cmds = [
+                'mkbootimg',
+                '--header_version', '2',
+                '--dtb', dtb,
+                '--kernel', kernel,
+                '--ramdisk', ramdisk,
+                '--cmdline', cmdline+extra_cmdline,
+                '--output', boot_img,
+            ]
+
+            subprocess.run(mkbootimg_cmds, check=True)
+
+            with open(boot_img, 'rb') as f:
+                raw_boot_img = f.read()
+            raw_cmdline = raw_boot_img[BOOT_ARGS_OFFSET:][:BOOT_ARGS_SIZE]
+            raw_extra_cmdline = (
+                raw_boot_img[BOOT_EXTRA_ARGS_OFFSET:][:BOOT_EXTRA_ARGS_SIZE])
+            self.assertEqual(raw_cmdline, cmdline.encode() + b'\x00')
+            self.assertEqual(raw_extra_cmdline,
+                             extra_cmdline.encode() + b'\x00')
+
+    def test_boot_image_v3_cmdline_null_terminator(self):
+        """Tests that kernel commandline is null-terminated."""
+        with tempfile.TemporaryDirectory() as temp_out_dir:
+            kernel = create_blank_file(os.path.join(temp_out_dir, 'kernel'),
+                                       0x1000)
+            ramdisk = create_blank_file(os.path.join(temp_out_dir, 'ramdisk'),
+                                        0x1000)
+            cmdline = BOOT_ARGS_SIZE * 'x' + (BOOT_EXTRA_ARGS_SIZE - 1) * 'y'
+            boot_img = os.path.join(temp_out_dir, 'boot.img')
+            mkbootimg_cmds = [
+                'mkbootimg',
+                '--header_version', '3',
+                '--kernel', kernel,
+                '--ramdisk', ramdisk,
+                '--cmdline', cmdline,
+                '--output', boot_img,
+            ]
+
+            subprocess.run(mkbootimg_cmds, check=True)
+
+            with open(boot_img, 'rb') as f:
+                raw_boot_img = f.read()
+            raw_cmdline = (raw_boot_img[BOOT_V3_ARGS_OFFSET:]
+                           [:BOOT_ARGS_SIZE + BOOT_EXTRA_ARGS_SIZE])
+            self.assertEqual(raw_cmdline, cmdline.encode() + b'\x00')
+
+    def test_vendor_boot_image_v3_cmdline_null_terminator(self):
+        """Tests that kernel commandline is null-terminated."""
+        with tempfile.TemporaryDirectory() as temp_out_dir:
+            dtb = create_blank_file(os.path.join(temp_out_dir, 'dtb'), 0x1000)
+            ramdisk = create_blank_file(os.path.join(temp_out_dir, 'ramdisk'),
+                                        0x1000)
+            vendor_cmdline = (VENDOR_BOOT_ARGS_SIZE - 1) * 'x'
+            vendor_boot_img = os.path.join(temp_out_dir, 'vendor_boot.img')
+            mkbootimg_cmds = [
+                'mkbootimg',
+                '--header_version', '3',
+                '--dtb', dtb,
+                '--vendor_ramdisk', ramdisk,
+                '--vendor_cmdline', vendor_cmdline,
+                '--vendor_boot', vendor_boot_img,
+            ]
+
+            subprocess.run(mkbootimg_cmds, check=True)
+
+            with open(vendor_boot_img, 'rb') as f:
+                raw_vendor_boot_img = f.read()
+            raw_vendor_cmdline = (raw_vendor_boot_img[VENDOR_BOOT_ARGS_OFFSET:]
+                                  [:VENDOR_BOOT_ARGS_SIZE])
+            self.assertEqual(raw_vendor_cmdline,
+                             vendor_cmdline.encode() + b'\x00')
 
 
 if __name__ == '__main__':
