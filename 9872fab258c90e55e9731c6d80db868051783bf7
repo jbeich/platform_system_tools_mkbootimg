@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "764c08e8_161a98fa",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-05T03:00:14Z",
+      "side": 1,
+      "message": "nit: how about adding a comment below?\n\nKeep in sync with include/bootimg/bootimg.h",
+      "revId": "9872fab258c90e55e9731c6d80db868051783bf7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
