@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4d38399_079594f6",
+        "filename": "mkbootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-05T04:12:51Z",
+      "side": 1,
+      "message": "Can we add a comment to explain the difference?\n\ne.g., in v2, the boot header is:\n   uint8_t cmdline[BOOT_ARGS_SIZE];\n   uint8_t extra_cmdline[BOOT_EXTRA_ARGS_SIZE];  \n\nin v3, it becomes:\n   uint8_t cmdline[BOOT_ARGS_SIZE + BOOT_EXTRA_ARGS_SIZE];",
+      "range": {
+        "startLine": 468,
+        "startChar": 0,
+        "endLine": 471,
+        "endChar": 60
+      },
+      "revId": "92997eb93d84cce0ea1f3e1d56ca6388069786ad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
