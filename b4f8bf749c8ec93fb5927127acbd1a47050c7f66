@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f597d8f8_07d6bdec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-05T08:43:48Z",
+      "side": 1,
+      "message": "There are some changes in mkbootimg.py in parallel.\n\nLet\u0027s still do the review first, and I can rebase it later if there is a conflict.",
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
