@@ -22,6 +22,30 @@
       },
       "revId": "92997eb93d84cce0ea1f3e1d56ca6388069786ad",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31e320cc_bae1f749",
+        "filename": "mkbootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-05T08:00:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4d38399_079594f6",
+      "range": {
+        "startLine": 468,
+        "startChar": 0,
+        "endLine": 471,
+        "endChar": 60
+      },
+      "revId": "92997eb93d84cce0ea1f3e1d56ca6388069786ad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
