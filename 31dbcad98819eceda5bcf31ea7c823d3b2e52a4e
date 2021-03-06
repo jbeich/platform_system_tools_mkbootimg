@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ed3e0fd_77545b25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-03-06T03:59:13Z",
+      "side": 1,
+      "message": "Do we require this? It doesn\u0027t seem to be specified in bootimg.h.\n\nRegardless, I totally agree that it is nice to have.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
