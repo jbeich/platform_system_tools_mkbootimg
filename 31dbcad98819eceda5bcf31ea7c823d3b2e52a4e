@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "23a9aa6d_b0947615",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-06T06:21:42Z",
+      "side": 1,
+      "message": "I think this is actually required, but we accidentally dropped this requirement when we migrate the legacy mkbootimg.c to mkbootimg.py.... (see this https://android-review.googlesource.com/c/platform/system/core/+/151385/4/mkbootimg/mkbootimg.c#b217)\n\nI believe some bootloader implementations requires the null-terminator, too. They use \"strcpy\"-esque functions to copy the .cmdline field.",
+      "parentUuid": "6ed3e0fd_77545b25",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "c73d355a_99df2e6d",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-06T04:02:33Z",
       "side": 1,
       "message": "nit: I find this name confusing because it is no longer a string, but a byte array.",
+      "range": {
+        "startLine": 251,
+        "startChar": 12,
+        "endLine": 251,
+        "endChar": 18
+      },
+      "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f34b290d_5864e7e2",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-06T06:21:42Z",
+      "side": 1,
+      "message": "Done.\nI was thinking the same too. I wasn\u0027t sure if it should be AsciizString (cause it parses a string) or AsciizBytes (cause it outputs a bytes).\n\nTook some time to think this through. I agree it should be AsciizBytes as it is a |bytes| parser that consumes a |string|.",
+      "parentUuid": "c73d355a_99df2e6d",
       "range": {
         "startLine": 251,
         "startChar": 12,
