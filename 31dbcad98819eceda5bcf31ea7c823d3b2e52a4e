@@ -22,6 +22,29 @@
       },
       "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c73d355a_99df2e6d",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-03-06T04:02:33Z",
+      "side": 1,
+      "message": "nit: I find this name confusing because it is no longer a string, but a byte array.",
+      "range": {
+        "startLine": 251,
+        "startChar": 12,
+        "endLine": 251,
+        "endChar": 18
+      },
+      "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
