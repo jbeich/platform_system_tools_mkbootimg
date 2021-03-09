@@ -16,6 +16,75 @@
       "message": "There are some changes in mkbootimg.py in parallel.\n\nLet\u0027s still do the review first, and I can rebase it later if there is a conflict.",
       "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e79dd2a_7f13c825",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-03-09T02:53:33Z",
+      "side": 1,
+      "message": "macro for this number?",
+      "range": {
+        "startLine": 319,
+        "startChar": 27,
+        "endLine": 319,
+        "endChar": 31
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d12c8b5f_c9b139d2",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-03-09T02:53:33Z",
+      "side": 1,
+      "message": "Not specific to this CL, but can we import these numbers / magic strings from bootimg.h? One thing I see is the ctypes library:\n\nhttps://docs.python.org/3/library/ctypes.html\n\n... we might be able to load a host version of libmkbootimg_abi_check and get numbers from there.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 40
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e50b7596_906d55bb",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1121838
+      },
+      "writtenOn": "2021-03-09T02:53:33Z",
+      "side": 1,
+      "message": "rename? e.g. write_header_v3_and_above",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 19
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
