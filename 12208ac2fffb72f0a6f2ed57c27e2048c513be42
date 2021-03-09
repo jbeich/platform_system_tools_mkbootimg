@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baf37a8f_4442c5fe",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-09T11:17:57Z",
+      "side": 1,
+      "message": "I think this should be done in write_header_v3_and_above(), like how L117 is done",
+      "range": {
+        "startLine": 168,
+        "startChar": 8,
+        "endLine": 171,
+        "endChar": 9
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39b6e797_893db880",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-09T11:17:57Z",
+      "side": 1,
+      "message": "Potential race?\n\ntemp file is opened by process mkbootimg, written to by process avbtool, and then read from process mkbootimg. I\u0027m worried that process mkbootimg might not get the changes made by process avbtool.\n\nI think the file should be open()-ed after avbtool has done writing it.",
+      "range": {
+        "startLine": 548,
+        "startChar": 8,
+        "endLine": 549,
+        "endChar": 27
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6daa347_6aaa80c9",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-09T11:17:57Z",
+      "side": 1,
+      "message": "I think this is leaking implementation detail of add_boot_image_digest(). How about move this into add_boot_image_digest()?\n\nQQ, Should this be args.output.flush() \u0026\u0026 os.fsync(args.output.fileno())?",
+      "range": {
+        "startLine": 563,
+        "startChar": 8,
+        "endLine": 563,
+        "endChar": 71
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74b05c75_5cce4bd0",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-09T11:17:57Z",
+      "side": 1,
+      "message": "I\u0027m confused...\nI thought we are appending the hash digest of boot.img, but seems like it\u0027s actually the vbmeta (which contains the hash dogest and other auxiliary data) of boot.img?\n\nIf we are indeed appending the vbmeta to boot.img, why not just call it \"boot image vbmeta\" (or \"boot image signature\") in the header bootimg.h? Calling it \"boot image digest\" when it is not a \"hash digest\" can confuse people, right?\n\nAnother questions is, it seems like the \"--gki_signing_extra_args\" argument can be arbitrarily long, so this mean the created vbmeta object can have variable length?\nShould we check this, that is, assert the size of vbmeta is always \u003c\u003d 4096?",
+      "range": {
+        "startLine": 131,
+        "startChar": 51,
+        "endLine": 131,
+        "endChar": 61
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
