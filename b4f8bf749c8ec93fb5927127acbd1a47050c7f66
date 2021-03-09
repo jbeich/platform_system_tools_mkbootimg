@@ -43,6 +43,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e53e0c17_e11a4d2e",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-09T06:55:57Z",
+      "side": 1,
+      "message": "Oh, actually this is boot_img_digest_size (padded with page size).\nCurrently it is 1 page, but might be increased later if needed.\n\nLet me follow the format at L322-323.\nThanks!",
+      "parentUuid": "0e79dd2a_7f13c825",
+      "range": {
+        "startLine": 319,
+        "startChar": 27,
+        "endLine": 319,
+        "endChar": 31
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d12c8b5f_c9b139d2",
         "filename": "mkbootimg.py",
         "patchSetId": 1
@@ -66,6 +90,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "78d7a938_a6dfa525",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-09T06:55:57Z",
+      "side": 1,
+      "message": "Good point, yup, this will be a separate topic.\nLet\u0027s investigate this part later. \n\nThanks for the suggestion.",
+      "parentUuid": "d12c8b5f_c9b139d2",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 40
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "e50b7596_906d55bb",
         "filename": "mkbootimg.py",
         "patchSetId": 1
@@ -77,6 +125,30 @@
       "writtenOn": "2021-03-09T02:53:33Z",
       "side": 1,
       "message": "rename? e.g. write_header_v3_and_above",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 19
+      },
+      "revId": "b4f8bf749c8ec93fb5927127acbd1a47050c7f66",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f611b21f_9a3defb4",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-09T06:55:57Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "e50b7596_906d55bb",
       "range": {
         "startLine": 93,
         "startChar": 4,
