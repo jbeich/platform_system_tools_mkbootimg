@@ -71,6 +71,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81affd8f_7cbc9b4b",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T05:16:38Z",
+      "side": 1,
+      "message": "ack,\nI agree your close() \u0026 seek() argument is sound.",
+      "parentUuid": "fb8b186c_c836ed20",
+      "range": {
+        "startLine": 548,
+        "startChar": 8,
+        "endLine": 549,
+        "endChar": 27
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6daa347_6aaa80c9",
@@ -131,6 +155,30 @@
       "writtenOn": "2021-03-10T05:12:32Z",
       "side": 1,
       "message": "Nvm, let\u0027s still to fsync() to ensure the operating system buffers are synchronized with the storage devices (to be safe).",
+      "parentUuid": "18189174_a1be4883",
+      "range": {
+        "startLine": 563,
+        "startChar": 8,
+        "endLine": 563,
+        "endChar": 71
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96535135_afdfc423",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T05:16:38Z",
+      "side": 1,
+      "message": "I\u0027m honestly not sure. From what I know, flush() is a python thing, it flushes the buffered IO buffer of python. os.sync() is kernel thing, it ensures the data cached in memory is written back to disk.\n\nAnyway we could assume flush() then open() can read the previously flushed data, that is the kernel should take care of this?",
       "parentUuid": "18189174_a1be4883",
       "range": {
         "startLine": 563,
