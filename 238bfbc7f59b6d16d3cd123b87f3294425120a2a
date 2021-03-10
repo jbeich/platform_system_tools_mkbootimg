@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f061328d_7d2d0fb7",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-10T10:39:34Z",
+      "side": 1,
+      "message": "This test ensures mkbootimg.py raises the AssertionError when the signature size \u003e 4096.",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 55
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
