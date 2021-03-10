@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c77a460_2b1e2ea9",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T10:54:06Z",
+      "side": 1,
+      "message": "Raise ValueError instead, `assert` should be used sparingly, \nQuote our coding style: go/pystyle#exceptions:\n\u003e assert is used to ensure internal correctness, not to enforce correct usage nor to indicate that some unexpected event occurred. If an exception is desired in the latter cases, use a raise statement.",
+      "range": {
+        "startLine": 565,
+        "startChar": 12,
+        "endLine": 566,
+        "endChar": 73
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "f061328d_7d2d0fb7",
