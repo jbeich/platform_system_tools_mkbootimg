@@ -118,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8739d64d_e35590a0",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-10T05:12:32Z",
+      "side": 1,
+      "message": "Nvm, let\u0027s still to fsync() to ensure the operating system buffers are synchronized with the storage devices (to be safe).",
+      "parentUuid": "18189174_a1be4883",
+      "range": {
+        "startLine": 563,
+        "startChar": 8,
+        "endLine": 563,
+        "endChar": 71
+      },
+      "revId": "12208ac2fffb72f0a6f2ed57c27e2048c513be42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74b05c75_5cce4bd0",
