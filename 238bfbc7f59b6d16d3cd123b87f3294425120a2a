@@ -1,6 +1,75 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f2c4b5f_21ac8972",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T11:11:55Z",
+      "side": 1,
+      "message": "nit: *verify",
+      "range": {
+        "startLine": 527,
+        "startChar": 56,
+        "endLine": 527,
+        "endChar": 64
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "944f2e78_f1684cb7",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T11:11:55Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be \"not args.gki_signing_key or not args.gki_signing_algorithm\" ? according to the unittest \"The boot signature will be zeros if no --gki_signing_[algorithm|key] is provided.\"",
+      "range": {
+        "startLine": 535,
+        "startChar": 4,
+        "endLine": 535,
+        "endChar": 32
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8b2a9e4_3462c5a5",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-10T11:11:55Z",
+      "side": 1,
+      "message": "extra space: open() is a function, not a statement, so no space between function name and (...)\n\n(I\u0027m surprised the linter didn\u0027t catch this 🤔)",
+      "range": {
+        "startLine": 564,
+        "startChar": 17,
+        "endLine": 564,
+        "endChar": 18
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c77a460_2b1e2ea9",
