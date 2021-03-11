@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b33a64af_97cbb6af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-11T09:28:14Z",
+      "side": 1,
+      "message": "Hi Oleg, Fernando,\n\nJust to be clear, the bootloader does not need to process the \u0027boot signature\u0027 here.\nThe \u0027boot signature\u0027 will only be ",
+      "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
