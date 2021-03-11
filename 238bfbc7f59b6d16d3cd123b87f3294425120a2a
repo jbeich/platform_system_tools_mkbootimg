@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c572cbc9_158f6f9d",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-11T05:19:58Z",
+      "side": 1,
+      "message": "Good catch! We should fix this (it\u0027s not nit).",
+      "parentUuid": "2f2c4b5f_21ac8972",
+      "range": {
+        "startLine": 527,
+        "startChar": 56,
+        "endLine": 527,
+        "endChar": 64
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "944f2e78_f1684cb7",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-10T11:11:55Z",
       "side": 1,
       "message": "shouldn\u0027t this be \"not args.gki_signing_key or not args.gki_signing_algorithm\" ? according to the unittest \"The boot signature will be zeros if no --gki_signing_[algorithm|key] is provided.\"",
+      "range": {
+        "startLine": 535,
+        "startChar": 4,
+        "endLine": 535,
+        "endChar": 32
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "348be4b3_e939995d",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-11T05:19:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "944f2e78_f1684cb7",
       "range": {
         "startLine": 535,
         "startChar": 4,
@@ -70,6 +118,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdcdbefc_4b569f50",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-11T05:19:58Z",
+      "side": 1,
+      "message": "Yup, not sure why linter didn\u0027t catch it",
+      "parentUuid": "e8b2a9e4_3462c5a5",
+      "range": {
+        "startLine": 564,
+        "startChar": 17,
+        "endLine": 564,
+        "endChar": 18
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c77a460_2b1e2ea9",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-03-10T10:54:06Z",
       "side": 1,
       "message": "Raise ValueError instead, `assert` should be used sparingly, \nQuote our coding style: go/pystyle#exceptions:\n\u003e assert is used to ensure internal correctness, not to enforce correct usage nor to indicate that some unexpected event occurred. If an exception is desired in the latter cases, use a raise statement.",
+      "range": {
+        "startLine": 565,
+        "startChar": 12,
+        "endLine": 566,
+        "endChar": 73
+      },
+      "revId": "238bfbc7f59b6d16d3cd123b87f3294425120a2a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "716dcef5_292fa650",
+        "filename": "mkbootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-11T05:19:58Z",
+      "side": 1,
+      "message": "Nice, thanks for raising this!",
+      "parentUuid": "7c77a460_2b1e2ea9",
       "range": {
         "startLine": 565,
         "startChar": 12,
