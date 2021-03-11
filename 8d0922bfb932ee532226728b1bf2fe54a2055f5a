@@ -34,6 +34,24 @@
       "parentUuid": "b33a64af_97cbb6af",
       "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d98d18b_0b22e447",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1138338
+      },
+      "writtenOn": "2021-03-11T18:23:35Z",
+      "side": 1,
+      "message": "Thanks Bowgo. We just wanted to keep track of this since we need to update bootloader bootimg.h header. Since one of our verification is that header_size field matches sizeof(boot_header), so we want to make sure it will pass that validation.",
+      "parentUuid": "2115f951_5e531c85",
+      "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
