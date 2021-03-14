@@ -39,6 +39,30 @@
       },
       "revId": "0df8b73d086294b997f1a8821af05421389e75f1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88dfaf9a_038da57f",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-14T13:09:27Z",
+      "side": 1,
+      "message": "Thing is I cannot reproduce the atest/tradefed error on my side. It just happens sometimes. I copied this line from here (https://cs.android.com/android/platform/superproject/+/master:build/make/tools/releasetools/test_utils.py;l\u003d34;drc\u003d9fd5886e2377b3832211f5dbc3b2cbfa0ceb940f) and I *feel* like this fixes the error (or at least make it happen less frequently.)\n\nI was feeling a bit frustrated and I feel like digging deeper isn\u0027t a good use of my time, thus I leave this big block of text here, just in case people in the future might be curious about what happened here...",
+      "parentUuid": "8425a49c_8efa8158",
+      "range": {
+        "startLine": 463,
+        "startChar": 2,
+        "endLine": 463,
+        "endChar": 23
+      },
+      "revId": "0df8b73d086294b997f1a8821af05421389e75f1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
