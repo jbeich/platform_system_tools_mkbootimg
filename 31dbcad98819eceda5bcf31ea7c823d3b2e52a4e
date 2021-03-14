@@ -116,6 +116,30 @@
       },
       "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c90e0c31_c70c84fc",
+        "filename": "mkbootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-14T12:59:39Z",
+      "side": 1,
+      "message": "Thanks! Nice catch!\n\nThis is my mistake, I thought the `required\u003dTrue` of `--ramdisk_name` would check empty strings for me. I moved this entire check to the VendorRamdiskTableBuilder so it\u0027s more managable.\n\nI also upload aosp/1634321 to disallow \"default\" as a vendor ramdisk name.",
+      "parentUuid": "296db9b2_b31632b5",
+      "range": {
+        "startLine": 421,
+        "startChar": 8,
+        "endLine": 421,
+        "endChar": 29
+      },
+      "revId": "31dbcad98819eceda5bcf31ea7c823d3b2e52a4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
