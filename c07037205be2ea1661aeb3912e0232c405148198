@@ -1,0 +1,47 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000008976034",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1614950?revision\u003d8",
+      "fixSuggestions": [
+        {
+          "fixId": "26feabcf_b3b80584",
+          "description": "Change to \"mkbootimg.py\"",
+          "replacements": [
+            {
+              "path": "mkbootimg.py",
+              "range": {
+                "startLine": 306,
+                "startChar": 45,
+                "endLine": 306,
+                "endChar": 56
+              },
+              "replacement": "comparison"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "20b64345_fb2f3c5d",
+        "filename": "mkbootimg.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-03-14T12:56:01Z",
+      "side": 1,
+      "message": "Common typo found: \"comparision\" -- should it be \"comparison\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 306,
+        "startChar": 45,
+        "endLine": 306,
+        "endChar": 56
+      },
+      "revId": "c07037205be2ea1661aeb3912e0232c405148198",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
