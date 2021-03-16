@@ -69,6 +69,30 @@
       },
       "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37fc1296_5cb504f1",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-16T08:20:19Z",
+      "side": 1,
+      "message": "Nice to learn this, thanks!",
+      "parentUuid": "1d90f5d1_91e9eb4e",
+      "range": {
+        "startLine": 130,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 56
+      },
+      "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
