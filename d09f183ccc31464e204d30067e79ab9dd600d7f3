@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db8059b1_b3d20349",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-16T06:52:58Z",
+      "side": 1,
+      "message": "Specifying avbtool path here.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 79
+      },
+      "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6322060f_aedb4b14",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-16T06:52:58Z",
+      "side": 1,
+      "message": "Use avbtool_path here if it\u0027s not None.",
+      "range": {
+        "startLine": 130,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 56
+      },
+      "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
