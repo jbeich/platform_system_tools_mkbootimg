@@ -45,6 +45,30 @@
       },
       "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d90f5d1_91e9eb4e",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-03-16T08:12:48Z",
+      "side": 1,
+      "message": "you can use \"avbtool_path or \u0027avbtool\u0027\" for this XD",
+      "parentUuid": "6322060f_aedb4b14",
+      "range": {
+        "startLine": 130,
+        "startChar": 12,
+        "endLine": 130,
+        "endChar": 56
+      },
+      "revId": "d09f183ccc31464e204d30067e79ab9dd600d7f3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
