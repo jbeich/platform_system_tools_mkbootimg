@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea343616_4570db72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Thanks for the nice review!",
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5bc8cd68_a86c04fc",
@@ -24,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5de9f15_5073b6a9",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bc8cd68_a86c04fc",
+      "range": {
+        "startLine": 465,
+        "startChar": 21,
+        "endLine": 465,
+        "endChar": 22
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca67a85a_e3397323",
@@ -37,6 +78,30 @@
       "writtenOn": "2021-03-24T16:11:13Z",
       "side": 1,
       "message": "x",
+      "range": {
+        "startLine": 527,
+        "startChar": 21,
+        "endLine": 527,
+        "endChar": 22
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc68be8e_69b5ac34",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca67a85a_e3397323",
       "range": {
         "startLine": 527,
         "startChar": 21,
@@ -72,6 +137,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "9c68a34a_d620f307",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d977f87_4ff0d581",
+      "range": {
+        "startLine": 590,
+        "startChar": 21,
+        "endLine": 590,
+        "endChar": 22
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ed399acf_279a421f",
         "filename": "unpack_bootimg.py",
         "patchSetId": 3
@@ -83,6 +172,30 @@
       "writtenOn": "2021-03-24T16:11:13Z",
       "side": 1,
       "message": "nit: I\u0027m seeing a lot of duplicating code of this, how about factor this to a helper, something like:\n\ndef decode_os_version_patch_level(os_version_patch_level):\n    os_version \u003d os_version_patch_level \u003e\u003e 11\n    os_patch_level \u003d os_version_patch_level \u0026 ((1\u003c\u003c11) - 1)\n    return (format_os_version(os_version), format_os_patch_level(os_patch_level))",
+      "range": {
+        "startLine": 107,
+        "startChar": 4,
+        "endLine": 108,
+        "endChar": 59
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4860e017_d2703877",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Good idea, thanks.",
+      "parentUuid": "ed399acf_279a421f",
       "range": {
         "startLine": 107,
         "startChar": 4,
@@ -116,6 +229,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba8bad8b_448582f7",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a814de35_38c76e8a",
+      "range": {
+        "startLine": 181,
+        "startChar": 8,
+        "endLine": 182,
+        "endChar": 20
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d56dc062_8d971842",
@@ -139,6 +276,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54a8b420_f1dbc4d9",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d56dc062_8d971842",
+      "range": {
+        "startLine": 183,
+        "startChar": 12,
+        "endLine": 183,
+        "endChar": 71
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "237756c8_63cd6f53",
@@ -152,6 +313,30 @@
       "writtenOn": "2021-03-24T16:11:13Z",
       "side": 1,
       "message": "if version \u003c 3:\n    mkbootimg_args \u003d get_boot_image_v2_and_below_args(...)\nelse:\n    mkbootimg_args \u003d get_boot_image_v3_args(...)\n\nwith open(...) as f:\n    json.dump(mkbootimg_args, f)",
+      "range": {
+        "startLine": 215,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 66
+      },
+      "revId": "faf13f1e43e6e7d87887e48334dd46c970d7acb6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8d1f90c_502ba199",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-03-25T04:15:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "237756c8_63cd6f53",
       "range": {
         "startLine": 215,
         "startChar": 4,
