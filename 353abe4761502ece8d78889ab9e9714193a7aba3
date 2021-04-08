@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a91dda7_9ba68e47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-08T11:27:27Z",
+      "side": 1,
+      "message": "The original change got reverted because the symlink names are colliding with other files under out directory, for example:\n  unpack_bootimg --boot_img boot.img\n  unpack_bootimg --boot_img vendor_boot.img\n\nand the symlink from the second invocation would name collide with the extracted \"out/ramdisk\" from the first invocation.",
+      "revId": "353abe4761502ece8d78889ab9e9714193a7aba3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
