@@ -16,6 +16,29 @@
       "message": "thanks for catching these!",
       "revId": "a08985e1121cc905acfc248ffb85ec2224366490",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0ddeb59_8bae1377",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 476,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-04-09T06:11:38Z",
+      "side": 1,
+      "message": "looks like this is the major change.",
+      "range": {
+        "startLine": 476,
+        "startChar": 23,
+        "endLine": 476,
+        "endChar": 45
+      },
+      "revId": "a08985e1121cc905acfc248ffb85ec2224366490",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
