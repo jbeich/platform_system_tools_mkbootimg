@@ -167,9 +167,13 @@ class BootImage:
         self._bootimg = bootimg
         self._bootimg_dir = None
         self._bootimg_type = None
-        self._dtb = None
-        self._kernel = None
         self._ramdisk = None
+        # Potential images to extract from a boot.img. Unlike the ramdisk,
+        # the content of the following images will not be changed during the
+        # repack process.
+        self._intact_image_candidates = ('dtb', 'kernel',
+                                         'recovery_dtbo', 'second')
+        self._repack_intact_image_args = []
         self._temp_file_manager = TempFileManager()
 
         self._unpack_bootimg()
@@ -185,13 +189,13 @@ class BootImage:
              '--out', self._bootimg_dir], stdout=subprocess.DEVNULL)
         print("=== Unpacked boot image: '{}' ===".format(self._bootimg))
 
-        kernel = os.path.join(self._bootimg_dir, 'kernel')
-        if os.path.exists(kernel):
-            self._kernel = kernel
-
-        dtb = os.path.join(self._bootimg_dir, 'dtb')
-        if os.path.exists(dtb):
-            self._dtb = dtb
+        for img_name in self._intact_image_candidates:
+            img_file = os.path.join(self._bootimg_dir, img_name)
+            if os.path.exists(img_file):
+                # Prepares args for repacking those intact images. e.g.,
+                # --kernel kernel_image, --dtb dtb_image.
+                self._repack_intact_image_args.extend(
+                    ['--' + img_name, img_file])
 
         # From the output dir, checks there is 'ramdisk' or 'vendor_ramdisk'.
         ramdisk = os.path.join(self._bootimg_dir, 'ramdisk')
@@ -231,18 +235,17 @@ class BootImage:
 
         mkbootimg_cmd = ['mkbootimg']
 
-        if self._dtb:
-            mkbootimg_cmd.extend(['--dtb', self._dtb])
-
         # Uses previous mkbootimg args, e.g., --vendor_cmdline, --dtb_offset.
         mkbootimg_cmd.extend(self._previous_mkbootimg_args)
+
+        if self._repack_intact_image_args:
+            mkbootimg_cmd.extend(self._repack_intact_image_args)
 
         if self._bootimg_type == BootImageType.VENDOR_BOOT_IMAGE:
             mkbootimg_cmd.extend(['--vendor_ramdisk', new_ramdisk])
             mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
             # TODO(bowgotsai): add support for multiple vendor ramdisk.
         else:
-            mkbootimg_cmd.extend(['--kernel', self._kernel])
             mkbootimg_cmd.extend(['--ramdisk', new_ramdisk])
             mkbootimg_cmd.extend(['--output', self._bootimg])
 
@@ -257,12 +260,19 @@ class BootImage:
             src_dir: a source dir containing the files to copy from.
             files: a list of files to copy from src_dir.
         """
+        # Creates missing parent dirs with 0o755.
+        original_mask = os.umask(0o022)
         for f in files:
             src_file = os.path.join(src_dir, f)
             dst_file = os.path.join(self.ramdisk_dir, f)
+            dst_dir = os.path.dirname(dst_file)
+            if not os.path.exists(dst_dir):
+                print("Creating dir '{}'".format(dst_dir))
+                os.makedirs(dst_dir, 0o755)
             print("Copying file '{}' into '{}'".format(
                 src_file, self._bootimg))
             shutil.copy2(src_file, dst_file)
+        os.umask(original_mask)
 
     @property
     def ramdisk_dir(self):
