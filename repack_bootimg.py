@@ -225,7 +225,6 @@ class BootImage:
                 command.extend(['--' + argname, value])
         return command
 
-
     def repack_bootimg(self):
         """Repacks the ramdisk and rebuild the boot.img"""
 
@@ -252,25 +251,25 @@ class BootImage:
         subprocess.check_call(mkbootimg_cmd)
         print("=== Repacked boot image: '{}' ===".format(self._bootimg))
 
-
-    def add_files(self, src_dir, files):
-        """Copy files from the src_dir into current ramdisk.
+    def add_files(self, src_dir, src_dst_file_mapping):
+        """Copy files from src_dir into the current ramdisk.
 
         Args:
             src_dir: a source dir containing the files to copy from.
-            files: a list of files to copy from src_dir.
+            src_dst_file_mapping: a list of src_file:dst_file pairs to copy
+              from src_dir to the current ramdisk.
         """
         # Creates missing parent dirs with 0o755.
         original_mask = os.umask(0o022)
-        for f in files:
-            src_file = os.path.join(src_dir, f)
-            dst_file = os.path.join(self.ramdisk_dir, f)
+        for src_dst_pair in src_dst_file_mapping:
+            src_file = os.path.join(src_dir, src_dst_pair.split(':')[0])
+            dst_file = os.path.join(self.ramdisk_dir,
+                                    src_dst_pair.split(':')[1])
             dst_dir = os.path.dirname(dst_file)
             if not os.path.exists(dst_dir):
-                print("Creating dir '{}'".format(dst_dir))
+                print("Creating destination dir '{}'".format(dst_dir))
                 os.makedirs(dst_dir, 0o755)
-            print("Copying file '{}' into '{}'".format(
-                src_file, self._bootimg))
+            print("Copying file '{}' into '{}'".format(src_file, dst_file))
             shutil.copy2(src_file, dst_file)
         os.umask(original_mask)
 
@@ -291,8 +290,10 @@ def _parse_args():
         '--dst_bootimg', help='filename to destination boot image',
         type=str, required=True)
     parser.add_argument(
-        '--ramdisk_add', help='a list of files to add into the ramdisk',
-        nargs='+', default=['first_stage_ramdisk/userdebug_plat_sepolicy.cil']
+        '--ramdisk_add', nargs='+',
+        help='a list of src_file:dst_file pairs to add into the ramdisk',
+        default=['first_stage_ramdisk/userdebug_plat_sepolicy.cil:'
+                 'first_stage_ramdisk/userdebug_plat_sepolicy.cil']
     )
 
     return parser.parse_args()
