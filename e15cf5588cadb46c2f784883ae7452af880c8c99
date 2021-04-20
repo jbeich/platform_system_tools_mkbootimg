@@ -52,6 +52,23 @@
       "parentUuid": "e5783e39_6f10a15a",
       "revId": "e15cf5588cadb46c2f784883ae7452af880c8c99",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64c94f7a_9dd22e79",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-20T04:04:11Z",
+      "side": 1,
+      "message": "Thanks for making this (presubmit host python tests) work!",
+      "revId": "e15cf5588cadb46c2f784883ae7452af880c8c99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
