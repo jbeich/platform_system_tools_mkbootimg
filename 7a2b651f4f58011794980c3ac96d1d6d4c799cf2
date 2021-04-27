@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "389a49b3_a3c74c3e",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-27T10:30:17Z",
+      "side": 1,
+      "message": "Can we format all address double-word as #010x, and quad-word as #018x ?",
+      "range": {
+        "startLine": 123,
+        "startChar": 63,
+        "endLine": 123,
+        "endChar": 65
+      },
+      "revId": "7a2b651f4f58011794980c3ac96d1d6d4c799cf2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0687b93e_1301acbc",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-27T10:30:17Z",
+      "side": 1,
+      "message": "this is the encoded value; I think we only need to store the decoded .os_version and .os_patch_level in info, intermediate results such as .os_version_patch_level don\u0027t need to go in here",
+      "range": {
+        "startLine": 211,
+        "startChar": 8,
+        "endLine": 211,
+        "endChar": 35
+      },
+      "revId": "7a2b651f4f58011794980c3ac96d1d6d4c799cf2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "958d8385_ab8f1ba5",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-27T10:30:17Z",
+      "side": 1,
+      "message": "we could just make this \"info.header_version in {1, 2}\", that\u0027ll be more straightforward",
+      "range": {
+        "startLine": 224,
+        "startChar": 7,
+        "endLine": 224,
+        "endChar": 35
+      },
+      "revId": "7a2b651f4f58011794980c3ac96d1d6d4c799cf2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dd0966c_39a7e601",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-04-27T10:30:17Z",
+      "side": 1,
+      "message": "... and \"info.header_version \u003d\u003d 2\"",
+      "range": {
+        "startLine": 231,
+        "startChar": 8,
+        "endLine": 231,
+        "endChar": 34
+      },
+      "revId": "7a2b651f4f58011794980c3ac96d1d6d4c799cf2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
