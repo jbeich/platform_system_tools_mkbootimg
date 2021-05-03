@@ -70,6 +70,30 @@
       },
       "revId": "88b7839d96785943476c55adf38d479016193a2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b729040_935d840c",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-03T13:16:01Z",
+      "side": 1,
+      "message": "Ok, SGTM!\n\nThanks for the clean-up!",
+      "parentUuid": "76e57aa8_35330c67",
+      "range": {
+        "startLine": 537,
+        "startChar": 12,
+        "endLine": 537,
+        "endChar": 73
+      },
+      "revId": "88b7839d96785943476c55adf38d479016193a2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
