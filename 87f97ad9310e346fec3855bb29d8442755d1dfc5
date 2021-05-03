@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bff68b54_258b219a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-03T15:27:13Z",
+      "side": 1,
+      "message": "hmm, this shouldn\u0027t be related as the repack_bootimg tool isn\u0027t used in the test infra (IIRC).\n\nhttps://source.android.com/compatibility/vts/vts-on-gsi#path_sepolicy\n\nAlso, in b/179966921, does a debug ramdisk is used? (e.g., boot-debug.img or vendor_boot-debug.img)",
+      "revId": "87f97ad9310e346fec3855bb29d8442755d1dfc5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
