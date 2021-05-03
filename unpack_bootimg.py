@@ -134,6 +134,17 @@ class BootImageInfoFormatter:
         """Returns a dict of mkbootimg.py arguments for v0-v2 boot.img."""
         args_dict = {}
 
+        args_dict['kernel'] = os.path.join(self.image_dir, 'kernel')
+        args_dict['ramdisk'] = os.path.join(self.image_dir, 'ramdisk')
+
+        if self.second_size > 0:
+            args_dict['second'] = os.path.join(self.image_dir, 'second')
+        if self.recovery_dtbo_size > 0:
+            args_dict['recovery_dtbo'] = os.path.join(
+                self.image_dir, 'recovery_dtbo')
+        if self.dtb_size > 0:
+            args_dict['dtb'] = os.path.join(self.image_dir, 'dtb')
+
         args_dict['header_version'] = str(self.header_version)
         # The type of pagesize is uint32_t, using '0xFFFFFFFF' as the
         # output format.
@@ -168,6 +179,9 @@ class BootImageInfoFormatter:
     def _format_json_dict_boot_image_v3_and_above(self):
         """Returns a dict of mkbootimg.py arguments for >= v3 boot.img."""
         args_dict = {}
+
+        args_dict['kernel'] = os.path.join(self.image_dir, 'kernel')
+        args_dict['ramdisk'] = os.path.join(self.image_dir, 'ramdisk')
 
         args_dict['header_version'] = str(self.header_version)
         args_dict['os_version'] = self.os_version
@@ -291,6 +305,8 @@ def unpack_boot_image(args):
         extract_image(image_info[0], image_info[1], args.boot_img,
                       os.path.join(args.out, image_info[2]))
 
+    info.image_dir = args.out
+
     # Saves the arguments to be reused in mkbootimg.py later.
     mkbootimg_args = info.format_json_dict()
     with open(os.path.join(args.out, MKBOOTIMG_ARGS_FILE), 'w') as f:
@@ -390,6 +406,13 @@ class VendorBootImageInfoFormatter:
     def format_json_dict(self):
         """Returns a dict of arguments to be used in mkbootimg.py later."""
         args_dict = {}
+
+        args_dict['vendor_ramdisk'] = os.path.join(
+            self.image_dir, 'vendor_ramdisk')
+        args_dict['dtb'] = os.path.join(self.image_dir, 'dtb')
+
+        # TODO(bowgotsai): support for multiple vendor ramdisk (vendor boot v4).
+
         args_dict['header_version'] = str(self.header_version)
 
         # Format uint32_t as '0xFFFFFFFF', uint64_t as '0xFFFFFFFFEEEEEEEE'.
@@ -410,7 +433,6 @@ class VendorBootImageInfoFormatter:
         args_dict['vendor_cmdline'] = self.cmdline
         args_dict['board'] = self.product_name
 
-        # TODO(bowgotsai): support for multiple vendor ramdisk (vendor boot v4).
         return args_dict
 
 

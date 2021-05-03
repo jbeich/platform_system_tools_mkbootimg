@@ -66,6 +66,18 @@ def subsequence_of(list1, list2):
     return subsequence_of(list1, list2[1:])
 
 
+def reconstruct_image_from_json_args(mkbootimg_cmds, json_config):
+    """Reconstructs a boot.img or vendor_boot.img based on json_config."""
+    mkbootimg_config = os.path.join(json_config)
+    with open (mkbootimg_config) as config:
+        mkbootimg_args = json.load(config)
+        for argname, value in mkbootimg_args.items():
+            # Prepends '--' to make the full args, e.g., --header_version.
+            mkbootimg_cmds.extend(['--' + argname, value])
+
+    subprocess.run(mkbootimg_cmds, check=True)
+
+
 class MkbootimgTest(unittest.TestCase):
     """Tests the functionalities of mkbootimg and unpack_bootimg."""
 
@@ -409,6 +421,8 @@ class MkbootimgTest(unittest.TestCase):
         """Tests mkbootimg_args.json when unpacking a boot image version 3."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             boot_img = os.path.join(temp_out_dir, 'boot.img')
+            boot_img_reconstructed = os.path.join(
+                temp_out_dir, 'boot.img.reconstructed')
             kernel = generate_test_file(os.path.join(temp_out_dir, 'kernel'),
                                         0x1000)
             ramdisk = generate_test_file(os.path.join(temp_out_dir, 'ramdisk'),
@@ -433,7 +447,9 @@ class MkbootimgTest(unittest.TestCase):
                 'cmdline': 'test-cmdline',
                 'header_version': '3',
                 'os_patch_level': '2021-01',
-                'os_version': '11.0.0'
+                'os_version': '11.0.0',
+                'kernel': os.path.join(temp_out_dir, 'out', 'kernel'),
+                'ramdisk': os.path.join(temp_out_dir, 'out', 'ramdisk'),
             }
 
             subprocess.run(mkbootimg_cmds, check=True)
@@ -446,12 +462,24 @@ class MkbootimgTest(unittest.TestCase):
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
 
+            # Reconstruct the boot image for comparison.
+            reconstruct_cmds = [
+                'mkbootimg',
+                '--out', boot_img_reconstructed,
+            ]
+            reconstruct_image_from_json_args(reconstruct_cmds, json_file)
+            self.assertTrue(
+                filecmp.cmp(boot_img, boot_img_reconstructed),
+                'reconstructed boot image differ from the original')
+
     def test_unpack_vendor_boot_image_v3_json_args(self):
         """Tests mkbootimg_args.json when unpacking a vendor boot image version
         3.
         """
         with tempfile.TemporaryDirectory() as temp_out_dir:
             vendor_boot_img = os.path.join(temp_out_dir, 'vendor_boot.img')
+            vendor_boot_reconstructed = os.path.join(
+                temp_out_dir, 'vendor_boot.reconstructed')
             dtb = generate_test_file(os.path.join(temp_out_dir, 'dtb'), 0x1000)
             ramdisk = generate_test_file(os.path.join(temp_out_dir, 'ramdisk'),
                                          0x1000)
@@ -486,6 +514,9 @@ class MkbootimgTest(unittest.TestCase):
                 'pagesize': '0x00001000',
                 'ramdisk_offset': '0x01000000',
                 'tags_offset': '0x00000100',
+                'dtb': os.path.join(temp_out_dir, 'out', 'dtb'),
+                'vendor_ramdisk': os.path.join(
+                    temp_out_dir, 'out', 'vendor_ramdisk'),
             }
 
             subprocess.run(mkbootimg_cmds, check=True)
@@ -498,11 +529,23 @@ class MkbootimgTest(unittest.TestCase):
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
 
+            # Reconstruct the vendor boot image for comparison.
+            reconstruct_cmds = [
+                'mkbootimg',
+                '--vendor_boot', vendor_boot_reconstructed,
+            ]
+            reconstruct_image_from_json_args(reconstruct_cmds, json_file)
+            self.assertTrue(
+                filecmp.cmp(vendor_boot_img, vendor_boot_reconstructed),
+                'reconstructed vendor boot image differ from the original')
+
     def test_unpack_boot_image_v2_json_args(self):
         """Tests mkbootimg_args.json when unpacking a boot image v2."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             # Output image path.
             boot_img = os.path.join(temp_out_dir, 'boot.img')
+            boot_img_reconstructed = os.path.join(
+                temp_out_dir, 'boot.img.reconstructed')
             # Creates blank images first.
             kernel = generate_test_file(
                 os.path.join(temp_out_dir, 'kernel'), 0x1000)
@@ -548,10 +591,16 @@ class MkbootimgTest(unittest.TestCase):
             expected_mkbootimg_args = {
                 'header_version': '2',
                 'base': '0x00000000',
+                'kernel': os.path.join(temp_out_dir, 'out', 'kernel'),
                 'kernel_offset': '0x00008000',
+                'ramdisk': os.path.join(temp_out_dir, 'out', 'ramdisk'),
                 'ramdisk_offset': '0x01000000',
+                'second': os.path.join(temp_out_dir, 'out', 'second'),
                 'second_offset': '0x40000000',
+                'dtb': os.path.join(temp_out_dir, 'out', 'dtb'),
                 'dtb_offset': '0x0000000001f00000',  # dtb_offset is uint64_t.
+                'recovery_dtbo': os.path.join(
+                    temp_out_dir, 'out', 'recovery_dtbo'),
                 'tags_offset': '0x00000100',
                 'pagesize': '0x00001000',
                 'os_version': '11.0.0',
@@ -570,11 +619,23 @@ class MkbootimgTest(unittest.TestCase):
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
 
+            # Reconstruct the boot image for comparison.
+            reconstruct_cmds = [
+                'mkbootimg',
+                '--out', boot_img_reconstructed,
+            ]
+            reconstruct_image_from_json_args(reconstruct_cmds, json_file)
+            self.assertTrue(
+                filecmp.cmp(boot_img, boot_img_reconstructed),
+                'reconstructed boot image differ from the original')
+
     def test_unpack_boot_image_v1_json_args(self):
         """Tests mkbootimg_args.json when unpacking a boot image v1."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             # Output image path.
             boot_img = os.path.join(temp_out_dir, 'boot.img')
+            boot_img_reconstructed = os.path.join(
+                temp_out_dir, 'boot.img.reconstructed')
             # Creates blank images first.
             kernel = generate_test_file(
                 os.path.join(temp_out_dir, 'kernel'), 0x1000)
@@ -612,8 +673,12 @@ class MkbootimgTest(unittest.TestCase):
             expected_mkbootimg_args = {
                 'header_version': '1',
                 'base': '0x00000000',
+                'kernel': os.path.join(temp_out_dir, 'out', 'kernel'),
                 'kernel_offset': '0x00008000',
+                'ramdisk': os.path.join(temp_out_dir, 'out', 'ramdisk'),
                 'ramdisk_offset': '0x01000000',
+                'recovery_dtbo': os.path.join(
+                    temp_out_dir, 'out', 'recovery_dtbo'),
                 'second_offset': '0x00000000',
                 'tags_offset': '0x00000100',
                 'pagesize': '0x00001000',
@@ -633,11 +698,23 @@ class MkbootimgTest(unittest.TestCase):
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
 
+            # Reconstruct the boot image for comparison.
+            reconstruct_cmds = [
+                'mkbootimg',
+                '--out', boot_img_reconstructed,
+            ]
+            reconstruct_image_from_json_args(reconstruct_cmds, json_file)
+            self.assertTrue(
+                filecmp.cmp(boot_img, boot_img_reconstructed),
+                'reconstructed boot image differ from the original')
+
     def test_unpack_boot_image_v0_json_args(self):
         """Tests mkbootimg_args.json when unpacking a boot image v0."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             # Output image path.
             boot_img = os.path.join(temp_out_dir, 'boot.img')
+            boot_img_reconstructed = os.path.join(
+                temp_out_dir, 'boot.img.reconstructed')
             # Creates blank images first.
             kernel = generate_test_file(
                 os.path.join(temp_out_dir, 'kernel'), 0x1000)
@@ -676,8 +753,11 @@ class MkbootimgTest(unittest.TestCase):
             expected_mkbootimg_args = {
                 'header_version': '0',
                 'base': '0x00000000',
+                'kernel': os.path.join(temp_out_dir, 'out', 'kernel'),
                 'kernel_offset': '0x00008000',
+                'ramdisk': os.path.join(temp_out_dir, 'out', 'ramdisk'),
                 'ramdisk_offset': '0x01000000',
+                'second': os.path.join(temp_out_dir, 'out', 'second'),
                 'second_offset': '0x40000000',
                 'tags_offset': '0x00000100',
                 'pagesize': '0x00001000',
@@ -696,6 +776,16 @@ class MkbootimgTest(unittest.TestCase):
                 actual_mkbootimg_args = json.load(json_fd)
                 self.assertEqual(actual_mkbootimg_args,
                                  expected_mkbootimg_args)
+
+            # Reconstruct the boot image for comparison.
+            reconstruct_cmds = [
+                'mkbootimg',
+                '--out', boot_img_reconstructed,
+            ]
+            reconstruct_image_from_json_args(reconstruct_cmds, json_file)
+            self.assertTrue(
+                filecmp.cmp(boot_img, boot_img_reconstructed),
+                'reconstructed boot image differ from the original')
 
     def test_boot_image_v2_cmdline_null_terminator(self):
         """Tests that kernel commandline is null-terminated."""
