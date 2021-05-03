@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8fafd4_23d72a2f",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-03T11:06:22Z",
+      "side": 1,
+      "message": "Could you try\n\n(1) Test that the output of `--format\u003dmkbootimg` and `mkbootimg_args.json` are consistent\nor even better (2) Change repack_bootimg to use the output of `--format\u003dmkbootimg` if feasible, and drop `mkbootimg_args.json` altogether\n\nSorry for not bringing this up earlier",
+      "range": {
+        "startLine": 537,
+        "startChar": 12,
+        "endLine": 537,
+        "endChar": 73
+      },
+      "revId": "88b7839d96785943476c55adf38d479016193a2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
