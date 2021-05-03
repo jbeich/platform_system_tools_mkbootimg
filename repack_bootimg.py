@@ -22,8 +22,8 @@ the ramdisk to repack the boot image.
 
 import argparse
 import enum
-import json
 import os
+import shlex
 import shutil
 import subprocess
 import tempfile
@@ -168,6 +168,7 @@ class BootImage:
         self._bootimg_dir = None
         self._bootimg_type = None
         self._ramdisk = None
+        self._previous_mkbootimg_args = []
         # Potential images to extract from a boot.img. Unlike the ramdisk,
         # the content of the following images will not be changed during the
         # repack process.
@@ -184,9 +185,24 @@ class BootImage:
             suffix=os.path.basename(self._bootimg))
 
         # Unpacks the boot.img first.
-        subprocess.check_call(
-            ['unpack_bootimg', '--boot_img', self._bootimg,
-             '--out', self._bootimg_dir], stdout=subprocess.DEVNULL)
+        unpack_bootimg_cmds = [
+            'unpack_bootimg',
+            '--boot_img', self._bootimg,
+            '--out', self._bootimg_dir,
+            '--format=mkbootimg',
+        ]
+        result = subprocess.run(unpack_bootimg_cmds, check=True,
+                                capture_output=True, encoding='utf-8')
+        ignore_next = False
+        for arg in shlex.split(result.stdout):
+            if ignore_next:
+                ignore_next = False
+                continue
+            if arg in {'--ramdisk', '--vendor_ramdisk'}:
+                ignore_next = True
+                continue
+            self._previous_mkbootimg_args.append(arg)
+
         print("=== Unpacked boot image: '{}' ===".format(self._bootimg))
 
         for img_name in self._intact_image_candidates:
@@ -208,22 +224,6 @@ class BootImage:
             self._bootimg_type = BootImageType.VENDOR_BOOT_IMAGE
         else:
             raise RuntimeError('Both ramdisk and vendor_ramdisk do not exist.')
-
-    @property
-    def _previous_mkbootimg_args(self):
-        """Returns the previous mkbootimg args from mkbootimg_args.json file."""
-        # Loads the saved mkbootimg_args.json from previous unpack_bootimg.
-        command = []
-        mkbootimg_config = os.path.join(
-            self._bootimg_dir, 'mkbootimg_args.json')
-        with open (mkbootimg_config) as config:
-            mkbootimg_args = json.load(config)
-            for argname, value in mkbootimg_args.items():
-                # argname, e.g., 'board', 'header_version', etc., does not have
-                # prefix '--', which is required when invoking `mkbootimg.py`.
-                # Prepends '--' to make the full args, e.g., --header_version.
-                command.extend(['--' + argname, value])
-        return command
 
     def repack_bootimg(self):
         """Repacks the ramdisk and rebuild the boot.img"""
