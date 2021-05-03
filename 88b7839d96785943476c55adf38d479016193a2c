@@ -46,6 +46,30 @@
       },
       "revId": "88b7839d96785943476c55adf38d479016193a2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e57aa8_35330c67",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-03T12:28:57Z",
+      "side": 1,
+      "message": "WIP: https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1693414",
+      "parentUuid": "392c3f38_e40fefcf",
+      "range": {
+        "startLine": 537,
+        "startChar": 12,
+        "endLine": 537,
+        "endChar": 73
+      },
+      "revId": "88b7839d96785943476c55adf38d479016193a2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
