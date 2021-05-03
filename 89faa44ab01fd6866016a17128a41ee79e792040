@@ -1,0 +1,47 @@
+{
+  "comments": [
+    {
+      "robotId": "ayeaye",
+      "robotRunId": "AR00000000000010429249",
+      "url": "https://android-build.googleplex.com/builds/treetop/android-review/1693411?revision\u003d1",
+      "fixSuggestions": [
+        {
+          "fixId": "724e0d58_3792d411",
+          "description": "Change to \"repack_bootimg.py\"",
+          "replacements": [
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 209,
+                "startChar": 28,
+                "endLine": 209,
+                "endChar": 36
+              },
+              "replacement": "original"
+            }
+          ]
+        }
+      ],
+      "key": {
+        "uuid": "27a6c3ac_59778554",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1757831
+      },
+      "writtenOn": "2021-05-03T10:18:54Z",
+      "side": 1,
+      "message": "Common typo found: \"origianl\" -- should it be \"original\"?\nNote: a line containing \"common_typos_disable\" or \"common_typos_enable\" will turn off or on (respectively) the linter for subsequent lines in the file. Alternatively include the token \"NOTYPO\" within a line to skip typo linting that line or include \u0027No-Typo-Check: \u003creason\u003e\u0027in the commit message.",
+      "range": {
+        "startLine": 209,
+        "startChar": 28,
+        "endLine": 209,
+        "endChar": 36
+      },
+      "revId": "89faa44ab01fd6866016a17128a41ee79e792040",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
