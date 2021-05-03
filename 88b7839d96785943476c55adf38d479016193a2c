@@ -22,6 +22,30 @@
       },
       "revId": "88b7839d96785943476c55adf38d479016193a2c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "392c3f38_e40fefcf",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-03T11:11:23Z",
+      "side": 1,
+      "message": "The reason for (2) is that it reduces maintenance cost and dependencies, as the output of `--format\u003dmkbootimg` can be parsed by the shell or human trivially, while json needs a parser to deal with",
+      "parentUuid": "2c8fafd4_23d72a2f",
+      "range": {
+        "startLine": 537,
+        "startChar": 12,
+        "endLine": 537,
+        "endChar": 73
+      },
+      "revId": "88b7839d96785943476c55adf38d479016193a2c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
