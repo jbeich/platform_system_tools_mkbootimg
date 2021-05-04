@@ -116,6 +116,30 @@
       },
       "revId": "c3009fdc7eaef672d446949518d648c9ec01ae59",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb07a7b4_0e1481a2",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-04T16:34:22Z",
+      "side": 1,
+      "message": "Ah yes, even better!",
+      "parentUuid": "becc0f7e_a66d0c42",
+      "range": {
+        "startLine": 237,
+        "startChar": 17,
+        "endLine": 237,
+        "endChar": 62
+      },
+      "revId": "c3009fdc7eaef672d446949518d648c9ec01ae59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

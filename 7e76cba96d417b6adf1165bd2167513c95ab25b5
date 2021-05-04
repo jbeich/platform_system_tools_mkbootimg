@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f323800f_777b4293",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-04T16:34:22Z",
+      "side": 1,
+      "message": "It feels oddly satisfying knowing that we only need to add so little code to support vendor_boot v4.",
+      "revId": "7e76cba96d417b6adf1165bd2167513c95ab25b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fb45af7_4f05379a",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-04T16:34:22Z",
+      "side": 1,
+      "message": "nit: --ramdisk \u0026 --vendor_ramdisk can use the same treatment (replace the argument after --ramdisk / --vendor_ramdisk), but that could be in another change.",
+      "range": {
+        "startLine": 243,
+        "startChar": 36,
+        "endLine": 246,
+        "endChar": 67
+      },
+      "revId": "7e76cba96d417b6adf1165bd2167513c95ab25b5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
