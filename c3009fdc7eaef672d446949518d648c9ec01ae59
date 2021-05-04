@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2d4febff_124336e7",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-04T16:13:23Z",
+      "side": 1,
+      "message": "Done!",
+      "parentUuid": "da482aea_89946402",
+      "range": {
+        "startLine": 177,
+        "startChar": 15,
+        "endLine": 177,
+        "endChar": 76
+      },
+      "revId": "c3009fdc7eaef672d446949518d648c9ec01ae59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "9c267f32_88fc1d8f",
         "filename": "repack_bootimg.py",
         "patchSetId": 3
@@ -60,6 +84,30 @@
       "writtenOn": "2021-05-04T15:46:30Z",
       "side": 1,
       "message": "instead of removing these arguments, could we just rename the repacked ramdisk to the unpacked ramdisk? I mean:\n\n$ unpack_bootimg --boot_img vendor_boot.img --format\u003dmkbootimg \u003emkbootimg_args\n$ ls out\n\u003e out/vendor_boot00 \u003c... other unpacked files\u003e\n$ \u003crepack out/vendor_boot00 as something like /tmp/repacked.img\u003e\n$ rm out/vendor_boot00 \u0026\u0026 mv /tmp/repacked.img out/vendor_boot00\n$ bash -c \"mkbootimg $(cat mkbootimg_args) --vendor_boot vendor_boot.img\"  # repack vendor_boot.img\n\nThis way we don\u0027t need to modify _previous_mkbootimg_args at all, and we can remove L215-L221 as well",
+      "range": {
+        "startLine": 237,
+        "startChar": 17,
+        "endLine": 237,
+        "endChar": 62
+      },
+      "revId": "c3009fdc7eaef672d446949518d648c9ec01ae59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "becc0f7e_a66d0c42",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-04T16:13:23Z",
+      "side": 1,
+      "message": "Yup, I was thinking about similar things after sending out PS-3.\n\nBasically we can replace the ramdisk fragment right after \u0027--vendor_ramdisk_framgment\u0027.",
+      "parentUuid": "1c3b60a1_58bc9e5c",
       "range": {
         "startLine": 237,
         "startChar": 17,
