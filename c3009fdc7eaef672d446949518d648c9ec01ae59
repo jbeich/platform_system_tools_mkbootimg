@@ -24,6 +24,29 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c267f32_88fc1d8f",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-04T16:06:34Z",
+      "side": 1,
+      "message": "This can be removed if we just replace the ramdisk after --vendor_ramdisk_fragment.",
+      "range": {
+        "startLine": 179,
+        "startChar": 8,
+        "endLine": 179,
+        "endChar": 51
+      },
+      "revId": "c3009fdc7eaef672d446949518d648c9ec01ae59",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c3b60a1_58bc9e5c",
