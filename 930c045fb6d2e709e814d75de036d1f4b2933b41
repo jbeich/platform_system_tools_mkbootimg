@@ -22,6 +22,30 @@
       },
       "revId": "930c045fb6d2e709e814d75de036d1f4b2933b41",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a046a6f_b1ad8195",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-05-05T05:40:27Z",
+      "side": 1,
+      "message": "We can probably only do warning, as we don\u0027t search the ramdisk_index in MULTIPLE_RAMDISK_FRAGMENTS case (L243-L250).",
+      "parentUuid": "75800147_d0738691",
+      "range": {
+        "startLine": 253,
+        "startChar": 11,
+        "endLine": 253,
+        "endChar": 29
+      },
+      "revId": "930c045fb6d2e709e814d75de036d1f4b2933b41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
