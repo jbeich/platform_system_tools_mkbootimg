@@ -46,6 +46,30 @@
       },
       "revId": "930c045fb6d2e709e814d75de036d1f4b2933b41",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869b0d2e_1d438396",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2021-05-05T05:52:40Z",
+      "side": 1,
+      "message": "oh right, nvm then",
+      "parentUuid": "2a046a6f_b1ad8195",
+      "range": {
+        "startLine": 253,
+        "startChar": 11,
+        "endLine": 253,
+        "endChar": 29
+      },
+      "revId": "930c045fb6d2e709e814d75de036d1f4b2933b41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
