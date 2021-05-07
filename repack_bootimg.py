@@ -21,9 +21,11 @@ the ramdisk to repack the boot image.
 """
 
 import argparse
+import datetime
 import enum
-import json
+import glob
 import os
+import shlex
 import shutil
 import subprocess
 import tempfile
@@ -75,22 +77,28 @@ class BootImageType(enum.Enum):
     """Enum class for different boot image types."""
     BOOT_IMAGE = 1
     VENDOR_BOOT_IMAGE = 2
+    SINGLE_RAMDISK_FRAGMENT = 3
+    MULTIPLE_RAMDISK_FRAGMENTS = 4
 
 
 class RamdiskImage:
     """A class that supports packing/unpacking a ramdisk."""
-    def __init__(self, ramdisk_img):
+    def __init__(self, ramdisk_img, unpack=True):
         self._ramdisk_img = ramdisk_img
         self._ramdisk_format = None
         self._ramdisk_dir = None
         self._temp_file_manager = TempFileManager()
 
-        self._unpack_ramdisk()
+        if unpack:
+            self._unpack_ramdisk()
+        else:
+            self._ramdisk_dir = self._temp_file_manager.make_temp_dir(
+                suffix='_new_ramdisk')
 
     def _unpack_ramdisk(self):
         """Unpacks the ramdisk."""
         self._ramdisk_dir = self._temp_file_manager.make_temp_dir(
-            suffix=os.path.basename(self._ramdisk_img))
+            suffix='_' + os.path.basename(self._ramdisk_img))
 
         # The compression format might be in 'lz4' or 'gzip' format,
         # trying lz4 first.
@@ -115,18 +123,10 @@ class RamdiskImage:
             # toybox cpio arguments:
             #   -i: extract files from stdin
             #   -d: create directories if needed
-            cpio_result = subprocess.run(
-                ['toybox', 'cpio', '-id'], check=False,
-                input=decompressed_result.stdout, capture_output=True,
-                cwd=self._ramdisk_dir)
-
-            # toybox cpio command might return a non-zero code, e.g., found
-            # duplicated files in the ramdisk. Treat it as non-fatal with
-            # check=False and only print the error message here.
-            if cpio_result.returncode != 0:
-                print('\n'
-                      'WARNNING: cpio command error:\n' +
-                      cpio_result.stderr.decode('utf-8').strip() + '\n')
+            #   -u: override existing files
+            subprocess.run(
+                ['toybox', 'cpio', '-idu'], check=True,
+                input=decompressed_result.stdout, cwd=self._ramdisk_dir)
 
             print("=== Unpacked ramdisk: '{}' ===".format(
                 self._ramdisk_img))
@@ -168,62 +168,54 @@ class BootImage:
         self._bootimg_dir = None
         self._bootimg_type = None
         self._ramdisk = None
-        # Potential images to extract from a boot.img. Unlike the ramdisk,
-        # the content of the following images will not be changed during the
-        # repack process.
-        self._intact_image_candidates = ('dtb', 'kernel',
-                                         'recovery_dtbo', 'second')
-        self._repack_intact_image_args = []
+        self._previous_mkbootimg_args = []
         self._temp_file_manager = TempFileManager()
 
         self._unpack_bootimg()
 
+    def _get_vendor_ramdisks(self):
+        """Returns a list of vendor ramdisks after unpack."""
+        return sorted(glob.glob(
+            os.path.join(self._bootimg_dir, 'vendor_ramdisk*')))
+
     def _unpack_bootimg(self):
         """Unpacks the boot.img and the ramdisk inside."""
         self._bootimg_dir = self._temp_file_manager.make_temp_dir(
-            suffix=os.path.basename(self._bootimg))
+            suffix='_' + os.path.basename(self._bootimg))
 
         # Unpacks the boot.img first.
-        subprocess.check_call(
-            ['unpack_bootimg', '--boot_img', self._bootimg,
-             '--out', self._bootimg_dir], stdout=subprocess.DEVNULL)
+        unpack_bootimg_cmds = [
+            'unpack_bootimg',
+            '--boot_img', self._bootimg,
+            '--out', self._bootimg_dir,
+            '--format=mkbootimg',
+        ]
+        result = subprocess.run(unpack_bootimg_cmds, check=True,
+                                capture_output=True, encoding='utf-8')
+        self._previous_mkbootimg_args = shlex.split(result.stdout)
         print("=== Unpacked boot image: '{}' ===".format(self._bootimg))
-
-        for img_name in self._intact_image_candidates:
-            img_file = os.path.join(self._bootimg_dir, img_name)
-            if os.path.exists(img_file):
-                # Prepares args for repacking those intact images. e.g.,
-                # --kernel kernel_image, --dtb dtb_image.
-                self._repack_intact_image_args.extend(
-                    ['--' + img_name, img_file])
 
         # From the output dir, checks there is 'ramdisk' or 'vendor_ramdisk'.
         ramdisk = os.path.join(self._bootimg_dir, 'ramdisk')
         vendor_ramdisk = os.path.join(self._bootimg_dir, 'vendor_ramdisk')
+        vendor_ramdisks = self._get_vendor_ramdisks()
         if os.path.exists(ramdisk):
             self._ramdisk = RamdiskImage(ramdisk)
             self._bootimg_type = BootImageType.BOOT_IMAGE
         elif os.path.exists(vendor_ramdisk):
             self._ramdisk = RamdiskImage(vendor_ramdisk)
             self._bootimg_type = BootImageType.VENDOR_BOOT_IMAGE
+        elif len(vendor_ramdisks) == 1:
+            self._ramdisk = RamdiskImage(vendor_ramdisks[0])
+            self._bootimg_type = BootImageType.SINGLE_RAMDISK_FRAGMENT
+        elif len(vendor_ramdisks) > 1:
+            # Creates an empty RamdiskImage() below, without unpack.
+            # We'll then add files into this newly created ramdisk, then pack
+            # it with other vendor ramdisks together.
+            self._ramdisk = RamdiskImage(ramdisk_img=None, unpack=False)
+            self._bootimg_type = BootImageType.MULTIPLE_RAMDISK_FRAGMENTS
         else:
             raise RuntimeError('Both ramdisk and vendor_ramdisk do not exist.')
-
-    @property
-    def _previous_mkbootimg_args(self):
-        """Returns the previous mkbootimg args from mkbootimg_args.json file."""
-        # Loads the saved mkbootimg_args.json from previous unpack_bootimg.
-        command = []
-        mkbootimg_config = os.path.join(
-            self._bootimg_dir, 'mkbootimg_args.json')
-        with open (mkbootimg_config) as config:
-            mkbootimg_args = json.load(config)
-            for argname, value in mkbootimg_args.items():
-                # argname, e.g., 'board', 'header_version', etc., does not have
-                # prefix '--', which is required when invoking `mkbootimg.py`.
-                # Prepends '--' to make the full args, e.g., --header_version.
-                command.extend(['--' + argname, value])
-        return command
 
     def repack_bootimg(self):
         """Repacks the ramdisk and rebuild the boot.img"""
@@ -237,16 +229,32 @@ class BootImage:
         # Uses previous mkbootimg args, e.g., --vendor_cmdline, --dtb_offset.
         mkbootimg_cmd.extend(self._previous_mkbootimg_args)
 
-        if self._repack_intact_image_args:
-            mkbootimg_cmd.extend(self._repack_intact_image_args)
-
-        if self._bootimg_type == BootImageType.VENDOR_BOOT_IMAGE:
-            mkbootimg_cmd.extend(['--vendor_ramdisk', new_ramdisk])
-            mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
-            # TODO(bowgotsai): add support for multiple vendor ramdisk.
-        else:
-            mkbootimg_cmd.extend(['--ramdisk', new_ramdisk])
+        ramdisk_option = ''
+        if self._bootimg_type == BootImageType.BOOT_IMAGE:
+            ramdisk_option = '--ramdisk'
             mkbootimg_cmd.extend(['--output', self._bootimg])
+        elif self._bootimg_type == BootImageType.VENDOR_BOOT_IMAGE:
+            ramdisk_option = '--vendor_ramdisk'
+            mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
+        elif self._bootimg_type == BootImageType.SINGLE_RAMDISK_FRAGMENT:
+            ramdisk_option = '--vendor_ramdisk_fragment'
+            mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
+        elif self._bootimg_type == BootImageType.MULTIPLE_RAMDISK_FRAGMENTS:
+            mkbootimg_cmd.extend(['--ramdisk_type', 'PLATFORM'])
+            ramdisk_name = (
+                'RAMDISK_' +
+                datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S'))
+            mkbootimg_cmd.extend(['--ramdisk_name', ramdisk_name])
+            mkbootimg_cmd.extend(['--vendor_ramdisk_fragment', new_ramdisk])
+            mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
+
+        if ramdisk_option and ramdisk_option not in mkbootimg_cmd:
+            raise RuntimeError("Failed to find '{}' from:\n  {}".format(
+                ramdisk_option, shlex.join(mkbootimg_cmd)))
+        # Replaces the original ramdisk with the newly packed ramdisk.
+        if ramdisk_option:
+            ramdisk_index = mkbootimg_cmd.index(ramdisk_option) + 1
+            mkbootimg_cmd[ramdisk_index] = new_ramdisk
 
         subprocess.check_call(mkbootimg_cmd)
         print("=== Repacked boot image: '{}' ===".format(self._bootimg))
@@ -335,7 +343,7 @@ def _parse_args():
         '--ramdisk_add', nargs='+',
         help='a list of files or src_file:dst_file pairs to add into '
              'the ramdisk',
-        default=['first_stage_ramdisk/userdebug_plat_sepolicy.cil']
+        default=['userdebug_plat_sepolicy.cil']
     )
 
     return parser.parse_args()
