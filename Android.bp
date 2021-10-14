@@ -89,6 +89,8 @@ python_binary_host {
     ],
 }
 
+/* This test requires latest build system changes to work.
+
 python_test_host {
     name: "mkbootimg_test",
     defaults: ["mkbootimg_defaults"],
@@ -106,3 +108,5 @@ python_test_host {
         unit_test: true,
     },
 }
+
+*/
