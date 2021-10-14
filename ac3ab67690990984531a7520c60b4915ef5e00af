@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "194597e3_be08fece",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-10-14T07:45:13Z",
+      "side": 1,
+      "message": "Thanks for the nice clean-up!",
+      "revId": "ac3ab67690990984531a7520c60b4915ef5e00af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7670de88_c25dcd95",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-10-14T07:45:13Z",
+      "side": 1,
+      "message": "Wow, this is nice.",
+      "range": {
+        "startLine": 338,
+        "startChar": 23,
+        "endLine": 338,
+        "endChar": 51
+      },
+      "revId": "ac3ab67690990984531a7520c60b4915ef5e00af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e41f0025_2d5c8285",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2021-10-14T07:45:13Z",
+      "side": 1,
+      "message": "Great, this reduces two lines below. \nThanks for fixing this!",
+      "range": {
+        "startLine": 348,
+        "startChar": 8,
+        "endLine": 348,
+        "endChar": 22
+      },
+      "revId": "ac3ab67690990984531a7520c60b4915ef5e00af",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
