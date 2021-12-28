@@ -127,7 +127,10 @@ def write_header_v3_and_above(args):
                            args.cmdline))
     if args.header_version >= 4:
         # The signature used to verify boot image v4.
-        args.output.write(pack('I', BOOT_IMAGE_V4_SIGNATURE_SIZE))
+        boot_signature_size = BOOT_IMAGE_V4_SIGNATURE_SIZE
+        if args.boot_signature:
+            boot_signature_size = filesize(args.boot_signature)
+        args.output.write(pack('I', boot_signature_size))
     pad_file(args.output, BOOT_IMAGE_HEADER_V3_PAGESIZE)
 
 
@@ -536,20 +539,27 @@ def parse_cmdline():
                         help='boot image header version')
     parser.add_argument('-o', '--output', type=FileType('wb'),
                         help='output file name')
-    parser.add_argument('--gki_signing_algorithm',
-                        help='GKI signing algorithm to use')
-    parser.add_argument('--gki_signing_key',
-                        help='path to RSA private key file')
-    parser.add_argument('--gki_signing_signature_args', default='',
-                        help='other hash arguments passed to avbtool')
-    parser.add_argument('--gki_signing_avbtool_path', default='avbtool',
-                        help='path to avbtool for boot signature generation')
+    parser.add_argument('--boot_signature', type=FileType('rb'),
+                        help='path to the GKI certificate file')
     parser.add_argument('--vendor_boot', type=FileType('wb'),
                         help='vendor boot output file name')
     parser.add_argument('--vendor_ramdisk', type=FileType('rb'),
                         help='path to the vendor ramdisk')
     parser.add_argument('--vendor_bootconfig', type=FileType('rb'),
                         help='path to the vendor bootconfig file')
+
+    gki_2_0_signing_args = parser.add_argument_group(
+        '[DEPRECATED] GKI 2.0 signing arguments')
+    gki_2_0_signing_args.add_argument(
+        '--gki_signing_algorithm', help='GKI signing algorithm to use')
+    gki_2_0_signing_args.add_argument(
+        '--gki_signing_key', help='path to RSA private key file')
+    gki_2_0_signing_args.add_argument(
+        '--gki_signing_signature_args', default='',
+        help='other hash arguments passed to avbtool')
+    gki_2_0_signing_args.add_argument(
+        '--gki_signing_avbtool_path', default='avbtool',
+        help='path to avbtool for boot signature generation')
 
     args, extra_args = parser.parse_known_args()
     if args.vendor_boot is not None and args.header_version > 3:
@@ -576,7 +586,12 @@ def add_boot_image_signature(args, pagesize):
     vbmeta partition) via the Android Verified Boot process, when the
     device boots.
     """
-    args.output.flush()  # Flush the buffer for signature calculation.
+
+    if args.boot_signature:
+        write_padded_file(args.output, args.boot_signature, pagesize)
+        return
+
+    # Fallback to the legacy certificating method.
 
     # Appends zeros if the signing key is not specified.
     if not args.gki_signing_key or not args.gki_signing_algorithm:
@@ -584,6 +599,9 @@ def add_boot_image_signature(args, pagesize):
         args.output.write(zeros)
         pad_file(args.output, pagesize)
         return
+
+    # Flush the buffer for signature calculation.
+    args.output.flush()
 
     # Outputs the signed vbmeta to a separate file, then append to boot.img
     # as the boot signature.
