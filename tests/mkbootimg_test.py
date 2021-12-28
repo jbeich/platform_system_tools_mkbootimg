@@ -418,6 +418,48 @@ class MkbootimgTest(unittest.TestCase):
                 filecmp.cmp(vendor_boot_img, vendor_boot_img_reconstructed),
                 'reconstructed vendor_boot image differ from the original')
 
+    def test_unpack_boot_image_v4(self):
+        """Tests that mkbootimg(unpack_bootimg(image)) is an identity."""
+        with tempfile.TemporaryDirectory() as temp_out_dir:
+            boot_img = os.path.join(temp_out_dir, 'boot.img')
+            boot_img_reconstructed = os.path.join(
+                temp_out_dir, 'boot.img.reconstructed')
+            kernel = generate_test_file(os.path.join(temp_out_dir, 'kernel'),
+                                        0x1000)
+            ramdisk = generate_test_file(os.path.join(temp_out_dir, 'ramdisk'),
+                                         0x1000)
+            boot_signature = generate_test_file(
+                os.path.join(temp_out_dir, 'boot_signature'), 0x800)
+            mkbootimg_cmds = [
+                'mkbootimg',
+                '--header_version', '4',
+                '--kernel', kernel,
+                '--ramdisk', ramdisk,
+                '--cmdline', TEST_KERNEL_CMDLINE,
+                '--boot_signature', boot_signature,
+                '--output', boot_img,
+            ]
+            unpack_bootimg_cmds = [
+                'unpack_bootimg',
+                '--boot_img', boot_img,
+                '--out', os.path.join(temp_out_dir, 'out'),
+                '--format=mkbootimg',
+            ]
+
+            subprocess.run(mkbootimg_cmds, check=True)
+            result = subprocess.run(unpack_bootimg_cmds, check=True,
+                                    capture_output=True, encoding='utf-8')
+            mkbootimg_cmds = [
+                'mkbootimg',
+                '--out', boot_img_reconstructed,
+            ]
+            mkbootimg_cmds.extend(shlex.split(result.stdout))
+
+            subprocess.run(mkbootimg_cmds, check=True)
+            self.assertTrue(
+                filecmp.cmp(boot_img, boot_img_reconstructed),
+                'reconstructed boot image differ from the original')
+
     def test_unpack_boot_image_v3(self):
         """Tests that mkbootimg(unpack_bootimg(image)) is an identity."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
