@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf890971_5f9ed974",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-01-24T05:03:13Z",
+      "side": 1,
+      "message": "no, I think there is hardly any benefit to prefer * over @, unless you want very precise IFS control, which is almost never a good idea.\n\nIn most cases @ is what we want (when quoting matters), and the rest of the cases when quoting is irrelevant, it\u0027s still more consistent to always stick with @.",
+      "parentUuid": "ce8d5cee_343c10f3",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f32f1229_447ffec9",
