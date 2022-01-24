@@ -73,6 +73,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "0e799e19_b045fa93",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-01-24T05:21:52Z",
+      "side": 1,
+      "message": "it\u0027s implicitly masked already, you cannot trap EXIT within the EXIT handler, tested already.",
+      "parentUuid": "f32f1229_447ffec9",
+      "range": {
+        "startLine": 73,
+        "startChar": 15,
+        "endLine": 73,
+        "endChar": 16
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "67878d71_aa8c2b2b",
         "filename": "gki/retrofit_gki.sh",
         "patchSetId": 7
