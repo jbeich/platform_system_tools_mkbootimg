@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce8d5cee_343c10f3",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T04:50:16Z",
+      "side": 1,
+      "message": "nit: since we don\u0027t need to iterate the array, how about just using \"$*\" ?\n\ne.g.,\n   echo \"ERROR: $*\" \u003e\u00262\n   https://google.github.io/styleguide/shellguide.html#stdout-vs-stderr",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f32f1229_447ffec9",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T04:50:16Z",
+      "side": 1,
+      "message": "nit: clear the trap in the first line of exit_handler() ?\n\n trap - EXIT",
+      "range": {
+        "startLine": 73,
+        "startChar": 15,
+        "endLine": 73,
+        "endChar": 16
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67878d71_aa8c2b2b",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T04:50:16Z",
+      "side": 1,
+      "message": "Wow, just learned this usage. \n\nUsually I use \"|| true\".",
+      "range": {
+        "startLine": 75,
+        "startChar": 23,
+        "endLine": 75,
+        "endChar": 26
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39fa0d9f_6130cf9d",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T04:50:16Z",
+      "side": 1,
+      "message": "nit: how about adding a few descriptions for how do we make a retrofitted boot v2,v3,v4 images? This also helps us refresh our memory in the future.\n\ne.g., \n\n - boot v2:\n   - Has only one ramdisk and no boot signature.\n   - Merges the vendor_ramdisk and generic ramdisk into a single ramdisk\n   - Merges the BOOT signature and INIT_BOOT signature into a single signature then\n     appends it to the end of the retrofitted boot.img.\n - boot v3: \n    - Has no boot signature.\n    - Merges the BOOT signature and INIT_BOOT signature into a single signature then\n     appends it to the end of the retrofitted boot.img.\n - boot v4:\n    - Has one boot signature.\n    - Merges the BOOT signature and INIT_BOOT signature into a single signature, then\n      pass it to the --boot_signature argument.",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
