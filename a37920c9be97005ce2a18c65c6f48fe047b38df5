@@ -48,6 +48,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c32352b_398b8d84",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T06:15:18Z",
+      "side": 1,
+      "message": "OK, thanks for sharing the thoughts.",
+      "parentUuid": "cf890971_5f9ed974",
+      "range": {
+        "startLine": 49,
+        "startChar": 21,
+        "endLine": 49,
+        "endChar": 25
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f32f1229_447ffec9",
@@ -155,6 +179,30 @@
       "side": 1,
       "message": "I think this is better documented by the README, in the follow up change",
       "parentUuid": "39fa0d9f_6130cf9d",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c80a631_068f1631",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-24T06:15:18Z",
+      "side": 1,
+      "message": "OK, sgtm!",
+      "parentUuid": "e7a8ef8f_24310482",
       "range": {
         "startLine": 161,
         "startChar": 0,
