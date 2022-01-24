@@ -115,6 +115,30 @@
       },
       "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7a8ef8f_24310482",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-01-24T05:08:22Z",
+      "side": 1,
+      "message": "I think this is better documented by the README, in the follow up change",
+      "parentUuid": "39fa0d9f_6130cf9d",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
