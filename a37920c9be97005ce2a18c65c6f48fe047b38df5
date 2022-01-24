@@ -211,6 +211,30 @@
       },
       "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f1767a0_ab7716d9",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-01-24T14:26:56Z",
+      "side": 1,
+      "message": "Done here https://android-review.googlesource.com/c/platform/system/tools/mkbootimg/+/1956320/5/gki/README.md",
+      "parentUuid": "5c80a631_068f1631",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "a37920c9be97005ce2a18c65c6f48fe047b38df5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
