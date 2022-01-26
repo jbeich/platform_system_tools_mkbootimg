@@ -46,6 +46,30 @@
       },
       "revId": "cda92f419a87d6ce4b284c4f253feb9324fe7912",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "891315f6_8b296b4d",
+        "filename": "gki/boot_signature_info.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-01-26T14:25:52Z",
+      "side": 1,
+      "message": "Ack.\n\nThanks for adding this tool, this improves our productivity a lot!\n\n(especially for the retrofitted boot signatures)",
+      "parentUuid": "95833f42_34e08857",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 5
+      },
+      "revId": "cda92f419a87d6ce4b284c4f253feb9324fe7912",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
