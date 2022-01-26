@@ -22,6 +22,30 @@
       },
       "revId": "cda92f419a87d6ce4b284c4f253feb9324fe7912",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95833f42_34e08857",
+        "filename": "gki/boot_signature_info.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-01-26T13:40:21Z",
+      "side": 1,
+      "message": "Sure let me add that. \n\nThis thing was hacked together previously for developing `retrofit_gki`, I just thought it might be potentially useful for future debugging, so checking it in (after some polishing!)\n\nNow I look at it I don\u0027t really need `dd` here, `tail` is probably enough and more efficient...",
+      "parentUuid": "9f913db3_f0e38e98",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 5
+      },
+      "revId": "cda92f419a87d6ce4b284c4f253feb9324fe7912",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
