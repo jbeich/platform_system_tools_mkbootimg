@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f7fa205_2808ea1f",
+        "filename": "gki/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-10T14:07:41Z",
+      "side": 1,
+      "message": "nit: supported?",
+      "range": {
+        "startLine": 27,
+        "startChar": 3,
+        "endLine": 27,
+        "endChar": 10
+      },
+      "revId": "809317de22aa1668e1f283a3f8b81b4be0447162",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
