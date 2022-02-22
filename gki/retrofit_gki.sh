@@ -162,7 +162,7 @@ readonly RETROFITTED_BOOT_SIGNATURE_SIZE=$(( 16 << 10 ))
 ( [[ -n "${VERBOSE}" ]] && set -x
   "${UNPACK_BOOTIMG}" --boot_img "${BOOT_IMAGE}" --out "${BOOT_DIR}" >/dev/null
   "${UNPACK_BOOTIMG}" --boot_img "${INIT_BOOT_IMAGE}" --out "${INIT_BOOT_DIR}" >/dev/null
-  cp "${BOOT_DIR}/boot_signature" "${OUTPUT_BOOT_SIGNATURE}"
+  tail -c $(( 16 << 10 )) "${BOOT_IMAGE}" > "${OUTPUT_BOOT_SIGNATURE}"
 )
 
 declare -a mkbootimg_args=()
@@ -172,7 +172,6 @@ if [[ "${OUTPUT_BOOT_IMAGE_VERSION}" -eq 4 ]]; then
     --header_version 4 \
     --kernel "${BOOT_DIR}/kernel" \
     --ramdisk "${INIT_BOOT_DIR}/ramdisk" \
-    --boot_signature "${OUTPUT_BOOT_SIGNATURE}" \
   )
 elif [[ "${OUTPUT_BOOT_IMAGE_VERSION}" -eq 3 ]]; then
   mkbootimg_args+=( \
@@ -221,13 +220,11 @@ fi
   "${MKBOOTIMG}" "${mkbootimg_args[@]}" --output "${OUTPUT_BOOT_IMAGE}"
 )
 
-if [[ "${OUTPUT_BOOT_IMAGE_VERSION}" -eq 2 ]] || [[ "${OUTPUT_BOOT_IMAGE_VERSION}" -eq 3 ]]; then
-  if [[ "$(file_size "${OUTPUT_BOOT_SIGNATURE}")" -gt "${RETROFITTED_BOOT_SIGNATURE_SIZE}" ]]; then
-    die "boot signature size is larger than ${RETROFITTED_BOOT_SIGNATURE_SIZE}"
-  fi
-  # Pad the boot signature and append it to the end.
-  ( [[ -n "${VERBOSE}" ]] && set -x
-    truncate -s "${RETROFITTED_BOOT_SIGNATURE_SIZE}" "${OUTPUT_BOOT_SIGNATURE}"
-    cat "${OUTPUT_BOOT_SIGNATURE}" >> "${OUTPUT_BOOT_IMAGE}"
-  )
+if [[ "$(file_size "${OUTPUT_BOOT_SIGNATURE}")" -gt "${RETROFITTED_BOOT_SIGNATURE_SIZE}" ]]; then
+  die "boot signature size is larger than ${RETROFITTED_BOOT_SIGNATURE_SIZE}"
 fi
+# Pad the boot signature and append it to the end.
+( [[ -n "${VERBOSE}" ]] && set -x
+  truncate -s "${RETROFITTED_BOOT_SIGNATURE_SIZE}" "${OUTPUT_BOOT_SIGNATURE}"
+  cat "${OUTPUT_BOOT_SIGNATURE}" >> "${OUTPUT_BOOT_IMAGE}"
+)

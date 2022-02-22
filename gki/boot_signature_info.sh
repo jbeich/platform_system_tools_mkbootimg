@@ -74,7 +74,7 @@ while IFS= read -r -d '' ARG; do
 done < "${BOOT_IMAGE_ARGS}"
 
 BOOT_IMAGE_VERSION="$(get_arg --header_version "${boot_args[@]}")"
-if [[ "${BOOT_IMAGE_VERSION}" -ge 4 ]]; then
+if [[ "${BOOT_IMAGE_VERSION}" -ge 4 ]] && [[ -f "${BOOT_IMAGE_DIR}/boot_signature" ]]; then
   cp "${BOOT_IMAGE_DIR}/boot_signature" "${VBMETA_IMAGE}"
 else
   tail -c "$(( 16 << 10 ))" "${BOOT_IMAGE}" > "${VBMETA_IMAGE}"
