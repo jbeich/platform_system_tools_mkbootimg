@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50af7b46_dcb73e88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T03:16:13Z",
+      "side": 1,
+      "message": "nit: at the end of the boot.img (before adding AVB footer)?\n\nBecause the avb footer will be located at the end of the partition (just wanted to be clear).",
+      "range": {
+        "startLine": 15,
+        "startChar": 14,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80133e84_ae929de2",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T03:16:13Z",
+      "side": 1,
+      "message": "using a constant instead for $(( 16 \u003c\u003c 10 ))?\n\ne.g., ${RETROFITTED_BOOT_SIGNATURE_SIZE} or just ${BOOT_SIGNATURE_SIZE}?",
+      "range": {
+        "startLine": 165,
+        "startChar": 14,
+        "endLine": 165,
+        "endChar": 22
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2f7de94_629db09c",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T03:16:13Z",
+      "side": 1,
+      "message": "The final 16K of a boot.img might include a AVB footer/descriptors.\n\nDo we need to erase avb footer first?\n\navbtool erase_footer --image \"${BOOT_IMAGE}\"\n\nhttps://cs.android.com/android/platform/superproject/+/master:external/avb/avbtool.py;l\u003d2231;drc\u003dafabdb3346bb514054587c2efbf6327b1a41f69e",
+      "range": {
+        "startLine": 165,
+        "startChar": 1,
+        "endLine": 165,
+        "endChar": 25
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44955cbf_6354874a",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T03:16:13Z",
+      "side": 1,
+      "message": "nit: removing DEPRECATED?",
+      "range": {
+        "startLine": 556,
+        "startChar": 9,
+        "endLine": 556,
+        "endChar": 22
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
