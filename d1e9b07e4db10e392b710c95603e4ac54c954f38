@@ -46,6 +46,30 @@
       },
       "revId": "d1e9b07e4db10e392b710c95603e4ac54c954f38",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de6782d9_815f581a",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T08:23:25Z",
+      "side": 1,
+      "message": "Thanks! \n\nAdding ${BOOT_IMAGE_WITHOUT_AVB_FOOTER} below looks much better.\n\nIt makes the argument parsing here more consistent.",
+      "parentUuid": "9e11a976_113e1d14",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 88,
+        "endChar": 29
+      },
+      "revId": "d1e9b07e4db10e392b710c95603e4ac54c954f38",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
