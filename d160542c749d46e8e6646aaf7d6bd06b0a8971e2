@@ -91,6 +91,30 @@
       },
       "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e277fb3d_1f401738",
+        "filename": "mkbootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T03:25:54Z",
+      "side": 1,
+      "message": "nvm, after checking aosp/1999070, I think those \"gki_2_0_signing_args\" should still be deprecated in the future.\n\nIt\u0027s better (as in aosp/1999070) to mkbootimg first, then generate/append boot_signature separately.",
+      "parentUuid": "44955cbf_6354874a",
+      "range": {
+        "startLine": 556,
+        "startChar": 9,
+        "endLine": 556,
+        "endChar": 22
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
