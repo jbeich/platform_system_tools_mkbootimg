@@ -72,6 +72,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "be6f6214_b463ed1f",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-02-25T03:43:45Z",
+      "side": 1,
+      "message": "great catch! will change in next patch!",
+      "parentUuid": "e2f7de94_629db09c",
+      "range": {
+        "startLine": 165,
+        "startChar": 1,
+        "endLine": 165,
+        "endChar": 25
+      },
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44955cbf_6354874a",
         "filename": "mkbootimg.py",
         "patchSetId": 1
