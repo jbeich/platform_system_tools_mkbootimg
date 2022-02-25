@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "919320a4_c3addfc2",
+        "filename": "gki/retrofit_gki.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T07:50:00Z",
+      "side": 1,
+      "message": "nit: I was wondering why we need \u0027cp\u0027 here but don\u0027t use \u0027cp\u0027 for INIT_BOOT_IMAGE / VENDOR_BOOT_IMAGE at L92/L96.\n\nAfter read thought the code below, I realized this is for `avbtool erase_footer`.\n\nHow about adding a comment? \n\n# Copy the boot image because we\u0027ll erase the AVB footer to get boot_signature below.",
+      "range": {
+        "startLine": 88,
+        "startChar": 6,
+        "endLine": 88,
+        "endChar": 29
+      },
+      "revId": "d1e9b07e4db10e392b710c95603e4ac54c954f38",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
