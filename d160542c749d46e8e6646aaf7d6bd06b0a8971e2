@@ -24,6 +24,23 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f828d478_ae6e6908",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-25T04:47:55Z",
+      "side": 1,
+      "message": "Btw, we also need to --boot_signature in unpack_bootimg.py (for --format\u003dmkbootimg) ?\n\nhttps://cs.android.com/android/kernel/superproject/+/common-android-mainline:tools/mkbootimg/unpack_bootimg.py;l\u003d145;drc\u003d33bf962400b09c58e20418494597efb19952f509",
+      "revId": "d160542c749d46e8e6646aaf7d6bd06b0a8971e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80133e84_ae929de2",
