@@ -91,6 +91,21 @@ python_binary_host {
     ],
 }
 
+python_binary_host {
+    name: "certify_bootimg",
+    defaults: ["mkbootimg_defaults"],
+    main: "certify_bootimg.py",
+    srcs: [
+        "certify_bootimg.py",
+        "gki/generate_gki_certificate.py",
+    ],
+    required: [
+        "avbtool",
+        "mkbootimg",
+        "unpack_bootimg",
+    ],
+}
+
 python_test_host {
     name: "mkbootimg_test",
     defaults: ["mkbootimg_defaults"],
@@ -100,6 +115,25 @@ python_test_host {
     ],
     data: [
         ":avbtool",
+        ":mkbootimg",
+        ":unpack_bootimg",
+        "tests/data/*",
+    ],
+    test_options: {
+        unit_test: true,
+    },
+}
+
+python_test_host {
+    name: "certify_bootimg_test",
+    defaults: ["mkbootimg_defaults"],
+    main: "tests/certify_bootimg_test.py",
+    srcs: [
+        "tests/certify_bootimg_test.py",
+    ],
+    data: [
+        ":avbtool",
+        ":certify_bootimg",
         ":mkbootimg",
         ":unpack_bootimg",
         "tests/data/*",
