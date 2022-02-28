@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6be399ff_d9762127",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-02-28T11:05:39Z",
+      "side": 1,
+      "message": "Hold off presubmit for now, until aosp/1999090 is merged.\n\nBecause this CL assumes `unpack_bootimg` will not output \"--boot_signature\" for \"--format\u003dmkbootimg\"",
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
