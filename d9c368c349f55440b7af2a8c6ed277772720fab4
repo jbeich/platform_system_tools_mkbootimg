@@ -16,6 +16,121 @@
       "message": "Hold off presubmit for now, until aosp/1999090 is merged.\n\nBecause this CL assumes `unpack_bootimg` will not output \"--boot_signature\" for \"--format\u003dmkbootimg\"",
       "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ef769e4_8380c338",
+        "filename": "Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-01T07:10:13Z",
+      "side": 1,
+      "message": "move these under the ./gki/ subdir",
+      "range": {
+        "startLine": 95,
+        "startChar": 11,
+        "endLine": 95,
+        "endChar": 26
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0618d34f_82d1b7ff",
+        "filename": "Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-01T07:10:13Z",
+      "side": 1,
+      "message": "move these under the ./gki/ subdir",
+      "range": {
+        "startLine": 128,
+        "startChar": 11,
+        "endLine": 128,
+        "endChar": 31
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ee82a97_8ce5ab89",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-01T07:10:13Z",
+      "side": 1,
+      "message": "I\u0027d prefer we remove the footers than rebuild the boot.img.\n\nWe can use `avbtool erase_footer` to remove AVB footer, and use `avb info_image` to check if the last 16KiB is |boot signature|",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 40
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cb06ddc_a24d14eb",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-01T07:10:13Z",
+      "side": 1,
+      "message": "--partition_size sizeof(args.boot_img)",
+      "range": {
+        "startLine": 101,
+        "startChar": 49,
+        "endLine": 101,
+        "endChar": 72
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9087a29e_d71a9cd0",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-01T07:10:13Z",
+      "side": 1,
+      "message": "make this a function like get_kernel(|boot_image|)",
+      "range": {
+        "startLine": 149,
+        "startChar": 9,
+        "endLine": 149,
+        "endChar": 49
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
