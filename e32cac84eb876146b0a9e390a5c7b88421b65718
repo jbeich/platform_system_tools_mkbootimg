@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53e17057_967b6671",
+        "filename": "gki/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ca9ce81_ff62b4ce",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 20
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be3d93bd_645f96f5",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-03-04T06:02:34Z",
       "side": 1,
       "message": "Certify a GKI boot image by generating and appending its boot_signature.",
+      "range": {
+        "startLine": 18,
+        "startChar": 3,
+        "endLine": 18,
+        "endChar": 51
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d61edc1_c2cf71ec",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be3d93bd_645f96f5",
       "range": {
         "startLine": 18,
         "startChar": 3,
@@ -64,6 +112,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "612a21c7_8a8236f3",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1246c5d6_114a442e",
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1a01475_f3a21e4c",
@@ -77,6 +143,30 @@
       "writtenOn": "2022-03-04T06:02:34Z",
       "side": 1,
       "message": "```\nwith tempfile.NamedTemporaryFile() as kernel_img:\n  kernel_img.write(get_kernel(boot_img))\n  boot_signature_bytes +\u003d generate_certificate(kernel_img, \u0027generic_kernel\u0027)\n```",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 25
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c28da388_cb0e4ae4",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1a01475_f3a21e4c",
       "range": {
         "startLine": 72,
         "startChar": 4,
@@ -110,6 +200,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58fa10ac_51f0c34e",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21b55fa7_29728083",
+      "range": {
+        "startLine": 95,
+        "startChar": 45,
+        "endLine": 95,
+        "endChar": 64
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2739eeb3_88f5c477",
@@ -123,6 +237,30 @@
       "writtenOn": "2022-03-04T06:02:34Z",
       "side": 1,
       "message": "this is unused",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 103,
+        "endChar": 24
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f79fbf94_8b4400d2",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2739eeb3_88f5c477",
       "range": {
         "startLine": 103,
         "startChar": 4,
@@ -150,6 +288,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d09beeb2_bd50d021",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8283dae7_17e54257",
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2935e65f_980094b0",
@@ -163,6 +319,30 @@
       "writtenOn": "2022-03-04T06:02:34Z",
       "side": 1,
       "message": "doesn\u0027t need to capture the output",
+      "range": {
+        "startLine": 115,
+        "startChar": 32,
+        "endLine": 115,
+        "endChar": 51
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6276ddf_0d2c70fe",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2935e65f_980094b0",
       "range": {
         "startLine": 115,
         "startChar": 32,
@@ -196,6 +376,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da7cf50c_245a8240",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done, this is better!",
+      "parentUuid": "10a1c813_14ad3c6c",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 37
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "179a9e7c_de672440",
@@ -209,6 +413,30 @@
       "writtenOn": "2022-03-04T06:02:34Z",
       "side": 1,
       "message": "doesn\u0027t need to capture the output",
+      "range": {
+        "startLine": 130,
+        "startChar": 59,
+        "endLine": 130,
+        "endChar": 78
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e7c6591_828ff190",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T07:34:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "179a9e7c_de672440",
       "range": {
         "startLine": 130,
         "startChar": 59,
