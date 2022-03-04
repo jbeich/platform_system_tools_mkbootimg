@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d35aedc_c80a36d4",
+        "filename": "Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T05:00:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ef769e4_8380c338",
+      "range": {
+        "startLine": 95,
+        "startChar": 11,
+        "endLine": 95,
+        "endChar": 26
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0618d34f_82d1b7ff",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-03-01T07:10:13Z",
       "side": 1,
       "message": "move these under the ./gki/ subdir",
+      "range": {
+        "startLine": 128,
+        "startChar": 11,
+        "endLine": 128,
+        "endChar": 31
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72ddacfa_5f4a0ebe",
+        "filename": "Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T05:00:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0618d34f_82d1b7ff",
       "range": {
         "startLine": 128,
         "startChar": 11,
@@ -87,6 +135,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "510dfb67_e0ab7535",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T05:00:02Z",
+      "side": 1,
+      "message": "Done! \n\nAdded a new function: erase_certificate_and_avb_footer(boot_img) to do this.",
+      "parentUuid": "8ee82a97_8ce5ab89",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 40
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5cb06ddc_a24d14eb",
@@ -110,6 +182,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac762993_f8754538",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T05:00:02Z",
+      "side": 1,
+      "message": "Done, also in the tests to ensure AVB footer exist and the image size remains.",
+      "parentUuid": "5cb06ddc_a24d14eb",
+      "range": {
+        "startLine": 101,
+        "startChar": 49,
+        "endLine": 101,
+        "endChar": 72
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9087a29e_d71a9cd0",
@@ -123,6 +219,30 @@
       "writtenOn": "2022-03-01T07:10:13Z",
       "side": 1,
       "message": "make this a function like get_kernel(|boot_image|)",
+      "range": {
+        "startLine": 149,
+        "startChar": 9,
+        "endLine": 149,
+        "endChar": 49
+      },
+      "revId": "d9c368c349f55440b7af2a8c6ed277772720fab4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1c9a90c_d56b0908",
+        "filename": "certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-04T05:00:02Z",
+      "side": 1,
+      "message": "Done. Also moving get_kernel() invocation inside add_certificate(boot_img) only.\n\nThe kernel image is only needed to generate the \u0027generic_kernel\u0027 certificate.",
+      "parentUuid": "9087a29e_d71a9cd0",
       "range": {
         "startLine": 149,
         "startChar": 9,
