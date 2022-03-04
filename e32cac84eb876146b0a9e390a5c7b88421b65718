@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca9ce81_ff62b4ce",
+        "filename": "gki/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "not needed anymore ✔",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 20
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be3d93bd_645f96f5",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "Certify a GKI boot image by generating and appending its boot_signature.",
+      "range": {
+        "startLine": 18,
+        "startChar": 3,
+        "endLine": 18,
+        "endChar": 51
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1246c5d6_114a442e",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "how about just return the bytes of the kernel here, so we don\u0027t need this awkward tempfile juggling?\n\n```\nwith open(os.path.join(unpack_dir, \u0027kernel\u0027), \u0027rb\u0027) as kernel:\n  kernel_bytes \u003d kernel.read()\n  assert len(kernel_bytes) \u003e 0\n  return kernel_bytes\n```",
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1a01475_f3a21e4c",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "```\nwith tempfile.NamedTemporaryFile() as kernel_img:\n  kernel_img.write(get_kernel(boot_img))\n  boot_signature_bytes +\u003d generate_certificate(kernel_img, \u0027generic_kernel\u0027)\n```",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 25
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21b55fa7_29728083",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "doesn\u0027t need to capture the output\n\nuse \"stderr\u003dsubprocess.DEVNULL\" to suppress noise",
+      "range": {
+        "startLine": 95,
+        "startChar": 45,
+        "endLine": 95,
+        "endChar": 64
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2739eeb3_88f5c477",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "this is unused",
+      "range": {
+        "startLine": 103,
+        "startChar": 4,
+        "endLine": 103,
+        "endChar": 24
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8283dae7_17e54257",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "maybe add an \"assert len(boot_signature) \u003d\u003d BOOT_SIGNATURE_SIZE\" just to be sure?",
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2935e65f_980094b0",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "doesn\u0027t need to capture the output",
+      "range": {
+        "startLine": 115,
+        "startChar": 32,
+        "endLine": 115,
+        "endChar": 51
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a1c813_14ad3c6c",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "remove L104, and change this line to \"has_boot_signature \u003d (result.returncode \u003d\u003d 0)\"",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 117,
+        "endChar": 37
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "179a9e7c_de672440",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-04T06:02:34Z",
+      "side": 1,
+      "message": "doesn\u0027t need to capture the output",
+      "range": {
+        "startLine": 130,
+        "startChar": 59,
+        "endLine": 130,
+        "endChar": 78
+      },
+      "revId": "e32cac84eb876146b0a9e390a5c7b88421b65718",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
