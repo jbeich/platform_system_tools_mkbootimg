@@ -147,6 +147,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "38be0c43_9ebf3245",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-08T11:18:10Z",
+      "side": 1,
+      "message": "Need to check this explicitly, else struct.unpack() could raise exception.",
+      "parentUuid": "f09c34e0_db790577",
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2ed49383_0811f761",
