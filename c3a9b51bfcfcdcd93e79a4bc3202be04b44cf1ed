@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab2f99ca_9ec318f3",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-08T08:38:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c563883_db0e2add",
+      "range": {
+        "startLine": 80,
+        "startChar": 20,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "886511a6_61a78cdc",
@@ -64,6 +88,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f831188e_f15787b3",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-08T08:38:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "886511a6_61a78cdc",
+      "range": {
+        "startLine": 88,
+        "startChar": 18,
+        "endLine": 88,
+        "endChar": 19
+      },
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ba779c3_4f621f53",
@@ -77,6 +125,24 @@
       "writtenOn": "2022-03-07T06:28:28Z",
       "side": 1,
       "message": "add \"if len(vbmeta_image) \u003c struct.calcsize(FORMAT_STRING) then return 0\"",
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f09c34e0_db790577",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-08T08:38:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ba779c3_4f621f53",
       "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
@@ -127,6 +193,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bd3b050_2d698727",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-08T08:38:48Z",
+      "side": 1,
+      "message": "Ack, good catsh!",
+      "parentUuid": "76940dd9_7ad305a0",
+      "range": {
+        "startLine": 105,
+        "startChar": 57,
+        "endLine": 105,
+        "endChar": 65
+      },
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3897d33a_0da214c9",
@@ -140,6 +230,30 @@
       "writtenOn": "2022-03-07T06:28:28Z",
       "side": 1,
       "message": "this can be de-indented one level",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 128,
+        "endChar": 0
+      },
+      "revId": "c3a9b51bfcfcdcd93e79a4bc3202be04b44cf1ed",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99bcfc6a_454ac610",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-08T08:38:48Z",
+      "side": 1,
+      "message": "Nice!",
+      "parentUuid": "3897d33a_0da214c9",
       "range": {
         "startLine": 114,
         "startChar": 8,
