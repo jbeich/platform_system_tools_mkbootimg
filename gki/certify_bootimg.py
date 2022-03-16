@@ -18,6 +18,7 @@
 """Certify a GKI boot image by generating and appending its boot_signature."""
 
 from argparse import ArgumentParser
+import glob
 import os
 import shutil
 import subprocess
@@ -155,20 +156,34 @@ def parse_cmdline():
     parser = ArgumentParser(add_help=True)
 
     # Required args.
-    parser.add_argument('--boot_img', required=True,
-                        help='path to the boot image to certify')
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument(
+        '--boot_img', help='path to the boot image to certify')
+    input_group.add_argument(
+        '--boot_img_zip', help='path to the boot-img-*.zip archive to certify')
+
+    output_group = parser.add_mutually_exclusive_group(required=True)
+    output_group.add_argument(
+        '-o', '--output', help='output file name')
+    output_group.add_argument(
+        '--output_img_zip',
+        help='output path to the certified boot-img-*.zip archive')
+
     parser.add_argument('--algorithm', required=True,
                         help='signing algorithm for the certificate')
     parser.add_argument('--key', required=True,
                         help='path to the RSA private key')
-    parser.add_argument('-o', '--output', required=True,
-                        help='output file name')
 
     # Optional args.
     parser.add_argument('--extra_args', default=[], action='append',
                         help='extra arguments to be forwarded to avbtool')
 
     args = parser.parse_args()
+
+    if args.boot_img and args.output is None:
+        parser.error('--output is required for --boot_img')
+    if args.boot_img_zip and args.output_img_zip is None:
+        parser.error('--output_img_zip is required for --boot_img_zip')
 
     extra_args = []
     for a in args.extra_args:
@@ -178,17 +193,39 @@ def parse_cmdline():
     return args
 
 
+def certify_bootimg(args):
+    """Certify a GKI boot image by generating and appending a boot_signature."""
+    avb_partition_size = get_avb_image_size(args.boot_img)
+    if args.output != args.boot_img:
+        shutil.copy2(args.boot_img, args.output)
+
+    erase_certificate_and_avb_footer(args.output)
+    add_certificate(args.output, args.algorithm, args.key, args.extra_args)
+    add_avb_footer(args.output, avb_partition_size)
+
+
+def certify_bootimg_zip(args):
+    """Similar to certify_bootimg(), but for a zip archive of boot images."""
+    with tempfile.TemporaryDirectory() as unzip_dir:
+        shutil.unpack_archive(args.boot_img_zip, unzip_dir)
+        for boot_img in glob.glob(os.path.join(unzip_dir, 'boot-*.img')):
+            # Certifies the unzipped boot-*.img in-place.
+            args.boot_img = args.output = boot_img
+            print(f'Certifying {os.path.basename(boot_img)} ...')
+            certify_bootimg(args)
+        print(f'Making certified archive: {args.output_img_zip}')
+        archive_base_name = os.path.splitext(args.output_img_zip)[0]
+        shutil.make_archive(archive_base_name, 'zip', unzip_dir)
+
+
 def main():
     """Parse arguments and certify the boot image."""
     args = parse_cmdline()
 
-    shutil.copy2(args.boot_img, args.output)
-    erase_certificate_and_avb_footer(args.output)
-
-    add_certificate(args.output, args.algorithm, args.key, args.extra_args)
-
-    avb_partition_size = get_avb_image_size(args.boot_img)
-    add_avb_footer(args.output, avb_partition_size)
+    if args.boot_img_zip:
+        certify_bootimg_zip(args)
+    else:
+        certify_bootimg(args)
 
 
 if __name__ == '__main__':
