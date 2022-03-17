@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12c41dbe_b6db50ee",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-17T06:54:37Z",
+      "side": 1,
+      "message": "Good idea, done!",
+      "parentUuid": "810c5001_c438115d",
+      "range": {
+        "startLine": 169,
+        "startChar": 9,
+        "endLine": 169,
+        "endChar": 25
+      },
+      "revId": "10b3d047aff2fb338213b9464c54849849288ff4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1c66b3b_23ee5b49",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-03-16T17:36:31Z",
       "side": 1,
       "message": "if --output \u003d\u003d --boot_img and an error happened, then --boot_img could be left in a dirty state due to the in-place editing.\n\nHow about we copy the --boot_img to a temporary file \"$tmpdir/boot.tmp\" first, edit the temporary file (erase footer, append footer etc), and then move the temporary file to --output in the end only if all operations are successful?\n\nor add an \"in_place\" flag and only allow in-place editing in this case? (if args.in_place is true, then --output is ignored, and --boot_img \u0026\u0026 --boot_img_zip are edited in-place)",
+      "range": {
+        "startLine": 199,
+        "startChar": 7,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "10b3d047aff2fb338213b9464c54849849288ff4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d15d1a13_48b9716a",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-17T06:54:37Z",
+      "side": 1,
+      "message": "Ah, good point, let me use \"$tmpdir/boot.tmp\" then.\n\nProbably no need to provide \"in_place\" editing as it has the risk to leave the file in a stale state (e.g., some exception happens during the certification).",
+      "parentUuid": "d1c66b3b_23ee5b49",
       "range": {
         "startLine": 199,
         "startChar": 7,
