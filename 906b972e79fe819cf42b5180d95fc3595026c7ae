@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "528f576f_07a1fe44",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-18T04:15:31Z",
+      "side": 1,
+      "message": "def certify_bootimg(boot_img, output_img, algorithm, key, extra_args):",
+      "revId": "906b972e79fe819cf42b5180d95fc3595026c7ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10975102_6d114937",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-18T04:15:31Z",
+      "side": 1,
+      "message": "I\u0027m proposing another way that don\u0027t need to modify args",
+      "range": {
+        "startLine": 205,
+        "startChar": 6,
+        "endLine": 205,
+        "endChar": 30
+      },
+      "revId": "906b972e79fe819cf42b5180d95fc3595026c7ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71c32ba5_41189c0e",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-18T04:15:31Z",
+      "side": 1,
+      "message": "```\nfor boot_img in ...:\n  certify_bootimg(boot_img, boot_img, args.algorithm, args.key, args.extra_args)\n```",
+      "revId": "906b972e79fe819cf42b5180d95fc3595026c7ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "796423a9_157120be",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-18T04:15:31Z",
+      "side": 1,
+      "message": "path",
+      "range": {
+        "startLine": 75,
+        "startChar": 51,
+        "endLine": 75,
+        "endChar": 55
+      },
+      "revId": "906b972e79fe819cf42b5180d95fc3595026c7ae",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
