@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4dcfeb0_8aab24a9",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-21T08:13:29Z",
+      "side": 1,
+      "message": "Ack, sgtm!",
+      "parentUuid": "97c8e45c_42601a8c",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 167,
+        "endChar": 16
+      },
+      "revId": "7d933a6e0725a98b08846586fcb1ab57c7a3a1fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33cb4545_dded719c",
@@ -37,6 +61,24 @@
       "writtenOn": "2022-03-21T07:51:57Z",
       "side": 1,
       "message": "I think we can inline `load_gki_info()` here because it is so short,\nwe can move `load_dict_from_file()` to global and just write this here\n\n```\ninfo_dict \u003d load_dict_from_file(os.path.join(unzip_dir, \u0027gki-info.txt\u0027))\nextra_args.extend(info_dict[\u0027certify_bootimg_extra_args\u0027].split())\n```",
+      "revId": "7d933a6e0725a98b08846586fcb1ab57c7a3a1fd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4065cffb_63f9b135",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-21T08:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33cb4545_dded719c",
       "revId": "7d933a6e0725a98b08846586fcb1ab57c7a3a1fd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
