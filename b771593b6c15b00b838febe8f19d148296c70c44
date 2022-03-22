@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "864dde88_af9f8009",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-22T05:08:51Z",
+      "side": 1,
+      "message": "Could you also update https://cs.android.com/android/platform/superproject/+/master:system/tools/mkbootimg/gki/generate_gki_certificate.py;l\u003d76",
+      "revId": "b771593b6c15b00b838febe8f19d148296c70c44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
