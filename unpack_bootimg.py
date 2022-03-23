@@ -485,6 +485,9 @@ def unpack_image(args):
     else:
         raise ValueError(f'Not an Android boot image, magic: {boot_magic}')
 
+    if args.quiet:
+        return
+
     if args.format == 'mkbootimg':
         mkbootimg_args = info.format_mkbootimg_argument()
         if args.null:
@@ -526,7 +529,7 @@ def get_unpack_usage():
 """
 
 
-def parse_cmdline():
+def parse_cmdline(args=None):
     """parse command line arguments"""
     parser = ArgumentParser(
         formatter_class=RawDescriptionHelpFormatter,
@@ -542,7 +545,9 @@ def parse_cmdline():
                         help='text output format (default: info)')
     parser.add_argument('-0', '--null', action='store_true',
                         help='output null-terminated argument strings')
-    return parser.parse_args()
+    parser.add_argument('--quiet', action='store_true',
+                        help='Quiet; do not write anything to standard output.')
+    return parser.parse_args(args)
 
 
 def main():
