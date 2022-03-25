@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f47ed51_e12528bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-03-25T06:01:53Z",
+      "side": 1,
+      "message": "************* Module unpack_bootimg\nunpack_bootimg.py:357:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)\nunpack_bootimg.py:456:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)\nunpack_bootimg.py:61:11: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)\nunpack_bootimg.py:70:11: C0209: Formatting a regular string which could be a f-string (consider-using-f-string)",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "572d04b66c0ca37b8aa9c6684771f33b8ab426c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
