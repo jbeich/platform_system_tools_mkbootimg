@@ -22,6 +22,23 @@
       },
       "revId": "572d04b66c0ca37b8aa9c6684771f33b8ab426c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58d72bd7_fef932e7",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-25T06:16:53Z",
+      "side": 1,
+      "message": "redundant \".format(...)\"",
+      "revId": "572d04b66c0ca37b8aa9c6684771f33b8ab426c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
