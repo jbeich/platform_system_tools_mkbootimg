@@ -18,7 +18,9 @@
 """Certify a GKI boot image by generating and appending its boot_signature."""
 
 from argparse import ArgumentParser
+import glob
 import os
+import shlex
 import shutil
 import subprocess
 import tempfile
@@ -150,13 +152,31 @@ def add_avb_footer(image, partition_size):
     subprocess.check_call(avbtool_cmd)
 
 
+def load_dict_from_file(path):
+    """Loads key=value pairs from |path| and returns a dict."""
+    d = {}
+    with open(path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            if '=' in line:
+                name, value = line.split('=', 1)
+                d[name] = value
+    return d
+
+
 def parse_cmdline():
     """Parse command-line options."""
     parser = ArgumentParser(add_help=True)
 
     # Required args.
-    parser.add_argument('--boot_img', required=True,
-                        help='path to the boot image to certify')
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument(
+        '--boot_img', help='path to the boot image to certify')
+    input_group.add_argument(
+        '--boot_img_zip', help='path to the boot-img-*.zip archive to certify')
+
     parser.add_argument('--algorithm', required=True,
                         help='signing algorithm for the certificate')
     parser.add_argument('--key', required=True,
@@ -172,23 +192,56 @@ def parse_cmdline():
 
     extra_args = []
     for a in args.extra_args:
-        extra_args.extend(a.split())
+        extra_args.extend(shlex.split(a))
     args.extra_args = extra_args
 
     return args
+
+
+def certify_bootimg(boot_img, output_img, algorithm, key, extra_args):
+    """Certify a GKI boot image by generating and appending a boot_signature."""
+    with tempfile.TemporaryDirectory() as temp_dir:
+        boot_tmp = os.path.join(temp_dir, 'boot.tmp')
+        shutil.copy2(boot_img, boot_tmp)
+
+        erase_certificate_and_avb_footer(boot_tmp)
+        add_certificate(boot_tmp, algorithm, key, extra_args)
+
+        avb_partition_size = get_avb_image_size(boot_img)
+        add_avb_footer(boot_tmp, avb_partition_size)
+
+        # We're done, copy the temp image to the final output.
+        shutil.copy2(boot_tmp, output_img)
+
+
+def certify_bootimg_zip(boot_img_zip, output_zip, algorithm, key, extra_args):
+    """Similar to certify_bootimg(), but for a zip archive of boot images."""
+    with tempfile.TemporaryDirectory() as unzip_dir:
+        shutil.unpack_archive(boot_img_zip, unzip_dir)
+
+        info_dict = load_dict_from_file(os.path.join(unzip_dir, 'gki-info.txt'))
+        extra_args.extend(shlex.split(info_dict['certify_bootimg_extra_args']))
+
+        for boot_img in glob.glob(os.path.join(unzip_dir, 'boot-*.img')):
+            print(f'Certifying {os.path.basename(boot_img)} ...')
+            certify_bootimg(boot_img=boot_img, output_img=boot_img,
+                            algorithm=algorithm, key=key, extra_args=extra_args)
+
+        print(f'Making certified archive: {output_zip}')
+        archive_base_name = os.path.splitext(output_zip)[0]
+        shutil.make_archive(archive_base_name, 'zip', unzip_dir)
 
 
 def main():
     """Parse arguments and certify the boot image."""
     args = parse_cmdline()
 
-    shutil.copy2(args.boot_img, args.output)
-    erase_certificate_and_avb_footer(args.output)
-
-    add_certificate(args.output, args.algorithm, args.key, args.extra_args)
-
-    avb_partition_size = get_avb_image_size(args.boot_img)
-    add_avb_footer(args.output, avb_partition_size)
+    if args.boot_img_zip:
+        certify_bootimg_zip(args.boot_img_zip, args.output, args.algorithm,
+                            args.key, args.extra_args)
+    else:
+        certify_bootimg(args.boot_img, args.output, args.algorithm,
+                        args.key, args.extra_args)
 
 
 if __name__ == '__main__':
