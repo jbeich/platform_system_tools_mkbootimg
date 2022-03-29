@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fbc7317_0b7b3444",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-29T04:41:53Z",
+      "side": 1,
+      "message": "I don\u0027t think this option really make sense in terms of this tool.\n\nInstead of adding a \u0027--quiet\u0027 option to the commandline interface to |unpack_bootimg| that is only useful when importing |unpack_bootimg| as library, we should just define a clear API surface for |unpack_bootimg| library.\n\nMaybe split unpack_image() into two methods, one that unpacks the input image, and another prints the boot image arguments. both method should have an explicit list of parameter, instead of accepting |args| dictionary as their parameter.",
+      "revId": "da2e2cc19ef7024f8f6597496ac6abbd02f0aa99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
