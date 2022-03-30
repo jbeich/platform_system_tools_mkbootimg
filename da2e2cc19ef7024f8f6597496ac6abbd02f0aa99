@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "50eab731_16f9e790",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-03-30T12:58:38Z",
+      "side": 1,
+      "message": "This is still unsafe, because the input argument vector could be anything, and parsing error could happen.\n\nI was thinking about making the signature of unpack_image() to be like `unpack_image(boot_img, out, ...)`, and have a docstring describing this public interface.\n\nI think we should just split unpack_image into two, like:\n\n```\ndef unpack_bootimg(boot_img, output_dir):\n    \"\"\"Calls unpack_boot_image(boot_img, output_dir) or\n    unpack_vendor_boot_image(boot_img, output_dir), return the \u0027info\u0027 object\"\"\"\n    \ndef print_bootimg_info(info, format, null_separator):\n    \"\"\"Format and print boot image info\"\"\"\n    \ndef main():\n    args \u003d parse_cmdline()\n    info \u003d unpack_bootimg(args.boot_img, args.out)\n    print_bootimg_info(info, args.format, args.null)\n```\n\nand `certify_bootimg` can just call `unpack_bootimg.unpack_bootimg()` directly. (Only unpack_bootimg must have docstring because it is exported interface)",
+      "revId": "da2e2cc19ef7024f8f6597496ac6abbd02f0aa99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9fbc7317_0b7b3444",
         "filename": "unpack_bootimg.py",
         "patchSetId": 3
