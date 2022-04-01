@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8e84e30_05bbb2d8",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-04-01T05:49:42Z",
+      "side": 1,
+      "message": "nit: this is not a fd but a File-like object. See the difference between builtin open() and os.open() here https://docs.python.org/3/library/os.html#os.open",
+      "range": {
+        "startLine": 480,
+        "startChar": 33,
+        "endLine": 480,
+        "endChar": 41
+      },
+      "revId": "e54a9bcd819d4ebaabe01871d7dd0665d97796c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
