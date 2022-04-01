@@ -22,6 +22,30 @@
       },
       "revId": "e54a9bcd819d4ebaabe01871d7dd0665d97796c7",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cc1a84a_560ed6c1",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-04-01T06:46:52Z",
+      "side": 1,
+      "message": "Yup, I knew that.\n\nI just felt that using \"image_fb\" is a bit weird.\n\nAnyway, let me rename it.",
+      "parentUuid": "b8e84e30_05bbb2d8",
+      "range": {
+        "startLine": 480,
+        "startChar": 33,
+        "endLine": 480,
+        "endChar": 41
+      },
+      "revId": "e54a9bcd819d4ebaabe01871d7dd0665d97796c7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
