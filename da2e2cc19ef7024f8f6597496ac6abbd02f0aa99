@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4523ad8c_29d939b1",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-04-01T05:15:57Z",
+      "side": 1,
+      "message": "Wow, thanks for the nice suggestion, it\u0027s almost implementation done.\n\nAgree it looks much more organized.",
+      "parentUuid": "50eab731_16f9e790",
+      "revId": "da2e2cc19ef7024f8f6597496ac6abbd02f0aa99",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fbc7317_0b7b3444",
