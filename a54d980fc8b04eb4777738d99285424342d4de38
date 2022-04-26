@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ade19aa4_2aa48e69",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-04-26T05:11:07Z",
+      "side": 1,
+      "message": "how about merge these two into one method\n\n```\ndef get_archive_name_and_format_for_shutil(path):\n  for format_name, format_extensions, _ in shutil.get_unpack_formats():\n    for extension in format_extensions:\n      if path.endswith(extension):\n        return path[:-len(extension)], format_name\n  raise ...\n  \ndef certify_bootimg_archive(...):\n  archive_file_name, archive_format \u003d\n    get_archive_name_and_format_for_shutil(output_archive)\n  built_archive \u003d shutil.make_archive(archive_file_name,\n                                      archive_format,\n                                      unpack_dir)\n  if built_archive !\u003d output_archive:\n    os.rename(built_archive, output_archive)\n```",
+      "revId": "a54d980fc8b04eb4777738d99285424342d4de38",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
