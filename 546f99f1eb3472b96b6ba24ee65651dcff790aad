@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7e0503d_31add94e",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-04-28T13:12:00Z",
+      "side": 1,
+      "message": "this",
+      "range": {
+        "startLine": 699,
+        "startChar": 12,
+        "endLine": 701,
+        "endChar": 0
+      },
+      "revId": "546f99f1eb3472b96b6ba24ee65651dcff790aad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83535086_f929e666",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-04-28T13:12:00Z",
+      "side": 1,
+      "message": "and this?",
+      "range": {
+        "startLine": 713,
+        "startChar": 12,
+        "endLine": 714,
+        "endChar": 67
+      },
+      "revId": "546f99f1eb3472b96b6ba24ee65651dcff790aad",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
