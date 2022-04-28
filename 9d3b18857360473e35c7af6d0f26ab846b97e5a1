@@ -70,6 +70,30 @@
       },
       "revId": "9d3b18857360473e35c7af6d0f26ab846b97e5a1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b5ceed5_e0910812",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-04-28T10:30:24Z",
+      "side": 1,
+      "message": "OK, sgtm!",
+      "parentUuid": "e6ecc0ad_220e256a",
+      "range": {
+        "startLine": 273,
+        "startChar": 8,
+        "endLine": 274,
+        "endChar": 62
+      },
+      "revId": "9d3b18857360473e35c7af6d0f26ab846b97e5a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
