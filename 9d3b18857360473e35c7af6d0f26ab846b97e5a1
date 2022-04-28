@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "674f8d9c_1d8146fc",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-04-28T08:40:57Z",
+      "side": 1,
+      "message": "what would happen if --gki_info and --boot_image_archive are both specified?",
+      "range": {
+        "startLine": 273,
+        "startChar": 8,
+        "endLine": 274,
+        "endChar": 62
+      },
+      "revId": "9d3b18857360473e35c7af6d0f26ab846b97e5a1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
