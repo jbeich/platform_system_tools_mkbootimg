@@ -35,6 +35,17 @@ TEST_KERNEL_CMDLINE = (
 )
 
 
+def subsequence_of(sub_list, full_list):
+    """Returns True if |sub_list| is a subsequence of |full_list|."""
+    if len(sub_list) == 0:
+        return True
+    if len(full_list) == 0:
+        return False
+    if sub_list[0] == full_list[0]:
+        return subsequence_of(sub_list[1:], full_list[1:])
+    return subsequence_of(sub_list, full_list[1:])
+
+
 def generate_test_file(pathname, size, seed=None):
     """Generates a gibberish-filled test file and returns its pathname."""
     random.seed(os.path.basename(pathname) if seed is None else seed)
@@ -44,7 +55,7 @@ def generate_test_file(pathname, size, seed=None):
 
 
 def generate_test_boot_image(boot_img, kernel_size=4096, seed='kernel',
-                             avb_partition_size=None):
+                             avb_hash_footer_args=None):
     """Generates a test boot.img without a ramdisk."""
     with tempfile.NamedTemporaryFile() as kernel_tmpfile:
         generate_test_file(kernel_tmpfile.name, kernel_size, seed)
@@ -61,10 +72,10 @@ def generate_test_boot_image(boot_img, kernel_size=4096, seed='kernel',
         ]
         subprocess.check_call(mkbootimg_cmds)
 
-    if avb_partition_size:
+    if avb_hash_footer_args:
         avbtool_cmd = ['avbtool', 'add_hash_footer', '--image', boot_img,
-                       '--partition_name', 'boot',
-                       '--partition_size', str(avb_partition_size)]
+                       '--partition_name', 'boot']
+        avbtool_cmd.extend(avb_hash_footer_args)
         subprocess.check_call(avbtool_cmd)
 
 
@@ -81,9 +92,11 @@ def generate_test_boot_image_archive(archive_file_name, archive_format,
         archive_format: the |format| parameter for shutil.make_archive().
           e.g., 'zip', 'tar', or 'gztar', etc.
         boot_img_info: a list of (boot_image_name, kernel_size,
-          partition_size) tuples. e.g.,
-          [('boot.img', 4096, 4 * 1024),
-           ('boot-lz4.img', 8192, 8 * 1024)].
+          partition_size, footer_args) tuples. e.g.,
+          [('boot.img', 4096, 4 * 1024,
+            ['--prop', 'prop_name:prop_value']),
+           ('boot-lz4.img', 8192, 8 * 1024,
+            ['--prop', 'prop_name:prop_value'])].
         gki_info: the file content to be written into 'gki-info.txt' in the
           created archive.
 
@@ -91,12 +104,14 @@ def generate_test_boot_image_archive(archive_file_name, archive_format,
         The full path of the created archive. e.g., /path/to/boot-img.tar.gz.
     """
     with tempfile.TemporaryDirectory() as temp_out_dir:
-        for name, kernel_size, partition_size in boot_img_info:
+        for name, kernel_size, partition_size, footer_args in boot_img_info:
             boot_img = os.path.join(temp_out_dir, name)
-            generate_test_boot_image(boot_img=boot_img,
-                                     kernel_size=kernel_size,
-                                     seed=name,
-                                     avb_partition_size=partition_size)
+            generate_test_boot_image(
+                boot_img=boot_img,
+                kernel_size=kernel_size,
+                seed=name,
+                avb_hash_footer_args = (
+                    ['--partition_size', str(partition_size)] + footer_args))
 
         if gki_info:
             gki_info_path = os.path.join(temp_out_dir, 'gki-info.txt')
@@ -561,7 +576,8 @@ class CertifyBootimgTest(unittest.TestCase):
             "    Prop: space -> 'nice to meet you'\n"
         )
 
-    def _test_boot_signatures(self, signatures_dir, expected_signatures_info):
+    def _test_boot_signatures(self, signatures_dir,
+                              expected_signatures_info, partial_match=False):
         """Tests the info of each boot signature under the signature directory.
 
         Args:
@@ -581,7 +597,24 @@ class CertifyBootimgTest(unittest.TestCase):
             ]
             result = subprocess.run(avbtool_info_cmds, check=True,
                                     capture_output=True, encoding='utf-8')
-            self.assertEqual(result.stdout, expected_signatures_info[signature])
+            if partial_match:
+                expected_output = expected_signatures_info[signature]
+                actual_output = [
+                    line.strip() for line in result.stdout.splitlines()]
+                if not subsequence_of(expected_output, actual_output):
+                    error_msg = '\n'.join([
+                        'Unexpected boot signature content:',
+                        '',
+                        'Expected (partial outputs):',
+                        '  ' + '\n  '.join(expected_output),
+                        '',
+                        'Actual (full outputs):',
+                        '  ' + '\n  '.join(actual_output),
+                    ])
+                    self.fail(error_msg)
+            else:
+                self.assertEqual(result.stdout,
+                                 expected_signatures_info[signature])
 
     def test_certify_bootimg_without_avb_footer(self):
         """Tests certify_bootimg on a boot image without an AVB footer."""
@@ -633,8 +666,10 @@ class CertifyBootimgTest(unittest.TestCase):
         """Tests the AVB footer location remains after certify_bootimg."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             boot_img = os.path.join(temp_out_dir, 'boot.img')
-            generate_test_boot_image(boot_img=boot_img,
-                                     avb_partition_size=128 * 1024)
+            generate_test_boot_image(
+                boot_img=boot_img,
+                avb_hash_footer_args=['--partition_size', str(128 * 1024),
+                                      '--prop', 'avb:nice'])
             self.assertTrue(has_avb_footer(boot_img))
 
             # Generates the certified boot image, with a RSA2048 key.
@@ -656,6 +691,13 @@ class CertifyBootimgTest(unittest.TestCase):
             self.assertEqual(os.path.getsize(boot_img),
                              os.path.getsize(boot_certified_img))
 
+            # Checks AVB props in the footer are retained.
+            self._test_boot_signatures(
+                temp_out_dir,
+                {'boot-certified.img': ["Prop: avb -> 'nice'"]},
+                partial_match=True)
+
+            # Checks the content in the GKI certificate.
             extract_boot_signatures(boot_certified_img, temp_out_dir)
             self._test_boot_signatures(
                 temp_out_dir,
@@ -681,6 +723,13 @@ class CertifyBootimgTest(unittest.TestCase):
             self.assertEqual(os.path.getsize(boot_certified_img),
                              os.path.getsize(boot_certified2_img))
 
+            # Checks AVB props in the footer are retained.
+            self._test_boot_signatures(
+                temp_out_dir,
+                {'boot-certified2.img': ["Prop: avb -> 'nice'"]},
+                partial_match=True)
+
+            # Checks the content in the GKI certificate.
             extract_boot_signatures(boot_certified2_img, temp_out_dir)
             self._test_boot_signatures(
                 temp_out_dir,
@@ -691,8 +740,10 @@ class CertifyBootimgTest(unittest.TestCase):
         """Tests certify_bootimg with --gki_info."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             boot_img = os.path.join(temp_out_dir, 'boot.img')
-            generate_test_boot_image(boot_img=boot_img,
-                                     avb_partition_size=128 * 1024)
+            generate_test_boot_image(
+                boot_img=boot_img,
+                avb_hash_footer_args=['--partition_size', str(128 * 1024),
+                                      '--prop', 'avb:nice to meet you'])
             self.assertTrue(has_avb_footer(boot_img))
 
             gki_info = ('certify_bootimg_extra_args='
@@ -725,6 +776,13 @@ class CertifyBootimgTest(unittest.TestCase):
             self.assertEqual(os.path.getsize(boot_img),
                              os.path.getsize(boot_certified_img))
 
+            # Checks AVB props in the footer are retained.
+            self._test_boot_signatures(
+                temp_out_dir,
+                {'boot-certified.img': ["Prop: avb -> 'nice to meet you'"]},
+                partial_match=True)
+
+            # Checks the content in the GKI certificate.
             extract_boot_signatures(boot_certified_img, temp_out_dir)
             self._test_boot_signatures(
                 temp_out_dir,
@@ -775,9 +833,12 @@ class CertifyBootimgTest(unittest.TestCase):
             boot_img_archive_path = generate_test_boot_image_archive(
                 boot_img_archive_name,
                 'gztar',
-                # A list of (boot_img_name, kernel_size, partition_size).
-                [('boot.img', 8 * 1024, 128 * 1024),
-                 ('boot-lz4.img', 16 * 1024, 256 * 1024)],
+                # A list of (boot_img_name, kernel_size,
+                #            partition_size, footer_args).
+                [('boot.img', 8 * 1024, 128 * 1024,
+                  ['--prop', 'avb:boot is nice', '--prop', 'foo:bar']),
+                 ('boot-lz4.img', 16 * 1024, 256 * 1024,
+                  ['--prop', 'avb:boot-lz4 is nice'])],
                 gki_info)
 
             # Certify the boot image archive, with a RSA4096 key.
@@ -806,6 +867,15 @@ class CertifyBootimgTest(unittest.TestCase):
             self.assertTrue(has_avb_footer(boot_lz4_img))
             self.assertEqual(os.path.getsize(boot_lz4_img), 256 * 1024)
 
+            # Checks AVB props in the footer are retained.
+            self._test_boot_signatures(
+                temp_out_dir,
+                {'boot.img': ["Prop: avb -> 'boot is nice'",
+                              "Prop: foo -> 'bar'"],
+                 'boot-lz4.img': ["Prop: avb -> 'boot-lz4 is nice'"]},
+                partial_match=True)
+
+            # Checks the content in the GKI certificate.
             self._test_boot_signatures(
                 temp_out_dir,
                 {'boot/boot_signature1':
@@ -827,8 +897,10 @@ class CertifyBootimgTest(unittest.TestCase):
             boot_img_archive_path = generate_test_boot_image_archive(
                 boot_img_archive_name,
                 'zip',
-                # A list of (boot_img_name, kernel_size, partition_size).
-                [('boot-gz.img', 8 * 1024, 128 * 1024)],
+                # A list of (boot_img_name, kernel_size,
+                #            partition_size, footer_args).
+                [('boot-gz.img', 8 * 1024, 128 * 1024,
+                  ['--prop', 'avb:boot-gz is nice'])],
                 gki_info=None)
             # Certify the boot image archive, with a RSA4096 key.
             boot_certified_img_archive = os.path.join(
@@ -849,8 +921,11 @@ class CertifyBootimgTest(unittest.TestCase):
             boot_img_archive_path = generate_test_boot_image_archive(
                 boot_img_archive_name,
                 'tar',
-                # A list of (boot_img_name, kernel_size, partition_size).
-                [('boot-gz.img', 8 * 1024, 128 * 1024)],
+                # A list of (boot_img_name, kernel_size,
+                #            partition_size, footer_args).
+                [('boot-gz.img', 8 * 1024, 128 * 1024,
+                  ['--prop', 'avb:boot-gz is nice',
+                   '--prop', 'hello:world'])],
                 gki_info='a=b\n'
                          'c=d\n')
             # Certify the boot image archive, with a RSA4096 key.
@@ -875,6 +950,14 @@ class CertifyBootimgTest(unittest.TestCase):
             self.assertTrue(has_avb_footer(boot_3_img))
             self.assertEqual(os.path.getsize(boot_3_img), 128 * 1024)
 
+            # Checks AVB props in the footer are retained.
+            self._test_boot_signatures(
+                temp_out_dir,
+                {'boot-gz.img': ["Prop: avb -> 'boot-gz is nice'",
+                                 "Prop: hello -> 'world'"]},
+                partial_match=True)
+
+            # Checks the content in the GKI certificate.
             self._test_boot_signatures(
                 temp_out_dir,
                 {'boot-gz/boot_signature1':
