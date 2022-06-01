@@ -20,6 +20,7 @@
 from argparse import ArgumentParser
 import glob
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -118,29 +119,42 @@ def erase_certificate_and_avb_footer(boot_img):
     assert os.path.getsize(boot_img) > 0
 
 
-def get_avb_image_size(image):
-    """Returns the image size if there is a AVB footer, else return zero."""
+def get_avb_image_size_and_property_args(image):
+    """Returns the arguments for `avbtool add_hash_footer`.
 
+    If there is no AVB footer in the |image|, returns [].
+    If there is a AVB footer in the |image|, returns a list of arguments for
+    avbtool to retain the image size and AVB properties. e.g.,
+    ['--partition_size', '67108864', '--prop', 'prop_key:prop_value'].
+    """
     avbtool_info_cmd = ['avbtool', 'info_image', '--image', image]
-    result = subprocess.run(avbtool_info_cmd, check=False,
-                            stdout=subprocess.DEVNULL,
-                            stderr=subprocess.DEVNULL)
+    result = subprocess.run(avbtool_info_cmd, check=False, capture_output=True,
+                            encoding='utf-8')
 
-    if result.returncode == 0:
-        return os.path.getsize(image)
+    if result.returncode != 0:
+        return []
 
-    return 0
+    avb_add_hash_footer_args = ['--partition_size', str(os.path.getsize(image))]
+
+    for line in result.stdout.splitlines():
+        prop_match = re.match(r"Prop: (.*) -> '(.*)'", line.strip())
+        if prop_match:
+            avb_add_hash_footer_args.extend(
+                ['--prop', f'{prop_match.group(1)}:{prop_match.group(2)}'])
+
+    return avb_add_hash_footer_args
 
 
-def add_avb_footer(image, partition_size):
+def add_avb_footer(image, hash_footer_args):
     """Appends a AVB hash footer to the image."""
 
     avbtool_cmd = ['avbtool', 'add_hash_footer', '--image', image,
                    '--partition_name', 'boot']
 
-    if partition_size:
-        avbtool_cmd.extend(['--partition_size', str(partition_size)])
-    else:
+    if hash_footer_args:
+        avbtool_cmd.extend(hash_footer_args)
+
+    if '--partition_size' not in hash_footer_args:
         avbtool_cmd.extend(['--dynamic_partition_size'])
 
     subprocess.check_call(avbtool_cmd)
@@ -233,8 +247,8 @@ def certify_bootimg(boot_img, output_img, algorithm, key, extra_args):
         erase_certificate_and_avb_footer(boot_tmp)
         add_certificate(boot_tmp, algorithm, key, extra_args)
 
-        avb_partition_size = get_avb_image_size(boot_img)
-        add_avb_footer(boot_tmp, avb_partition_size)
+        original_footer_args = get_avb_image_size_and_property_args(boot_img)
+        add_avb_footer(boot_tmp, original_footer_args)
 
         # We're done, copy the temp image to the final output.
         shutil.copy2(boot_tmp, output_img)
