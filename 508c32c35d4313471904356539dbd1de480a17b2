@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50e1b019_8cf475c3",
+        "filename": "gki/certify_bootimg_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-06-01T13:27:33Z",
+      "side": 1,
+      "message": "This is almost the same as mkbootimg_test, I cannot think of a better solution 😎.",
+      "range": {
+        "startLine": 38,
+        "startChar": 4,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "508c32c35d4313471904356539dbd1de480a17b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
