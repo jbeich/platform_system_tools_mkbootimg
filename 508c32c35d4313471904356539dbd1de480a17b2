@@ -3,6 +3,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "e6fa0e48_c7afa268",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-06-01T13:30:14Z",
+      "side": 1,
+      "message": "Plan to add SPL AVB props in function \"gki_add_avb_footer\" below.\n\nhttps://android-review.googlesource.com/c/kernel/build/+/2110146/1/build_utils.sh#586\n\nAnd need to retain AVB props in \"gki_dry_run_certify_bootimg\" (also in the official signing process).",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 43
+      },
+      "revId": "508c32c35d4313471904356539dbd1de480a17b2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "50e1b019_8cf475c3",
         "filename": "gki/certify_bootimg_test.py",
         "patchSetId": 1
