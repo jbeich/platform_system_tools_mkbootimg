@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7a80da68_98ac23cd",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-06-02T07:36:54Z",
+      "side": 1,
+      "message": "yeah I think it\u0027s overkill to add a binary parser just for parsing AvbProperty too, but ...\n\nI also think adding *warning* is bad idea, because this tool could be invoked by another tool or automated system.\nThe warning might not even be collected by the automated system.\nIt\u0027s possible that as long as there is no fatal error, no human being would be looking at the warning messages. And since warning is not fatal, this means properties longer than 255 would just be silently dropped.\n\nOTOH, making (property length \u003e\u003d 256) an error might be too disruptive too.\n\nso I think we could either\n1. write a binary parser for Avb Descriptors (even just copying a piece of Avbtools.py here is fine...), or\n2. revive --extra_footer_args",
+      "parentUuid": "451c4da6_9c7ea923",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e045a3a8_334084a1",
         "filename": "gki/certify_bootimg.py",
         "patchSetId": 2
