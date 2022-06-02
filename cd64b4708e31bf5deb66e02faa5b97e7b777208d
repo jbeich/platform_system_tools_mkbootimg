@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "451c4da6_9c7ea923",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-06-02T07:03:33Z",
+      "side": 1,
+      "message": "Oh, thanks for catching this.\n\nI didn\u0027t see that output before (agree it\u0027s possible).\n\nHow about also catching that pattern (e.g., Prop: long -\u003e (258 bytes)), then prints a warning message to indicate that this property won\u0027t be retained?\n\nFor now, adding a AvbPropertyDescriptor parser looks a bit overkill in the context of certify_bootimg to me.\n\nThoughts?",
+      "parentUuid": "b4c9808d_7bd7ae5f",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e045a3a8_334084a1",
         "filename": "gki/certify_bootimg.py",
         "patchSetId": 2
