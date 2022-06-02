@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a3df3550_8754c27d",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-06-02T08:28:54Z",
+      "side": 1,
+      "message": "OK, let me try with approach 1.",
+      "parentUuid": "7a80da68_98ac23cd",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e045a3a8_334084a1",
         "filename": "gki/certify_bootimg.py",
         "patchSetId": 2
