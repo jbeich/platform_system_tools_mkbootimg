@@ -16,6 +16,41 @@
       "message": "If the property value is too long (\u003e\u003d 256), this would fail https://cs.android.com/android/platform/superproject/+/master:external/avb/avbtool.py;l\u003d1301\n\nI think we would need to implement our own AvbPropertyDescriptor parser",
       "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c9808d_7bd7ae5f",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-06-02T06:41:53Z",
+      "side": 1,
+      "message": "I think we would need to implement our own AvbPropertyDescriptor parser if we want to support all possible input.",
+      "parentUuid": "dafa783e_a34eead6",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e045a3a8_334084a1",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-06-02T06:41:53Z",
+      "side": 1,
+      "message": "just merge get_avb_image_size_and_property_args() into add_avb_footer()? \n\nBecause get_avb_image_size_and_property_args() is only used once and tightly coupled with add_avb_footer().",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
