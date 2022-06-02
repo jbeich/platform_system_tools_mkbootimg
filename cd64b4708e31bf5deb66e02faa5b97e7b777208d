@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dafa783e_a34eead6",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2022-06-02T06:34:34Z",
+      "side": 1,
+      "message": "If the property value is too long (\u003e\u003d 256), this would fail https://cs.android.com/android/platform/superproject/+/master:external/avb/avbtool.py;l\u003d1301\n\nI think we would need to implement our own AvbPropertyDescriptor parser",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
