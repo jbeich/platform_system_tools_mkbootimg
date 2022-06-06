@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a73431b8_cf17332f",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2022-06-06T08:10:42Z",
+      "side": 1,
+      "message": "After more discussions, approach-1 looks overkill.\n\nSo decided to go for approach-2.",
+      "parentUuid": "a3df3550_8754c27d",
+      "revId": "cd64b4708e31bf5deb66e02faa5b97e7b777208d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e045a3a8_334084a1",
         "filename": "gki/certify_bootimg.py",
         "patchSetId": 2
