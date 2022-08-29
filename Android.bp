@@ -62,7 +62,7 @@ python_binary_host {
         "gki/generate_gki_certificate.py",
     ],
     required: [
-        "avbtool",
+        "avbtool_lib",
     ],
 }
 
@@ -73,7 +73,6 @@ python_binary_host {
         "unpack_bootimg.py",
     ],
 }
-
 
 python_binary_host {
     name: "repack_bootimg",
@@ -101,7 +100,7 @@ python_binary_host {
         "unpack_bootimg.py",
     ],
     required: [
-        "avbtool",
+        "avbtool_lib",
     ],
 }
 
@@ -113,7 +112,7 @@ python_test_host {
         "tests/mkbootimg_test.py",
     ],
     data: [
-        ":avbtool",
+        ":avbtool_lib",
         ":mkbootimg",
         ":unpack_bootimg",
         "tests/data/*",

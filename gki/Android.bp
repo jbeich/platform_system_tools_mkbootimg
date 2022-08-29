@@ -24,7 +24,7 @@ python_test_host {
         "certify_bootimg_test.py",
     ],
     data: [
-        ":avbtool",
+        ":avbtool_lib",
         ":certify_bootimg",
         ":mkbootimg",
         ":unpack_bootimg",
@@ -42,7 +42,7 @@ python_binary_host {
         "generate_gki_certificate.py",
     ],
     required: [
-        "avbtool",
+        "avbtool_lib",
     ],
 }
 
@@ -50,7 +50,7 @@ sh_binary_host {
     name: "retrofit_gki",
     src: "retrofit_gki.sh",
     required: [
-        "avbtool",
+        "avbtool_lib",
         "mkbootimg",
         "unpack_bootimg",
     ],
@@ -63,7 +63,7 @@ sh_test_host {
         "retrofit_gki.sh",
     ],
     data_bins: [
-        "avbtool",
+        "avbtool_lib",
         "mkbootimg",
         "unpack_bootimg",
     ],
@@ -77,7 +77,7 @@ genrule {
     tools: [
         "soong_zip",
         "retrofit_gki",
-        "avbtool",
+        "avbtool_lib",
         "mkbootimg",
         "unpack_bootimg",
     ],
@@ -85,13 +85,13 @@ genrule {
         "README.md",
     ],
     cmd: "STAGE_DIR=$(genDir)/gki_retrofitting_tools && " +
-         "rm -rf $${STAGE_DIR} && mkdir -p $${STAGE_DIR} && " +
-         "cp $(location retrofit_gki) $${STAGE_DIR} && " +
-         "cp $(location avbtool) $${STAGE_DIR} && " +
-         "cp $(location mkbootimg) $${STAGE_DIR} && " +
-         "cp $(location unpack_bootimg) $${STAGE_DIR} && " +
-         "cp $(in) $${STAGE_DIR} && " +
-         "$(location soong_zip) -o $(out) -C $(genDir) -D $${STAGE_DIR}",
+        "rm -rf $${STAGE_DIR} && mkdir -p $${STAGE_DIR} && " +
+        "cp $(location retrofit_gki) $${STAGE_DIR} && " +
+        "cp $(location avbtool_lib) $${STAGE_DIR} && " +
+        "cp $(location mkbootimg) $${STAGE_DIR} && " +
+        "cp $(location unpack_bootimg) $${STAGE_DIR} && " +
+        "cp $(in) $${STAGE_DIR} && " +
+        "$(location soong_zip) -o $(out) -C $(genDir) -D $${STAGE_DIR}",
     out: [
         "gki_retrofitting_tools.zip",
     ],
