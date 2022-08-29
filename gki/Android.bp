@@ -24,7 +24,7 @@ python_test_host {
         "certify_bootimg_test.py",
     ],
     data: [
-        ":avbtool",
+        ":avbtool_lib",
         ":certify_bootimg",
         ":mkbootimg",
         ":unpack_bootimg",
@@ -42,6 +42,6 @@ python_binary_host {
         "generate_gki_certificate.py",
     ],
     required: [
-        "avbtool",
+        "avbtool_lib",
     ],
 }
