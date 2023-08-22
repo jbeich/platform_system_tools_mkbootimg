@@ -53,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c01b6742_6f6798c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029640
+      },
+      "writtenOn": "2023-08-22T23:30:05Z",
+      "side": 1,
+      "message": "I see. One other thing to I want to surface is that our UEFI toolchain is a standalone bazel build system in the GBL repo, similar to u-boot-mainline. If the library lives in a different repo, integrating it into the UEFI build will be trickier. Basically we\u0027ll need to pull down the repo during build, or pre-compile the library into a prebuilt, check it out and link in the GBL repo. If we need to make changes, we\u0027ll also need to additionally make a change to roll the dependency. If we are fine with this and don\u0027t expect the library to change a lot, this is probably ok.",
+      "parentUuid": "68fd116a_9bff9b57",
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9eab445f_f7f2fe81",
