@@ -34,6 +34,161 @@
       "parentUuid": "aca10d97_aeaf5c32",
       "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f82afbce_db5bef9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "Just few nits in comments.",
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eab445f_f7f2fe81",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "I think it might be more readable like this:\n```\npub const BOOT_MAGIC: [u8; BOOT_MAGIC_SIZE] \u003d *b\"ANDROID!\";\n```\nor I\u0027ve also seen\n```\npub const BOOT_MAGIC: \u0026[u8] \u003d b\"ANDROID!\";\n```\n\nBtw, not sure if `BOOT_MAGIC_SIZE` is needed, we might be able to use `BOOT_MAGIC.len()`",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 95
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11eb2467_21a833ad",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 53
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94c5b0b4_a78d5254",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "nit: I\u0027ve noticed in multiple places that `///` comments go first, then all `#[...]` and then `struct` it all corresponds to. But I don\u0027t think there is strict formatting guide on this.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 60
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edf400a4_d72f3ca7",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "Not sure about use case, maybe we could use `enum` here:\n```\n#[repr(u32)]\n#[derive(Clone, Copy, Debug, Eq, PartialEq)]\npub enum VendorRamdiskType {\n    /// Indicates the value is unspecified.\n    NONE \u003d 0,\n    /// Ramdisk contains platform specific bits, so the bootloader should always load these into memory.\n    PLATFORM \u003d 1,\n    /// Ramdisk contains recovery resources, so the bootloader should load these when booting into recovery.\n    RECOVERY \u003d 2,\n    /// Ramdisk contains dynamic loadable kernel modules.\n    DLKM \u003d 3,\n}\n```\nUpdate: I see it is used in C structure, so it is not suitable.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 1
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1bac098c_42d3abc6",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "maybe `ID_SIZE` to make it consistent?",
+      "range": {
+        "startLine": 150,
+        "startChar": 17,
+        "endLine": 150,
+        "endChar": 19
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e61da836_56975945",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-08-22T23:20:57Z",
+      "side": 1,
+      "message": "does it make sense to make reserved fields private?",
+      "range": {
+        "startLine": 326,
+        "startChar": 4,
+        "endLine": 326,
+        "endChar": 27
+      },
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
