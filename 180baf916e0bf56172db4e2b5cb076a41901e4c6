@@ -16,6 +16,24 @@
       "message": "Just to double check. Are we intentionally not putting it in our GBL repo \"platform/bootable/libbootloader\"?",
       "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68fd116a_9bff9b57",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-08-22T22:43:07Z",
+      "side": 1,
+      "message": "The rationale for keeping it in AOSP is to make it easier to keep in sync with the C definition and make it easier to discover for anyone else using this implementation.\nI agree that there\u0027s a trade-off; we now need to tie together more build artifacts across multiple repositories. I do think that keeping the rust definitions in sync is the bigger problem, though.",
+      "parentUuid": "aca10d97_aeaf5c32",
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
