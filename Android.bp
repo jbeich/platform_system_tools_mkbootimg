@@ -3,6 +3,55 @@
 package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
+rust_library{
+    name: "libbootimg_private",
+    crate_name: "bootimg_private",
+    vendor_available: true,
+    srcs: [
+        "src/bootimg_priv.rs",
+    ],
+    host_supported: true,
+    rustlibs: [
+        "libzerocopy",
+    ],
+    lints: "none",
+}
+
+rust_library{
+    name: "libbootimg",
+    crate_name: "bootimg",
+    vendor_available: true,
+    srcs: ["src/bootimg.rs"],
+    host_supported: true,
+    rustlibs: [
+        "libzerocopy",
+        "libbootimg_private",
+    ],
+}
+
+rust_test_host {
+    name: "libbootimg_tests",
+    srcs: [
+        "src/bootimg.rs",
+    ],
+    auto_gen_config: true,
+    rustlibs: [
+        "libzerocopy",
+        "libbootimg_private",
+    ],
+}
+
+rust_test_host {
+    name: "libbootimg_tests_priv",
+    srcs: [
+        "src/bootimg_priv.rs",
+    ],
+    auto_gen_config: true,
+    rustlibs: [
+        "libzerocopy",
+    ],
+    lints: "none",
+}
 
 cc_library_headers {
     name: "libmkbootimg_abi_headers",
