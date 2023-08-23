@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36397369_e4f32642",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2023-08-23T23:29:17Z",
+      "side": 1,
+      "message": "I\u0027m sorry that I didn\u0027t mention this earlier, I think I caused you more trouble than necessary 😞\n\nAndroid has build rules for autogenerating C-\u003eRust code using `bindgen`: https://source.android.com/docs/setup/build/rust/building-rust-modules/source-code-generators/bindgen-modules, so we can autogenerate all the raw definitions, and then just provide any higher-level Rust APIs in our library. That way the raw definitions are guaranteed to stay in sync with the C source-of-truth since they\u0027re always recompiled every build.\n\nThe preferred approach is detailed down the page a bit at https://source.android.com/docs/setup/build/rust/building-rust-modules/source-code-generators/bindgen-modules#visibility-and-linkage, but TL;DR we want to make a private `rust_bindgen` module to do the generation, and then expose a public `rust_library` module wrapping the bindgen which provides the higher-level API and wraps `unsafe` C functions with safe Rust equivalents.\n\nLMK if this isn\u0027t clear or you don\u0027t think this approach will work in this case and we can chat further.",
+      "revId": "908392d36b4062b26f4ee80def4bd043f0657c34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
