@@ -89,6 +89,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b83e48b_720650f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029640
+      },
+      "writtenOn": "2023-08-24T03:39:12Z",
+      "side": 1,
+      "message": "Yeah I agree that if we are concerned about out-of-sync issues, we should use rust_bindgen() as you suggested. In that case, having the rule maintained in the same repo as the header makes more sense.",
+      "parentUuid": "db437d87_b673cb8c",
+      "revId": "180baf916e0bf56172db4e2b5cb076a41901e4c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9eab445f_f7f2fe81",
