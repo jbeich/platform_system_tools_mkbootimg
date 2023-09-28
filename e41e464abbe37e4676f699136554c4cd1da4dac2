@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f1aeab0_b0643618",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2023-09-28T12:10:35Z",
+      "side": 1,
+      "message": "Thanks for fixing this!\n\nWe may consider changing the test case in the future, to allow only match partial outputs from `avbtool info_image`. e.g., see subsequence_of() below\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:system/tools/mkbootimg/tests/mkbootimg_test.py;l\u003d51;drc\u003d053c389f03f3c14f86b808608ccb5669ff8b887a",
+      "revId": "e41e464abbe37e4676f699136554c4cd1da4dac2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
