@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21995dfd_4efd94f1",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-10-04T00:06:49Z",
+      "side": 1,
+      "message": "Probably a good idea to implement `Display` trait for `BootError`.",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 1
+      },
+      "revId": "4f4345206082874f6ed646081cc6918c01efdad1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fe408ee_a2011328",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-10-04T00:06:49Z",
+      "side": 1,
+      "message": "Can we add `UnsupportedVersion\u0027 for values 1..2? It would be clearer and we might need to differentiate between unknown and unsupported versions.",
+      "range": {
+        "startLine": 176,
+        "startChar": 8,
+        "endLine": 190,
+        "endChar": 9
+      },
+      "revId": "4f4345206082874f6ed646081cc6918c01efdad1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
