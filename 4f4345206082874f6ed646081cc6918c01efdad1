@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "12fb511a_8ede5633",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-10-04T21:04:48Z",
+      "side": 1,
+      "message": "Here is core Display trait: [core/fmt/trait.Display](https://doc.rust-lang.org/beta/core/fmt/trait.Display.html)\n\nProbably something like this\n```\nimpl Display for Test {\n    fn fmt(\u0026self, f: \u0026mut Formatter\u003c\u0027_\u003e) -\u003e core::fmt::Result {\n        let str \u003d match self {\n            Test::Value \u003d\u003e \"Some string for Value\",\n        };\n        write!(f, \"{str}\")\n    }\n}\n```",
+      "parentUuid": "19741fc1_8074d539",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 1
+      },
+      "revId": "4f4345206082874f6ed646081cc6918c01efdad1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2fe408ee_a2011328",
         "filename": "src/bootimg.rs",
         "patchSetId": 5
