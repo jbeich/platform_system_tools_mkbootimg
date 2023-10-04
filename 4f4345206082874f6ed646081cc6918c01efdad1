@@ -72,6 +72,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60c8b496_12e6cdb1",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-04T21:12:02Z",
+      "side": 1,
+      "message": "My bad, I\u0027m still internalizing what traits and crates are core or nostd or std.",
+      "parentUuid": "12fb511a_8ede5633",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 1
+      },
+      "revId": "4f4345206082874f6ed646081cc6918c01efdad1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fe408ee_a2011328",
