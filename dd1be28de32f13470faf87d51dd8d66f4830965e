@@ -416,6 +416,30 @@
       },
       "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "606c6cad_2515bab3",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2023-10-05T22:20:33Z",
+      "side": 1,
+      "message": "I could be wrong but `new_from_prefix(buffer[..])` was working in this scenario.",
+      "parentUuid": "32f2899a_439f7706",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
