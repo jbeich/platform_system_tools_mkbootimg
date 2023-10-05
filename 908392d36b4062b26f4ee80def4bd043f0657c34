@@ -88,6 +88,24 @@
       "parentUuid": "2ad96f30_6823d477",
       "revId": "908392d36b4062b26f4ee80def4bd043f0657c34",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "129e9acc_6e2dc7c3",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2029640
+      },
+      "writtenOn": "2023-10-05T00:56:13Z",
+      "side": 1,
+      "message": "Is `gindgen.sh` the naming convention for Android? Cause it seems to be `bindgen.sh` in Fuchsia.",
+      "parentUuid": "6424f2c7_034b882f",
+      "revId": "908392d36b4062b26f4ee80def4bd043f0657c34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
