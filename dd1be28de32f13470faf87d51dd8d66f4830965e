@@ -440,6 +440,30 @@
       },
       "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "234c262a_0f997f8e",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T22:21:30Z",
+      "side": 1,
+      "message": "So to confuse the issue even more, both builtin `slice` and `zerocopy::ByteSlice` define a `split_at_mut` method. The difference is that `slice` takes self by reference, and ByteSlice takes self by value. I don\u0027t think there\u0027s a way to return ownership unless the object explicitly returned by a function: that\u0027s the whole premise of references.\n\nTaking a step back, the C++-ish way to do this would be something like\n```\n// Ignoring alignment verification\nuint32_t version;\n{\n    const auto\u0026 tmp_hdr \u003d reinterpret_cast\u003cconst boot_img_hdr_v0\u0026\u003e(buffer);\n    if (tmp_hdr.magic !\u003d BOOT_MAGIC) { return Error(...); }\n    version \u003d tmp_hdr-\u003eversion;\n}\nswitch (version){\ncase 0: return ...;\ncase 1: return (buffer.size() \u003e\u003d sizeof(boot_img_hdr_v1) ? ... : Error(...));\ncase 2: return (buffer.size() \u003e\u003d sizeof(boot_img_hdr_v2) ? ... : Error(...));\n...\n}\n```\n\nIt\u0027s the aliasing and consuming by value that\u0027s preventing the same thing in Rust.\nMy guess is that there\u0027s an unsafe Rust way of making the aliasing work, but that\u0027s going to take some more experimentation. I\u0027ll keep trying, but if that winds up not working (or being very complicated) I think raw offsets is an increasingly attractive alternative.",
+      "parentUuid": "32f2899a_439f7706",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
