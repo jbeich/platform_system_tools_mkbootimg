@@ -66,6 +66,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "40176ef7_9001e508",
+        "filename": "gindgen.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "I\u0027m not a big fan of golden file tests because they tend to be fragile, noisy, and often difficult to update. `genrule` looks promising, however; I\u0027m going to try to put something together that autogenerates `bootimg_priv.rs` and makes it visible to the wrapper library target.",
+      "parentUuid": "3b9c0848_10e1b5b1",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 53
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e2f0f262_6156c849",
         "filename": "gindgen.sh",
         "patchSetId": 6
@@ -77,6 +101,30 @@
       "writtenOn": "2023-10-05T16:46:26Z",
       "side": 1,
       "message": "nit: line length. Maybe put the args each on a newline with 4 indent? e.g.\n\n```\n./out/host/linux-x86/bin/bindgen \\\n    --blocklist-type\u003d\"${BLOCKED_TYPES_RE}\" \\\n    ...\n```",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 109
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f477351a_7ab5b457",
+        "filename": "gindgen.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2f0f262_6156c849",
       "range": {
         "startLine": 50,
         "startChar": 0,
@@ -110,6 +158,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2823332b_c8bf3570",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "That sounds reasonable, going with `ImageHeader` and `VendorImageHeader`.",
+      "parentUuid": "f5b90992_ee578d44",
+      "range": {
+        "startLine": 27,
+        "startChar": 9,
+        "endLine": 27,
+        "endChar": 16
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0049fd30_657327b0",
@@ -123,6 +195,30 @@
       "writtenOn": "2023-10-05T16:46:26Z",
       "side": 1,
       "message": "nit: maybe `ImageError` here instead? `BootError` makes it sound like we attempted to boot and failed",
+      "range": {
+        "startLine": 51,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 18
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f79dece0_1f689c11",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0049fd30_657327b0",
       "range": {
         "startLine": 51,
         "startChar": 9,
@@ -156,6 +252,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f614aa1f_bcee4753",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "Sounds good, I\u0027ll rename `UnknownVersion` to `UnexpectedVersion` to reduce collision.",
+      "parentUuid": "7b54b0bf_e3ab846e",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 16
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c24324e0_367c0578",
@@ -179,6 +299,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c26957e_0da95302",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c24324e0_367c0578",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 7
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8c39ff1_bdb3cdc6",
@@ -192,6 +336,30 @@
       "writtenOn": "2023-10-05T16:46:26Z",
       "side": 1,
       "message": "Rather than hardcoding offsets and manually parsing these fields, could we first attempt to interpret it as the smallest supported image type (I assume v0) and read these common fields directly, then re-interpret the buffer as the correct version?\n\n(Same below for vendor header)",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4ed5d8c_872fe729",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "The `v3` header is actually the smallest, but it is explicitly designed so that the magic string and the header version are at the same offsets as `v0`.\nYeah, that sounds like a reasonable thing to try. I had hoped that `offsetof` would be usable so that raw sizes wouldn\u0027t be hardcoded, but double-parsing is the next best thing.",
+      "parentUuid": "e8c39ff1_bdb3cdc6",
       "range": {
         "startLine": 101,
         "startChar": 8,

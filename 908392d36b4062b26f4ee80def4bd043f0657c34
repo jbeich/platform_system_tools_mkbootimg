@@ -124,6 +124,24 @@
       "parentUuid": "129e9acc_6e2dc7c3",
       "revId": "908392d36b4062b26f4ee80def4bd043f0657c34",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9efd71a1_ea5999c1",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T18:11:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0340839_b1b438bd",
+      "revId": "908392d36b4062b26f4ee80def4bd043f0657c34",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
