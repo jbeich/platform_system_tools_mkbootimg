@@ -392,6 +392,30 @@
       },
       "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32f2899a_439f7706",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2023-10-05T22:02:11Z",
+      "side": 1,
+      "message": "Huh interesting, maybe a lifetime scoping issue? It seems that if we return ownership back to `buffer` after the original split we should be able to re-split it again, e.g. from the Rust playground I can do this:\n\n```\nfn main() {\n    let mut data \u003d \u0026mut [1, 2, 3, 4, 5, 6];\n    \n    let (a, b) \u003d data.split_at_mut(3);\n    \n    // println!(\"data\u003d{:?}\", data);  // Doesn\u0027t compile since (a, b) still borrow `data`\n    println!(\"a\u003d{:?}, b\u003d{:?}\", a, b);\n    println!(\"data\u003d{:?}\", data);  // Works now, (a, b) have been returned\n    \n    // Now we can re-split at a different index.\n    let (a, b) \u003d data.split_at_mut(4);\n    println!(\"a\u003d{:?}, b\u003d{:?}\", a, b);\n}\n```\n\nBut perhaps zerocopy is doing something more complex with lifetimes than `split_at_mut()`, I\u0027ll keep poking around a bit.",
+      "parentUuid": "31b70a06_04a9d67d",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
