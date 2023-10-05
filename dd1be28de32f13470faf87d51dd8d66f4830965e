@@ -368,6 +368,30 @@
       },
       "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31b70a06_04a9d67d",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-05T21:16:02Z",
+      "side": 1,
+      "message": "This is turning out to be tricky because `new_from_prefix` takes its parameter by value and consumes it. The return values of `new_from_prefix` are `(T, \u0026[u8])`, and even though _we_ know that they are adjacent it is not safe (and not even really a good idea with `unsafe`) to recombine `T.bytes()` with the suffix to make a single slice. I think that the hardcoded offsets are necessary.\n\nWe could get around this by trying to interpret as the *largest* supported type and then narrowing from there on the `bytes` method, but that doesn\u0027t feel great.",
+      "parentUuid": "c4ed5d8c_872fe729",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
