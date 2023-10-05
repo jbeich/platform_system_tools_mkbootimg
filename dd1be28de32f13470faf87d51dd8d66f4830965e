@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db9dafda_bc6ffccd",
+        "filename": "Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2023-10-05T06:27:56Z",
+      "side": 1,
+      "message": "can you move all these (Android.bp for rust, bindgen.sh, *.rs) into their own subdirectory (like ./rust or ./src/rust) just so we keep the different language files organized",
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
