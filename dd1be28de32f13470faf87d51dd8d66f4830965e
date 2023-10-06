@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a621bea_c0b56482",
+        "filename": "Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-06T18:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db9dafda_bc6ffccd",
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a0e2f08_8cbc6e25",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-05T16:46:26Z",
       "side": 1,
       "message": "For common configuration it can be useful to extract the shared stuff into a \"defaults\" target to reduce repetition and make sure targets stay in sync. Something like:\n\n```\nrust_defaults {\n    name: \"libbootimg_private_defaults\",\n    srcs: [\"src/bootimg_priv.rs\"],\n    rustlibs: [ \"libzerocopy\" ],\n    lints: \"none\",\n}\n\nrust_library{\n    name: \"libbootimg_private\",\n    crate_name: \"bootimg_private\",\n    defaults: [ \"libbootimg_private_defaults\" ],\n    vendor_available: true,\n    host_supported: true,\n    visibility: [\":__subpackages__\"]\n}\n\nrust_test_host {\n    name: \"libbootimg_tests_priv\",\n    auto_gen_config: true,\n    defaults: [ \"libbootimg_private_defaults\" ],\n}\n```\n\n(Same for `libbootimg`)",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 16
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4981481a_8b6504d9",
+        "filename": "Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-06T18:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a0e2f08_8cbc6e25",
       "range": {
         "startLine": 33,
         "startChar": 0,
