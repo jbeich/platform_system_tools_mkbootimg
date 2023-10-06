@@ -132,6 +132,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bc0be979_622826ba",
+        "filename": "gindgen.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-06T20:59:51Z",
+      "side": 1,
+      "message": "Working with `genrule` is proving to be non-trivial, regardless of using it as a golden file checker or to generate the private binding directly. Unless you feel strongly that some sort of verification or automation is a merge blocker, I propose that it be left out.",
+      "parentUuid": "40176ef7_9001e508",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 53
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e2f0f262_6156c849",
         "filename": "gindgen.sh",
         "patchSetId": 6
