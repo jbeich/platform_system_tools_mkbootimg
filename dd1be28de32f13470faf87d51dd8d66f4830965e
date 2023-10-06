@@ -156,6 +156,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "72668d85_b073c7a1",
+        "filename": "gindgen.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2023-10-06T21:02:10Z",
+      "side": 1,
+      "message": "I\u0027m OK with filing a bug and revisiting in a future CL, but it is important. One of the promises of GBL is that users can uprev to get support for the latest boot image formats automatically, and if we don\u0027t have some sort of automated mechanism to make sure this Rust code stays in sync with the C source-of-truth, we\u0027re going to break that promise sooner or later.",
+      "parentUuid": "bc0be979_622826ba",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 53
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e2f0f262_6156c849",
         "filename": "gindgen.sh",
         "patchSetId": 6
