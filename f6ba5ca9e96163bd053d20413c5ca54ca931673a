@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45b30b3a_64ef037f",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2023-10-06T21:42:26Z",
+      "side": 1,
+      "message": "I can\u0027t seem to find documentation on `ByteSlice.get()`, in what cases does it fail? `unwrap()` is usually discouraged outside of tests since we don\u0027t want the library to panic on bad input, should this return an error instead?",
+      "range": {
+        "startLine": 103,
+        "startChar": 77,
+        "endLine": 103,
+        "endChar": 93
+      },
+      "revId": "f6ba5ca9e96163bd053d20413c5ca54ca931673a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2367457_f7aca310",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2023-10-06T21:42:26Z",
+      "side": 1,
+      "message": "optional: since we do this line quite a few times, is it worth extracting to a helper? e.g. something like:\n\n```\nfn parse_header\u003cB, T\u003e(buffer: B) -\u003e BootResult\u003cLayoutVerified\u003cB, T\u003e\u003e {\n  Ok(LayoutVerified::\u003cB, T\u003e::new_from_prefix(buffer)\n        .ok_or(ImageError::BufferTooSmall)?\n        .0)\n}\n```\n\nI\u0027m hoping this would simplify the callers a bit to look like:\n\n\n```\nlet header \u003d match version {\n  1 \u003d\u003e Self::V1(parse_header::\u003cB, boot_img_header_v1\u003e(buffer)?),\n  2 \u003d\u003e Self::V2(parse_header::\u003cB, boot_img_header_v2\u003e(buffer)?),\n  ... etc ...\n}\nOk(header)\n```",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 56
+      },
+      "revId": "f6ba5ca9e96163bd053d20413c5ca54ca931673a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
