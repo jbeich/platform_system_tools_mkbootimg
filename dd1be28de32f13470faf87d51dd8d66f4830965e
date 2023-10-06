@@ -464,6 +464,30 @@
       },
       "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ec7ca74_ec61c95d",
+        "filename": "src/bootimg.rs",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-06T00:06:46Z",
+      "side": 1,
+      "message": "Hah, success! The correct thing to do is to get a subslice from the buffer and then parse on that.\n\n```\nlet tmp \u003d buffer.get(..size_of::\u003cboot_img_hdr_v3\u003e()).ok_or(ImageError::BufferTooSmall)?;\nlet (hdr, _) \u003d LayoutVerified::\u003c\u0026[u8], boot_img_hdr_v3\u003e::new_from_prefix(tmp).ok_or(ImageError::BufferTooSmall)?;\n\nif hdr.magic.ne(\u0026BOOT_MAGIC[..magic_size]) {\n...\n}\n```\n\nThis still needs some kind of static assertion that the v3 header is the smallest, but the general problem has been solved.",
+      "parentUuid": "234c262a_0f997f8e",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 79
+      },
+      "revId": "dd1be28de32f13470faf87d51dd8d66f4830965e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
