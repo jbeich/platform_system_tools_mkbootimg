@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6d9cb5b6_5cf4549c",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-09T17:57:27Z",
+      "side": 1,
+      "message": "^ Disregard above, that\u0027s the tracking issue for the `genrule` task above.",
+      "parentUuid": "15870ee9_2d66cd4f",
+      "range": {
+        "startLine": 103,
+        "startChar": 77,
+        "endLine": 103,
+        "endChar": 93
+      },
+      "revId": "f6ba5ca9e96163bd053d20413c5ca54ca931673a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d2367457_f7aca310",
         "filename": "rust/bootimg.rs",
         "patchSetId": 7
