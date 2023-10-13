@@ -33,6 +33,24 @@
       "message": "can\u0027t the 0,1,2 branches all be fold into the catch-all clause ?\n\n{\n 3 \u003d\u003e Ok(),\n 4 \u003d\u003e Ok(),\n _ \u003d\u003e Err(),  // catches 0,1,2,5,6,7...\n}",
       "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44f82ba2_12d0b2dd",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2029635
+      },
+      "writtenOn": "2023-10-13T17:24:18Z",
+      "side": 1,
+      "message": "Absolutely, and I had the 0,1,2 branches compressed into the catch-all previously. Sergii commented that it might be more clear to be explicit with 0,1,2 because of the similarity with the other parsing function. I\u0027ll change it back if you think that conciseness is more important.",
+      "parentUuid": "e7093d32_58d55bc9",
+      "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
