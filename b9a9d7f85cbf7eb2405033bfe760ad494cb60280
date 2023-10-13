@@ -16,6 +16,23 @@
       "message": "Open review bump",
       "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7093d32_58d55bc9",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2023-10-13T07:22:36Z",
+      "side": 1,
+      "message": "can\u0027t the 0,1,2 branches all be fold into the catch-all clause ?\n\n{\n 3 \u003d\u003e Ok(),\n 4 \u003d\u003e Ok(),\n _ \u003d\u003e Err(),  // catches 0,1,2,5,6,7...\n}",
+      "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
