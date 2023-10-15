@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "030ef38c_0f148291",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002751
+      },
+      "writtenOn": "2023-10-15T18:07:39Z",
+      "side": 1,
+      "message": "Oops, this probably made things worse.  This will fix aosp/main and the *-plus-aosp branches, but break internal main where the other topic was reverted.",
+      "revId": "a1658dea78d76d3b5be8743652437bfa975d7775",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
