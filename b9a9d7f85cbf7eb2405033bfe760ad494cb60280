@@ -51,6 +51,24 @@
       "parentUuid": "e7093d32_58d55bc9",
       "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86736ce8_70b75b7d",
+        "filename": "rust/bootimg.rs",
+        "patchSetId": 8
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2023-10-16T07:29:12Z",
+      "side": 1,
+      "message": "Both works for me. I think Sergii\u0027s point of being explicit is sound, but I do prefer conciseness. Both are equally valid points IMO.",
+      "parentUuid": "44f82ba2_12d0b2dd",
+      "revId": "b9a9d7f85cbf7eb2405033bfe760ad494cb60280",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
