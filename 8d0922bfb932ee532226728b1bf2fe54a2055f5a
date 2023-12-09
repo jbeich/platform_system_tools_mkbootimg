@@ -70,6 +70,57 @@
       "parentUuid": "2d98d18b_0b22e447",
       "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4f642c7_0220915b",
+        "filename": "tests/data/testkey_rsa2048.pem",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2050056
+      },
+      "writtenOn": "2023-12-09T02:39:06Z",
+      "side": 1,
+      "message": "```suggestion\nYbrFmVEYl/kjQpafhy7Nsk1fqSTyRdriZSYmTQIDAQABAoIBAQC+kJgaCuX8wYAn\n```",
+      "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "501c427c_5afc0e2a",
+        "filename": "tests/mkbootimg_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2050056
+      },
+      "writtenOn": "2023-12-09T02:39:06Z",
+      "side": 1,
+      "message": "BOOT_IMAGE_V4_SIGNATURE_SIZE \u003d 4096\n```",
+      "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93912ac3_e4867084",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2050056
+      },
+      "writtenOn": "2023-12-09T02:39:06Z",
+      "side": 1,
+      "message": "```suggestion\n        boot_signature_size \u003d unpack(\u0027I\u0027, args.boot_img.read(4))[0]\n```",
+      "revId": "8d0922bfb932ee532226728b1bf2fe54a2055f5a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
