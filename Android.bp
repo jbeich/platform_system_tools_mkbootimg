@@ -1,6 +1,7 @@
 // Copyright 2012 The Android Open Source Project
 
 package {
+    default_team: "trendy_team_android_kernel",
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
@@ -69,7 +70,6 @@ python_binary_host {
         "unpack_bootimg.py",
     ],
 }
-
 
 python_binary_host {
     name: "repack_bootimg",
