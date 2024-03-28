@@ -30,9 +30,6 @@ cc_library_headers {
 cc_library {
     name: "libmkbootimg_abi_check",
     vendor_available: true,
-    vndk: {
-        enabled: true,
-    },
     srcs: [
         "mkbootimg_dummy.cpp",
     ],
