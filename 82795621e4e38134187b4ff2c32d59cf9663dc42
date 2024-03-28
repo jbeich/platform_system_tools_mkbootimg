@@ -16,6 +16,24 @@
       "message": "@dovs@google.com would you want your team be listed here for attribution? If so which team name would it be",
       "revId": "82795621e4e38134187b4ff2c32d59cf9663dc42",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc62074c_2f4a8c31",
+        "filename": "rust/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1980115
+      },
+      "writtenOn": "2024-03-28T12:28:58Z",
+      "side": 1,
+      "message": "Friendly reminder: @dovs@google.com PTAL",
+      "parentUuid": "4062bd48_3be484af",
+      "revId": "82795621e4e38134187b4ff2c32d59cf9663dc42",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
