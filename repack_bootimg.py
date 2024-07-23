@@ -27,6 +27,7 @@ import glob
 import os
 import shlex
 import shutil
+import stat
 import subprocess
 import tempfile
 
@@ -87,6 +88,7 @@ class RamdiskImage:
         self._ramdisk_img = ramdisk_img
         self._ramdisk_format = None
         self._ramdisk_dir = None
+        self._ramdisk_nodes = []
         self._temp_file_manager = TempFileManager()
 
         if unpack:
@@ -94,6 +96,37 @@ class RamdiskImage:
         else:
             self._ramdisk_dir = self._temp_file_manager.make_temp_dir(
                 suffix='_new_ramdisk')
+
+    def _list_cpio_archive(self, data):
+        offset = 0
+        while offset <= len(data)-110:
+            magic = data[offset+0:offset+6]
+            if magic == b'070701' or magic == b'070702':
+                pass
+            else:
+                break
+            mode = int(data[offset+14:offset+22], 16)
+            uid = int(data[offset+22:offset+30], 16)
+            gid = int(data[offset+30:offset+38], 16)
+            filesize = int(data[offset+54:offset+62], 16)
+            rmaj = int(data[offset+78:offset+86], 16)
+            rmin = int(data[offset+86:offset+94], 16)
+            namesize = int(data[offset+94:offset+102], 16)
+            name = data[offset+110:offset+110+namesize-1].decode()
+            offset = offset + 110 + namesize
+            if name == 'TRAILER!!!':
+                if offset%256 != 0:
+                    offset = offset + 256 - offset%256
+            else:
+                if offset%4 != 0:
+                    offset = offset + 4 - offset%4
+                offset = offset + filesize
+                if offset%4 != 0:
+                    offset = offset + 4 - offset%4
+                if stat.S_ISCHR(mode):
+                    self._ramdisk_nodes.append('nod {} 0{} {} {} {} {} {}'.format(name, oct(stat.S_IMODE(mode))[2:], uid, gid, 'c', rmaj, rmin))
+                elif stat.S_ISBLK(mode):
+                    self._ramdisk_nodes.append('nod {} 0{} {} {} {} {} {}'.format(name, oct(stat.S_IMODE(mode))[2:], uid, gid, 'b', rmaj, rmin))
 
     def _unpack_ramdisk(self):
         """Unpacks the ramdisk."""
@@ -125,8 +158,9 @@ class RamdiskImage:
             #   -d: create directories if needed
             #   -u: override existing files
             subprocess.run(
-                ['toybox', 'cpio', '-idu'], check=True,
+                ['toybox', 'cpio', '-idu'], check=False,
                 input=decompressed_result.stdout, cwd=self._ramdisk_dir)
+            self._list_cpio_archive(decompressed_result.stdout)
 
             print(f"=== Unpacked ramdisk: '{self._ramdisk_img}' at "
                   f"'{self._ramdisk_dir}' ===")
@@ -145,8 +179,16 @@ class RamdiskImage:
 
         print('Repacking ramdisk, which might take a few seconds ...')
 
+        mkbootfs_cmd = ['mkbootfs']
+        if len(self._ramdisk_nodes) > 0:
+            ramdisk_node_list = self._temp_file_manager.make_temp_file(suffix='_ramdisk_node_list')
+            with open(ramdisk_node_list, 'w') as file_out:
+                for node in self._ramdisk_nodes:
+                    file_out.write(node + '\n')
+            mkbootfs_cmd.extend(['-n', ramdisk_node_list])
+        mkbootfs_cmd.append(self._ramdisk_dir)
         mkbootfs_result = subprocess.run(
-            ['mkbootfs', self._ramdisk_dir], check=True, capture_output=True)
+            mkbootfs_cmd, check=True, capture_output=True)
 
         with open(out_ramdisk_file, 'w') as output_fd:
             subprocess.run(compression_cmd, check=True,
