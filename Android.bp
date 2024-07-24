@@ -5,12 +5,6 @@ package {
 }
 
 cc_library_headers {
-    name: "libmkbootimg_abi_headers",
-    vendor_available: true,
-    export_include_dirs: ["include"],
-}
-
-cc_library_headers {
     name: "bootimg_headers",
     vendor_available: true,
     recovery_available: true,
@@ -25,19 +19,6 @@ cc_library_headers {
         "//apex_available:platform",
         "com.android.virt",
     ],
-}
-
-cc_library {
-    name: "libmkbootimg_abi_check",
-    vendor_available: true,
-    vndk: {
-        enabled: true,
-    },
-    srcs: [
-        "mkbootimg_dummy.cpp",
-    ],
-    header_libs: ["libmkbootimg_abi_headers"],
-    export_header_lib_headers: ["libmkbootimg_abi_headers"],
 }
 
 python_defaults {
@@ -69,7 +50,6 @@ python_binary_host {
         "unpack_bootimg.py",
     ],
 }
-
 
 python_binary_host {
     name: "repack_bootimg",
