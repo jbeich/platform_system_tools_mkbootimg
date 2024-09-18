@@ -16,6 +16,23 @@
       "message": "Thanks Po,\nI tried and it works well in my case.",
       "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ac077ef_39aeceb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1278660
+      },
+      "writtenOn": "2024-09-18T22:31:33Z",
+      "side": 1,
+      "message": "Please consider merging this soon.",
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
