@@ -33,6 +33,214 @@
       "message": "Please consider merging this soon.",
       "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ac3016e_bcaf66e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "I still feel parsing the CPIO archive directly in this .py file is kind of messy.\n\nIt\u0027s better to handle it in the \u0027toybox cpio\u0027 as I mentioned in the bug. (or you can use target files, without using the repack_botimg script?)\n\nAnyway, if you need this and can further polish the script, we might be ok to accept this.",
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f639a3c2_43bb49c0",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "how about using struct.calcsize()\n\n```\n    header_offset \u003d 0\n    cpio_header_format \u003d \"\"\u003d6s8x8s8s8s16x8s16x8s8s8s8x\"\"  # CPIO header format with skipped fields\n    cpio_header_size \u003d struct.calcsize(cpio_header_format)\n    while header_offset \u003c\u003d len(data) - cpio_header_size:\n```",
+      "range": {
+        "startLine": 102,
+        "startChar": 7,
+        "endLine": 102,
+        "endChar": 38
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "28377dd9_c90c0766",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 30,
+                "startChar": 0,
+                "endLine": 30,
+                "endChar": 0
+              },
+              "replacement": "import struct\n"
+            },
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 101,
+                "startChar": 0,
+                "endLine": 101,
+                "endChar": 0
+              },
+              "replacement": "        cpio_header_format \u003d \u0027\u003d6s8x8s8s8s16x8s16x8s8s8s8x\u0027\n        cpio_header_size \u003d struct.calcsize(cpio_header_format)\n"
+            },
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 102,
+                "startChar": 0,
+                "endLine": 104,
+                "endChar": 0
+              },
+              "replacement": "        while offset \u003c\u003d len(data)-cpio_header_size:\n            magic \u003d data[offset:offset+6]\n"
+            },
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 115,
+                "startChar": 0,
+                "endLine": 117,
+                "endChar": 0
+              },
+              "replacement": "            name \u003d data[offset+102:offset+102+namesize-1].decode()\n            offset \u003d offset + cpio_header_size + namesize\n"
+            }
+          ]
+        }
+      ],
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "766e4657_1aabaeea",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "How about:\n  \n```  \n   if magic not in (b\u0027070701\u0027, b\u0027070702\u0027):\n      break\n```",
+      "range": {
+        "startLine": 104,
+        "startChar": 9,
+        "endLine": 107,
+        "endChar": 21
+      },
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba91ffe9_4f24a604",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "How about using struct.unpack_from() first?\n\n```\n# Unpack the CPIO header fields (skipping ino, nlink, mtime, devmaj, devmin, chksum)\n\n    (magic, mode, uid, gid, filesize, rmaj, rmin, namesize) \u003d struct.unpack_from(\n     cpio_header_format, data, header_offset)\n     \n      # Convert header fields to integers\n      mode \u003d int(mode, 16)\n      uid \u003d int(uid, 16)\n      gid \u003d int(gid, 16)\n      filesize \u003d int(filesize, 16)\n      namesize \u003d int(namesize, 16)\n      ...\n      \n```",
+      "range": {
+        "startLine": 108,
+        "startChar": 11,
+        "endLine": 115,
+        "endChar": 66
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "d294cc2d_8d2d596e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 30,
+                "startChar": 0,
+                "endLine": 30,
+                "endChar": 0
+              },
+              "replacement": "import struct\n"
+            },
+            {
+              "path": "repack_bootimg.py",
+              "range": {
+                "startLine": 108,
+                "startChar": 0,
+                "endLine": 115,
+                "endChar": 0
+              },
+              "replacement": "            # Unpack the CPIO header fields (skipping ino, nlink, mtime, devmaj,\n            # devmin, chksum)\n            (magic, mode, uid, gid, filesize, rmaj, rmin, namesize) \u003d struct.unpack_from(\n                \u0027\u003c6s6H6I8s\u0027, data, offset)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee00deb3_ac304651",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "how about moving this into another function?\n\ne.g.,\n\n```\nif name \u003d\u003d \u0027TRAILER!!!\u0027:\n    if offset % 256 !\u003d 0:\n        offset +\u003d 256 - offset % 256\n    else:\n        offset \u003d self._process_cpio_entry(\n            name, mode, uid, gid, filesize, rmaj, rmin, offset)\n\n\ndef _process_cpio_entry(self, name, mode, uid, gid, filesize, rmaj, rmin, offset):\n    if offset % 4 !\u003d 0:\n        offset +\u003d 4 - offset % 4\n    offset +\u003d filesize\n    if offset % 4 !\u003d 0:\n        offset +\u003d 4 - offset % 4\n\n    if stat.S_ISCHR(mode):\n        self._ramdisk_nodes.append(\n            \u0027nod {} 0{} {} {} {} {} {}\u0027.format(\n                name, oct(stat.S_IMODE(mode))[2:], uid, gid, \u0027c\u0027, rmaj, rmin))\n    elif stat.S_ISBLK(mode):\n        self._ramdisk_nodes.append(\n            \u0027nod {} 0{} {} {} {} {} {}\u0027.format(\n                name, oct(stat.S_IMODE(mode))[2:], uid, gid, \u0027b\u0027, rmaj, rmin))\n\n    return offset\n    \n```",
+      "range": {
+        "startLine": 121,
+        "startChar": 15,
+        "endLine": 129,
+        "endChar": 144
+      },
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dced59b7_27a45018",
+        "filename": "repack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2024-09-20T08:51:37Z",
+      "side": 1,
+      "message": "Without check, it will ignore other errors as well.\n\nCan we consider:\n\n1) Check if the error is \"Operation not permitted\", any return code to check that?\n\n2) adding a new flag, e.g., --parse_ramdisk_nodes, for the user to specify using this feature. Then using check\u003dFalse in this case (still not ideal tho).",
+      "range": {
+        "startLine": 161,
+        "startChar": 44,
+        "endLine": 161,
+        "endChar": 55
+      },
+      "revId": "21a045310bafb8e6754b627960c0a86435d3794b",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
