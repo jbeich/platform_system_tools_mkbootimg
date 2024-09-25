@@ -70,6 +70,30 @@
       },
       "revId": "d0bf5566c1ef978cfd38bb3303e30e4f2c26701c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91fe651e_1638e3da",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2031047
+      },
+      "writtenOn": "2024-09-25T10:11:05Z",
+      "side": 1,
+      "message": "I checked Android policy, I should not modify date when edit the file, thanks for spotting that",
+      "parentUuid": "dceb4755_0410aabb",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "d0bf5566c1ef978cfd38bb3303e30e4f2c26701c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
