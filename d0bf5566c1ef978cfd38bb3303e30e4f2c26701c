@@ -46,6 +46,30 @@
       },
       "revId": "d0bf5566c1ef978cfd38bb3303e30e4f2c26701c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dceb4755_0410aabb",
+        "filename": "include/bootimg/bootimg.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3496717
+      },
+      "writtenOn": "2024-09-25T10:05:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure either.",
+      "parentUuid": "5550c509_fc925fb8",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "d0bf5566c1ef978cfd38bb3303e30e4f2c26701c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
