@@ -28,7 +28,9 @@ cleanup (){
 }
 
 trap cleanup EXIT
-pushd ~/aosp > /dev/null
+[ -z "${ANDROID_BUILD_TOP}" ] && echo "Valid ANDROID_BUILD_TOP is required, do lunch first." && exit 1
+
+pushd "${ANDROID_BUILD_TOP}" > /dev/null
 
 BOOTIMG_DIR=$(realpath system/tools/mkbootimg/)
 # The stdint include generates a lot of unnecessary types that the
@@ -68,6 +70,8 @@ cat << EOF | cat - ${SCRATCH_DIR}/bootimg_gen.rs > ${BOOTIMG_PRIV}
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+#![cfg_attr(all(feature = "no_std", not(test)), no_std)]
 
 use zerocopy::{AsBytes, FromBytes, FromZeroes};
 
