@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f19371ac_db1bf822",
+        "filename": "rust/bindgen.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2024-09-30T17:49:34Z",
+      "side": 1,
+      "message": "For the auto-generated bindgen files I think it\u0027s fine to just make them nostd unconditionally, since both std and nostd code can depend on a nostd library.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 56
+      },
+      "revId": "47fc6856974b2044562efec3b59e9a410d4246da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
