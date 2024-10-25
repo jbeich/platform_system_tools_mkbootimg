@@ -22,6 +22,30 @@
       },
       "revId": "47fc6856974b2044562efec3b59e9a410d4246da",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04cc3046_37eb556b",
+        "filename": "rust/bindgen.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1893074
+      },
+      "writtenOn": "2024-10-25T14:56:07Z",
+      "side": 1,
+      "message": "Thank you, changed the approach.",
+      "parentUuid": "f19371ac_db1bf822",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 56
+      },
+      "revId": "47fc6856974b2044562efec3b59e9a410d4246da",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
