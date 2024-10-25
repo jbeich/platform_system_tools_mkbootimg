@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dba4439_2c9023ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2024-10-25T17:34:40Z",
+      "side": 1,
+      "message": "So much better! Thank you for doing this",
+      "revId": "a8afb401904560f41d318e6c12a53e198725f110",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29bbfa41_87e28b94",
+        "filename": "rust/bindgen/bootimg.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2024-10-25T17:34:40Z",
+      "side": 1,
+      "message": "optional nit: I\u0027m not sure if there\u0027s a standard here, but `.h` seems much more common in the Android codebase than `.hpp` ([~500](https://cs.android.com/search?q\u003d%5C.h%5C%22%20file:Android.bp\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain) instances vs [17](https://cs.android.com/search?q\u003d%5C.hpp%5C%22%20file:Android.bp\u0026sq\u003d\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain)). Up to you though, functionally it shouldn\u0027t matter either way.",
+      "revId": "a8afb401904560f41d318e6c12a53e198725f110",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36960c02_98d1cec6",
+        "filename": "rust/bindgen/bootimg.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2024-10-25T17:34:40Z",
+      "side": 1,
+      "message": "nit: it doesn\u0027t generally matter for modern compilers, but historically it\u0027s best to make sure source files end with a newline.",
+      "revId": "a8afb401904560f41d318e6c12a53e198725f110",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
