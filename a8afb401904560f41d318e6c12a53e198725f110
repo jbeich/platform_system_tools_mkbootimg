@@ -53,6 +53,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b2ca45a_d1c76690",
+        "filename": "rust/bindgen/bootimg.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1078119
+      },
+      "writtenOn": "2024-10-25T18:08:11Z",
+      "side": 1,
+      "message": "TIL! Thanks for the info.",
+      "parentUuid": "7e930f89_e6222f63",
+      "revId": "a8afb401904560f41d318e6c12a53e198725f110",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36960c02_98d1cec6",
