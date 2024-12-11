@@ -20,7 +20,7 @@ rust_bindgen {
         "--raw-line=use zerocopy::{AsBytes, FromBytes, FromZeroes};",
     ],
     header_libs: ["bootimg_headers"],
-    rustlibs: ["libzerocopy"],
+    rustlibs: ["libzerocopy-0.7.35"],
     vendor_available: true,
     host_supported: true,
 }
@@ -29,7 +29,7 @@ rust_defaults {
     name: "libbootimg_defaults",
     srcs: ["bootimg.rs"],
     rustlibs: [
-        "libzerocopy",
+        "libzerocopy-0.7.35",
         "libbootimg_bindgen",
     ],
 }
