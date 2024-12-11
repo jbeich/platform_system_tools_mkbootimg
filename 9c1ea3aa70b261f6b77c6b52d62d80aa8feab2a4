@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "381d214f_d8c2b329",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1380243
+      },
+      "writtenOn": "2024-12-11T08:15:40Z",
+      "side": 1,
+      "message": "This was submitted to internal main as http://ag/30803682, we need it in AOSP too.",
+      "revId": "9c1ea3aa70b261f6b77c6b52d62d80aa8feab2a4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
