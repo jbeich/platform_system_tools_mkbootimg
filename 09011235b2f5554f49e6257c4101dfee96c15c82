@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d683681_b19f39d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2029650
+      },
+      "writtenOn": "2024-12-13T00:15:16Z",
+      "side": 1,
+      "message": "I\u0027ll take a look at GBL switching to new zerocopy.",
+      "revId": "09011235b2f5554f49e6257c4101dfee96c15c82",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
