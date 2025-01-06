@@ -13,7 +13,7 @@
 // limitations under the License.
 
 //! The public interface for bootimg structs
-use zerocopy::{ByteSlice, LayoutVerified};
+use zerocopy::{ByteSlice, Immutable, KnownLayout, Ref, SplitByteSlice};
 
 use bootimg_bindgen::{
     boot_img_hdr_v0, boot_img_hdr_v1, boot_img_hdr_v2, boot_img_hdr_v3, boot_img_hdr_v4,
@@ -25,24 +25,24 @@ use bootimg_bindgen::{
 #[derive(PartialEq, Debug)]
 pub enum BootImage<B: ByteSlice + PartialEq> {
     /// Version 0 header
-    V0(LayoutVerified<B, boot_img_hdr_v0>),
+    V0(Ref<B, boot_img_hdr_v0>),
     /// Version 1 header
-    V1(LayoutVerified<B, boot_img_hdr_v1>),
+    V1(Ref<B, boot_img_hdr_v1>),
     /// Version 2 header
-    V2(LayoutVerified<B, boot_img_hdr_v2>),
+    V2(Ref<B, boot_img_hdr_v2>),
     /// Version 3 header
-    V3(LayoutVerified<B, boot_img_hdr_v3>),
+    V3(Ref<B, boot_img_hdr_v3>),
     /// Version 4 header
-    V4(LayoutVerified<B, boot_img_hdr_v4>),
+    V4(Ref<B, boot_img_hdr_v4>),
 }
 
 /// Generalized vendor boot header from a backing store of bytes.
 #[derive(PartialEq, Debug)]
 pub enum VendorImageHeader<B: ByteSlice + PartialEq> {
     /// Version 3 header
-    V3(LayoutVerified<B, vendor_boot_img_hdr_v3>),
+    V3(Ref<B, vendor_boot_img_hdr_v3>),
     /// Version 4 header
-    V4(LayoutVerified<B, vendor_boot_img_hdr_v4>),
+    V4(Ref<B, vendor_boot_img_hdr_v4>),
 }
 
 /// Boot related errors.
@@ -73,11 +73,13 @@ impl core::fmt::Display for ImageError {
 /// Common result type for use with boot headers
 pub type BootResult<T> = Result<T, ImageError>;
 
-fn parse_header<B: ByteSlice + PartialEq, T>(buffer: B) -> BootResult<LayoutVerified<B, T>> {
-    Ok(LayoutVerified::<B, T>::new_from_prefix(buffer).ok_or(ImageError::BufferTooSmall)?.0)
+fn parse_header<B: SplitByteSlice + PartialEq, T: Immutable + KnownLayout>(
+    buffer: B,
+) -> BootResult<Ref<B, T>> {
+    Ok(Ref::<B, T>::new_from_prefix(buffer).ok_or(ImageError::BufferTooSmall)?.0)
 }
 
-impl<B: ByteSlice + PartialEq> BootImage<B> {
+impl<B: SplitByteSlice + PartialEq> BootImage<B> {
     /// Given a byte buffer, attempt to parse the contents and return a zero-copy reference
     /// to the associated boot image header.
     ///
@@ -103,9 +105,8 @@ impl<B: ByteSlice + PartialEq> BootImage<B> {
         // Note: even though the v3 header is not a prefix for the v0, v1, or v2 header,
         // the version and the magic string exist at the same offset and have the same types.
         // Make a v3 temporary because it is the smallest.
-        let (hdr, _) =
-            LayoutVerified::<&[u8], boot_img_hdr_v3>::new_from_prefix(buffer.get(..).unwrap())
-                .ok_or(ImageError::BufferTooSmall)?;
+        let (hdr, _) = Ref::<&[u8], boot_img_hdr_v3>::new_from_prefix(buffer.get(..).unwrap())
+            .ok_or(ImageError::BufferTooSmall)?;
 
         if hdr.magic.ne(&BOOT_MAGIC[..magic_size]) {
             return Err(ImageError::BadMagic);
@@ -122,7 +123,7 @@ impl<B: ByteSlice + PartialEq> BootImage<B> {
     }
 }
 
-impl<B: ByteSlice + PartialEq> VendorImageHeader<B> {
+impl<B: SplitByteSlice + PartialEq> VendorImageHeader<B> {
     /// Given a byte buffer, attempt to parse the contents and return a zero-copy reference
     /// to the associated vendor boot image header.
     ///
@@ -145,10 +146,9 @@ impl<B: ByteSlice + PartialEq> VendorImageHeader<B> {
     /// ```
     pub fn parse(buffer: B) -> BootResult<Self> {
         let magic_size = VENDOR_BOOT_MAGIC_SIZE as usize;
-        let (hdr, _) = LayoutVerified::<&[u8], vendor_boot_img_hdr_v3>::new_from_prefix(
-            buffer.get(..).unwrap(),
-        )
-        .ok_or(ImageError::BufferTooSmall)?;
+        let (hdr, _) =
+            Ref::<&[u8], vendor_boot_img_hdr_v3>::new_from_prefix(buffer.get(..).unwrap())
+                .ok_or(ImageError::BufferTooSmall)?;
 
         if hdr.magic.ne(&VENDOR_BOOT_MAGIC[..magic_size]) {
             return Err(ImageError::BadMagic);
@@ -165,12 +165,12 @@ impl<B: ByteSlice + PartialEq> VendorImageHeader<B> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use zerocopy::AsBytes;
+    use zerocopy::IntoBytes;
 
     const MAGIC_SIZE: usize = BOOT_MAGIC_SIZE as usize;
     const VENDOR_MAGIC_SIZE: usize = VENDOR_BOOT_MAGIC_SIZE as usize;
 
-    pub fn add<T: AsBytes>(buffer: &mut [u8], t: T) {
+    pub fn add<T: Immutable + IntoBytes>(buffer: &mut [u8], t: T) {
         t.write_to_prefix(buffer).unwrap();
     }
 
@@ -232,8 +232,7 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected =
-            Ok(BootImage::V0(LayoutVerified::<&[u8], boot_img_hdr_v0>::new(&buffer).unwrap()));
+        let expected = Ok(BootImage::V0(Ref::<&[u8], boot_img_hdr_v0>::new(&buffer).unwrap()));
         assert_eq!(BootImage::parse(&buffer[..]), expected);
     }
 
@@ -251,8 +250,7 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected =
-            Ok(BootImage::V1(LayoutVerified::<&[u8], boot_img_hdr_v1>::new(&buffer).unwrap()));
+        let expected = Ok(BootImage::V1(Ref::<&[u8], boot_img_hdr_v1>::new(&buffer).unwrap()));
         assert_eq!(BootImage::parse(&buffer[..]), expected);
     }
 
@@ -273,8 +271,7 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected =
-            Ok(BootImage::V2(LayoutVerified::<&[u8], boot_img_hdr_v2>::new(&buffer).unwrap()));
+        let expected = Ok(BootImage::V2(Ref::<&[u8], boot_img_hdr_v2>::new(&buffer).unwrap()));
         assert_eq!(BootImage::parse(&buffer[..]), expected);
     }
 
@@ -289,8 +286,7 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected =
-            Ok(BootImage::V3(LayoutVerified::<&[u8], boot_img_hdr_v3>::new(&buffer).unwrap()));
+        let expected = Ok(BootImage::V3(Ref::<&[u8], boot_img_hdr_v3>::new(&buffer).unwrap()));
         assert_eq!(BootImage::parse(&buffer[..]), expected);
     }
 
@@ -308,8 +304,7 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected =
-            Ok(BootImage::V4(LayoutVerified::<&[u8], boot_img_hdr_v4>::new(&buffer).unwrap()));
+        let expected = Ok(BootImage::V4(Ref::<&[u8], boot_img_hdr_v4>::new(&buffer).unwrap()));
         assert_eq!(BootImage::parse(&buffer[..]), expected);
     }
 
@@ -371,9 +366,8 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected = Ok(VendorImageHeader::V3(
-            LayoutVerified::<&[u8], vendor_boot_img_hdr_v3>::new(&buffer).unwrap(),
-        ));
+        let expected =
+            Ok(VendorImageHeader::V3(Ref::<&[u8], vendor_boot_img_hdr_v3>::new(&buffer).unwrap()));
         assert_eq!(VendorImageHeader::parse(&buffer[..]), expected);
     }
 
@@ -391,9 +385,8 @@ mod tests {
                 ..Default::default()
             },
         );
-        let expected = Ok(VendorImageHeader::V4(
-            LayoutVerified::<&[u8], vendor_boot_img_hdr_v4>::new(&buffer).unwrap(),
-        ));
+        let expected =
+            Ok(VendorImageHeader::V4(Ref::<&[u8], vendor_boot_img_hdr_v4>::new(&buffer).unwrap()));
         assert_eq!(VendorImageHeader::parse(&buffer[..]), expected);
     }
 }
