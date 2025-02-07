@@ -226,7 +226,7 @@ class CertifyBootimgTest(unittest.TestCase):
         # pre-release test.
         self._EXPECTED_AVB_FOOTER_BOOT_CERTIFIED = (    # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               131072 bytes\n'
+            'Image size:               94208 bytes\n'
             'Original image size:      24576 bytes\n'
             'VBMeta offset:            24576\n'
             'VBMeta size:              576 bytes\n'
@@ -256,7 +256,7 @@ class CertifyBootimgTest(unittest.TestCase):
 
         self._EXPECTED_AVB_FOOTER_BOOT_CERTIFIED_2 = (  # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               131072 bytes\n'
+            'Image size:               94208 bytes\n'
             'Original image size:      24576 bytes\n'
             'VBMeta offset:            24576\n'
             'VBMeta size:              576 bytes\n'
@@ -286,7 +286,7 @@ class CertifyBootimgTest(unittest.TestCase):
 
         self._EXPECTED_AVB_FOOTER_WITH_GKI_INFO = (     # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               131072 bytes\n'
+            'Image size:               94208 bytes\n'
             'Original image size:      24576 bytes\n'
             'VBMeta offset:            24576\n'
             'VBMeta size:              704 bytes\n'
@@ -318,7 +318,7 @@ class CertifyBootimgTest(unittest.TestCase):
 
         self._EXPECTED_AVB_FOOTER_BOOT = (              # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               131072 bytes\n'
+            'Image size:               98304 bytes\n'
             'Original image size:      28672 bytes\n'
             'VBMeta offset:            28672\n'
             'VBMeta size:              704 bytes\n'
@@ -350,7 +350,7 @@ class CertifyBootimgTest(unittest.TestCase):
 
         self._EXPECTED_AVB_FOOTER_BOOT_LZ4 = (          # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               262144 bytes\n'
+            'Image size:               106496 bytes\n'
             'Original image size:      36864 bytes\n'
             'VBMeta offset:            36864\n'
             'VBMeta size:              704 bytes\n'
@@ -382,7 +382,7 @@ class CertifyBootimgTest(unittest.TestCase):
 
         self._EXPECTED_AVB_FOOTER_BOOT_GZ = (           # pylint: disable=C0103
             'Footer version:           1.0\n'
-            'Image size:               131072 bytes\n'
+            'Image size:               98304 bytes\n'
             'Original image size:      28672 bytes\n'
             'VBMeta offset:            28672\n'
             'VBMeta size:              576 bytes\n'
@@ -825,7 +825,7 @@ class CertifyBootimgTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_out_dir:
             boot_img = os.path.join(temp_out_dir, 'boot.img')
             generate_test_boot_image(boot_img=boot_img,
-                                     avb_partition_size=128 * 1024)
+                                     avb_partition_size=92 * 1024)
             self.assertTrue(has_avb_footer(boot_img))
 
             # Generates the certified boot image, with a RSA2048 key.
@@ -899,7 +899,7 @@ class CertifyBootimgTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_out_dir:
             boot_img = os.path.join(temp_out_dir, 'boot.img')
             generate_test_boot_image(boot_img=boot_img,
-                                     avb_partition_size=128 * 1024)
+                                     avb_partition_size=92 * 1024)
             self.assertTrue(has_avb_footer(boot_img))
 
             gki_info = ('certify_bootimg_extra_args='
@@ -1025,11 +1025,11 @@ class CertifyBootimgTest(unittest.TestCase):
             # Checks an AVB footer exists and the image size remains.
             boot_img = os.path.join(temp_out_dir, 'boot.img')
             self.assertTrue(has_avb_footer(boot_img))
-            self.assertEqual(os.path.getsize(boot_img), 128 * 1024)
+            self.assertEqual(os.path.getsize(boot_img), 96 * 1024)
 
             boot_lz4_img = os.path.join(temp_out_dir, 'boot-lz4.img')
             self.assertTrue(has_avb_footer(boot_lz4_img))
-            self.assertEqual(os.path.getsize(boot_lz4_img), 256 * 1024)
+            self.assertEqual(os.path.getsize(boot_lz4_img), 104 * 1024)
 
             # Checks the content in the AVB footer.
             self._test_boot_signatures(
@@ -1109,7 +1109,7 @@ class CertifyBootimgTest(unittest.TestCase):
             # Checks an AVB footer exists and the image size remains.
             boot_3_img = os.path.join(temp_out_dir, 'boot-gz.img')
             self.assertTrue(has_avb_footer(boot_3_img))
-            self.assertEqual(os.path.getsize(boot_3_img), 128 * 1024)
+            self.assertEqual(os.path.getsize(boot_3_img), 96 * 1024)
 
             # Checks the content in the AVB footer.
             self._test_boot_signatures(
