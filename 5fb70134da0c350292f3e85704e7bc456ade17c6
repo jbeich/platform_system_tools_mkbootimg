@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f52510fa_a91a5a96",
+        "filename": "gki/generate_gki_certificate.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2025-02-07T06:37:49Z",
+      "side": 1,
+      "message": "@bowgotsai@google.com Can we just use `--dynamic_partition_size` here instead\n\nRef:\nhttps://cs.android.com/android/platform/superproject/main/+/main:external/avb/avbtool.py;l\u003d3403?q\u003d%20f:avbtool%20dynamic_partition_size",
+      "revId": "5fb70134da0c350292f3e85704e7bc456ade17c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
