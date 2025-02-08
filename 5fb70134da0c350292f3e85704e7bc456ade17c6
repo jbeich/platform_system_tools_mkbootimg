@@ -34,6 +34,24 @@
       "parentUuid": "f52510fa_a91a5a96",
       "revId": "5fb70134da0c350292f3e85704e7bc456ade17c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c32c82d_2a7f3a7b",
+        "filename": "gki/generate_gki_certificate.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2025-02-08T06:10:57Z",
+      "side": 1,
+      "message": "I see. Joey could you replace the --partition_size arguments with just a --dynamic_partition_size ?",
+      "parentUuid": "edf171d4_bb8f2e74",
+      "revId": "5fb70134da0c350292f3e85704e7bc456ade17c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
