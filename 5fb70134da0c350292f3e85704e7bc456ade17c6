@@ -70,6 +70,24 @@
       "parentUuid": "2c32c82d_2a7f3a7b",
       "revId": "5fb70134da0c350292f3e85704e7bc456ade17c6",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c67612c_11c64e27",
+        "filename": "gki/generate_gki_certificate.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1337669
+      },
+      "writtenOn": "2025-02-10T04:36:36Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2c32c82d_2a7f3a7b",
+      "revId": "5fb70134da0c350292f3e85704e7bc456ade17c6",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
