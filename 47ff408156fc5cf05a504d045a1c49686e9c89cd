@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc28b1b5_8f44016a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2025-02-12T10:21:36Z",
+      "side": 1,
+      "message": "Test: atest --host certify_bootimg_test\n\nCan you run above command to test? (and also add the Test: info in the commit message).",
+      "revId": "47ff408156fc5cf05a504d045a1c49686e9c89cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
