@@ -16,6 +16,24 @@
       "message": "Test: atest --host certify_bootimg_test\n\nCan you run above command to test? (and also add the Test: info in the commit message).",
       "revId": "47ff408156fc5cf05a504d045a1c49686e9c89cd",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e8b4e4c_95b8b1fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1905021
+      },
+      "writtenOn": "2025-02-12T14:11:53Z",
+      "side": 1,
+      "message": "```\nInfo: Build successful\nRunning Tests...\nRolling subprocess output feature is enabled: http://b/380460196.\n\nx86_64 certify_bootimg_test\n---------------------------\ncertify_bootimg_test (6 Tests)\n[1/6] __main__.CertifyBootimgTest#test_certify_bootimg_archive: PASSED (1ms)\n[2/6] __main__.CertifyBootimgTest#test_certify_bootimg_archive_without_gki_info: PASSED (0ms)\n[3/6] __main__.CertifyBootimgTest#test_certify_bootimg_exceed_size: PASSED (1ms)\n[4/6] __main__.CertifyBootimgTest#test_certify_bootimg_with_avb_footer: PASSED (0ms)\n[5/6] __main__.CertifyBootimgTest#test_certify_bootimg_with_gki_info: PASSED (0ms)\n[6/6] __main__.CertifyBootimgTest#test_certify_bootimg_without_avb_footer: PASSED (0ms)\n\nSummary (Test executed with 1 devices.)\n-------\nx86_64 certify_bootimg_test:certify_bootimg_test: Passed: 6, Failed: 0, Ignored: 0, Assumption Failed: 0\n\nAll tests passed!\n```",
+      "parentUuid": "cc28b1b5_8f44016a",
+      "revId": "47ff408156fc5cf05a504d045a1c49686e9c89cd",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
