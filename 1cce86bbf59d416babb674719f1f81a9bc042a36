@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00045ac_c537dd47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1905021
+      },
+      "writtenOn": "2025-02-13T13:57:09Z",
+      "side": 1,
+      "message": "Update certify_bootimg too to use dynamic partition size and so updated the test case too.",
+      "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d6c2205_9e244052",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1905021
+      },
+      "writtenOn": "2025-02-13T13:57:09Z",
+      "side": 1,
+      "message": "should we put None here too?",
+      "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
