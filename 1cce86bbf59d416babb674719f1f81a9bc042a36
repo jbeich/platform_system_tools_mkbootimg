@@ -51,6 +51,24 @@
       "parentUuid": "7d6c2205_9e244052",
       "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "377b3edb_f842b4a4",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1080813
+      },
+      "writtenOn": "2025-02-14T06:46:26Z",
+      "side": 1,
+      "message": "Let\u0027s still keep the size for it as we\u0027ll set BUILD_GKI_BOOT_IMG_SIZE in the kernel tree. Our test infra expects the GKI boot.img built from there is that size.\n\nhttps://android-review.git.corp.google.com/q/BUILD_GKI_BOOT_IMG_SIZE",
+      "parentUuid": "df3b3b98_413401ad",
+      "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
