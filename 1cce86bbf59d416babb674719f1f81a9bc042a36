@@ -33,6 +33,24 @@
       "message": "should we put None here too?",
       "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df3b3b98_413401ad",
+        "filename": "gki/certify_bootimg.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1905021
+      },
+      "writtenOn": "2025-02-14T01:46:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d6c2205_9e244052",
+      "revId": "1cce86bbf59d416babb674719f1f81a9bc042a36",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
