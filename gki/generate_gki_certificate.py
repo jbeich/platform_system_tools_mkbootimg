@@ -26,13 +26,10 @@ def generate_gki_certificate(image, avbtool, name, algorithm, key, salt,
                              additional_avb_args, output):
     """Shell out to avbtool to generate a GKI certificate."""
 
-    # Need to specify a value of --partition_size for avbtool to work.
-    # We use 64 MB below, but avbtool will not resize the boot image to
-    # this size because --do_not_append_vbmeta_image is also specified.
     avbtool_cmd = [
         avbtool, 'add_hash_footer',
         '--partition_name', name,
-        '--partition_size', str(64 * 1024 * 1024),
+        '--dynamic_partition_size',
         '--image', image,
         '--algorithm', algorithm,
         '--key', key,
