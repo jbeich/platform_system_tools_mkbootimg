@@ -196,7 +196,7 @@ def extract_boot_archive_with_signatures(boot_img_archive, output_dir):
       - |output_dir|/boot-lz4/boot_signature1
       - |output_dir|/boot-lz4/boot_signature2
     """
-    shutil.unpack_archive(boot_img_archive, output_dir)
+    shutil.unpack_archive(boot_img_archive, output_dir, filter='data')
     for boot_img in glob.glob(os.path.join(output_dir, 'boot*.img')):
         img_name = os.path.splitext(os.path.basename(boot_img))[0]
         signature_output_dir = os.path.join(output_dir, img_name)
