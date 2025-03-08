@@ -23,11 +23,6 @@ cc_library_headers {
 
 python_defaults {
     name: "mkbootimg_defaults",
-    version: {
-        py3: {
-            embedded_launcher: true,
-        },
-    },
 }
 
 python_binary_host {
