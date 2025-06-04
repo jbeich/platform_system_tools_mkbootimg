@@ -18,7 +18,6 @@ package {
 
 python_test_host {
     name: "certify_bootimg_test",
-    defaults: ["mkbootimg_defaults"],
     main: "certify_bootimg_test.py",
     srcs: [
         "certify_bootimg_test.py",
@@ -37,7 +36,6 @@ python_test_host {
 
 python_binary_host {
     name: "generate_gki_certificate",
-    defaults: ["mkbootimg_defaults"],
     srcs: [
         "generate_gki_certificate.py",
     ],

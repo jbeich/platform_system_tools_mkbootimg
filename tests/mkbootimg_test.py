@@ -17,7 +17,6 @@
 """Tests mkbootimg and unpack_bootimg."""
 
 import filecmp
-import logging
 import os
 import random
 import shlex
@@ -799,7 +798,7 @@ class MkbootimgTest(unittest.TestCase):
                 self.fail(msg)
 
     def test_unpack_vendor_boot_image_v4_without_dtb(self):
-        """Tests that mkbootimg(unpack_bootimg(image)) is an identity when no dtb image."""
+        """mkbootimg(unpack_bootimg(image)) is an identity when no dtb image."""
         with tempfile.TemporaryDirectory() as temp_out_dir:
             vendor_boot_img = os.path.join(temp_out_dir, 'vendor_boot.img')
             vendor_boot_img_reconstructed = os.path.join(
@@ -834,11 +833,6 @@ class MkbootimgTest(unittest.TestCase):
                 filecmp.cmp(vendor_boot_img, vendor_boot_img_reconstructed),
                 'reconstructed vendor_boot image differ from the original')
 
-
-# I don't know how, but we need both the logger configuration and verbosity
-# level > 2 to make atest work. And yes this line needs to be at the very top
-# level, not even in the "__main__" indentation block.
-logging.basicConfig(stream=sys.stdout)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

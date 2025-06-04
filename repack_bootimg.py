@@ -148,11 +148,11 @@ class RamdiskImage:
         mkbootfs_result = subprocess.run(
             ['mkbootfs', self._ramdisk_dir], check=True, capture_output=True)
 
-        with open(out_ramdisk_file, 'w') as output_fd:
+        with open(out_ramdisk_file, 'wb') as output_fd:
             subprocess.run(compression_cmd, check=True,
                            input=mkbootfs_result.stdout, stdout=output_fd)
 
-        print("=== Repacked ramdisk: '{}' ===".format(out_ramdisk_file))
+        print(f"=== Repacked ramdisk: '{out_ramdisk_file}' ===")
 
     @property
     def ramdisk_dir(self):
@@ -193,7 +193,7 @@ class BootImage:
         result = subprocess.run(unpack_bootimg_cmds, check=True,
                                 capture_output=True, encoding='utf-8')
         self._previous_mkbootimg_args = shlex.split(result.stdout)
-        print("=== Unpacked boot image: '{}' ===".format(self._bootimg))
+        print(f"=== Unpacked boot image: '{self._bootimg}' ===")
 
         # From the output dir, checks there is 'ramdisk' or 'vendor_ramdisk'.
         ramdisk = os.path.join(self._bootimg_dir, 'ramdisk')
@@ -249,15 +249,15 @@ class BootImage:
             mkbootimg_cmd.extend(['--vendor_boot', self._bootimg])
 
         if ramdisk_option and ramdisk_option not in mkbootimg_cmd:
-            raise RuntimeError("Failed to find '{}' from:\n  {}".format(
-                ramdisk_option, shlex.join(mkbootimg_cmd)))
+            raise RuntimeError(f"Failed to find '{ramdisk_option}' from:\n"
+                               f"  {shlex.join(mkbootimg_cmd)}")
         # Replaces the original ramdisk with the newly packed ramdisk.
         if ramdisk_option:
             ramdisk_index = mkbootimg_cmd.index(ramdisk_option) + 1
             mkbootimg_cmd[ramdisk_index] = new_ramdisk
 
         subprocess.check_call(mkbootimg_cmd)
-        print("=== Repacked boot image: '{}' ===".format(self._bootimg))
+        print(f"=== Repacked boot image: '{self._bootimg}' ===")
 
     def add_files(self, copy_pairs):
         """Copy files specified by copy_pairs into current ramdisk.
@@ -271,7 +271,7 @@ class BootImage:
             dst_pathname = os.path.join(self.ramdisk_dir, dst_file)
             dst_dir = os.path.dirname(dst_pathname)
             if not os.path.exists(dst_dir):
-                print("Creating dir '{}'".format(dst_dir))
+                print(f"Creating dir '{dst_dir}'")
                 os.makedirs(dst_dir, 0o755)
             print(f"Copying file '{src_pathname}' to '{dst_pathname}'")
             shutil.copy2(src_pathname, dst_pathname, follow_symlinks=False)

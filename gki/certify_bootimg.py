@@ -109,7 +109,7 @@ def erase_certificate_and_avb_footer(boot_img):
         result = subprocess.run(avbtool_info_cmd, check=False,
                                 stdout=subprocess.DEVNULL,
                                 stderr=subprocess.DEVNULL)
-        has_boot_signature = (result.returncode == 0)
+        has_boot_signature = result.returncode == 0
 
     if has_boot_signature:
         new_file_size = os.path.getsize(boot_img) - BOOT_SIGNATURE_SIZE
