@@ -21,13 +21,8 @@ cc_library_headers {
     ],
 }
 
-python_defaults {
-    name: "mkbootimg_defaults",
-}
-
 python_binary_host {
     name: "mkbootimg",
-    defaults: ["mkbootimg_defaults"],
     main: "mkbootimg.py",
     srcs: [
         "mkbootimg.py",
@@ -40,7 +35,6 @@ python_binary_host {
 
 python_binary_host {
     name: "unpack_bootimg",
-    defaults: ["mkbootimg_defaults"],
     srcs: [
         "unpack_bootimg.py",
     ],
@@ -48,7 +42,6 @@ python_binary_host {
 
 python_binary_host {
     name: "repack_bootimg",
-    defaults: ["mkbootimg_defaults"],
     srcs: [
         "repack_bootimg.py",
     ],
@@ -63,7 +56,6 @@ python_binary_host {
 
 python_binary_host {
     name: "certify_bootimg",
-    defaults: ["mkbootimg_defaults"],
     main: "gki/certify_bootimg.py",
     srcs: [
         "gki/certify_bootimg.py",
@@ -77,7 +69,6 @@ python_binary_host {
 
 python_test_host {
     name: "mkbootimg_test",
-    defaults: ["mkbootimg_defaults"],
     main: "tests/mkbootimg_test.py",
     srcs: [
         "tests/mkbootimg_test.py",
