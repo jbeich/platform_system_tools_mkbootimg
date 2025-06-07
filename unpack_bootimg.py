@@ -318,7 +318,8 @@ class VendorBootImageInfoFormatter:
             lines.append(
                 f'vendor ramdisk table size: {self.vendor_ramdisk_table_size}')
             lines.append('vendor ramdisk table: [')
-            indent = lambda level: ' ' * 4 * level
+            def indent(level):
+                return ' ' * 4 * level
             for entry in self.vendor_ramdisk_table:
                 (output_ramdisk_name, ramdisk_size, ramdisk_offset,
                  ramdisk_type, ramdisk_name, board_id) = entry

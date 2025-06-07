@@ -16,7 +16,6 @@
 
 """Tests certify_bootimg."""
 
-import logging
 import glob
 import os
 import random
@@ -1124,11 +1123,6 @@ class CertifyBootimgTest(unittest.TestCase):
                  'boot-gz/boot_signature2':
                     self._EXPECTED_BOOT_GZ_SIGNATURE2_RSA4096})
 
-
-# I don't know how, but we need both the logger configuration and verbosity
-# level > 2 to make atest work. And yes this line needs to be at the very top
-# level, not even in the "__main__" indentation block.
-logging.basicConfig(stream=sys.stdout)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
