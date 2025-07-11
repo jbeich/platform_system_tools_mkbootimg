@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b360613_50d0c31c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4224986
+      },
+      "writtenOn": "2025-07-11T02:12:01Z",
+      "side": 1,
+      "message": "try:\n    raise KeyboardInterrupt\nfinally:\n    print(\u0027Goodbye, world!\u0027)",
+      "revId": "ac2f0c28b25ba95aff9fd540ced08b60cdb4cdd5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
@@ -23,7 +41,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"file:\"^(.*/)?aidl_api/.*\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\"^(.*/)?aidl_api/.*\""]}
+        "value": {"expression":{"expressionString":"file:\"^(.*/)?aidl_api/.*\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\"^(.*/)?aidl_api/.*\""],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -56,7 +74,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"file:\"^(.*/)?api/.*\\.txt$\" AND -file:\"^.*/xsd/.*\" AND -file:\"^.*/xml/.*\" AND -file:\"^CMakeLists\\.txt\" AND -project:device/generic/vulkan-cereal AND -project:platform/external/qemu AND -project:platform/hardware/interfaces AND -project:toolchain/go AND -project:platform/prebuilts/go/darwin-x86 AND -project:platform/prebuilts/go/linux-x86 AND -project:platform/system/tools/xsdc AND -project:platform/external/gfxstream-protocols -(project:platform/frameworks/av AND file:\".*/xmlparser/.*\") AND -(project:platform/external/icu AND file:\".*android_icu4j/api/legacy_platform/.*\") AND -(project:platform/tools/base AND file:\".*build-system/.*\")"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\"^(.*/)?api/.*\\.txt$\"","file:\"^.*/xsd/.*\"","file:\"^.*/xml/.*\"","file:\"^CMakeLists\\.txt\"","project:device/generic/vulkan-cereal","project:platform/external/qemu","project:platform/hardware/interfaces","project:toolchain/go","project:platform/prebuilts/go/darwin-x86","project:platform/prebuilts/go/linux-x86","project:platform/system/tools/xsdc","project:platform/external/gfxstream-protocols","project:platform/frameworks/av","file:\".*/xmlparser/.*\"","project:platform/external/icu","file:\".*android_icu4j/api/legacy_platform/.*\"","project:platform/tools/base","file:\".*build-system/.*\""]}
+        "value": {"expression":{"expressionString":"file:\"^(.*/)?api/.*\\.txt$\" AND -file:\"^.*/xsd/.*\" AND -file:\"^.*/xml/.*\" AND -file:\"^CMakeLists\\.txt\" AND -project:device/generic/vulkan-cereal AND -project:platform/external/qemu AND -project:platform/hardware/interfaces AND -project:toolchain/go AND -project:platform/prebuilts/go/darwin-x86 AND -project:platform/prebuilts/go/linux-x86 AND -project:platform/system/tools/xsdc AND -project:platform/external/gfxstream-protocols -(project:platform/frameworks/av AND file:\".*/xmlparser/.*\") AND -(project:platform/external/icu AND file:\".*android_icu4j/api/legacy_platform/.*\") AND -(project:platform/tools/base AND file:\".*build-system/.*\")"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\"^(.*/)?api/.*\\.txt$\"","file:\"^.*/xsd/.*\"","file:\"^.*/xml/.*\"","file:\"^CMakeLists\\.txt\"","project:device/generic/vulkan-cereal","project:platform/external/qemu","project:platform/hardware/interfaces","project:toolchain/go","project:platform/prebuilts/go/darwin-x86","project:platform/prebuilts/go/linux-x86","project:platform/system/tools/xsdc","project:platform/external/gfxstream-protocols","project:platform/frameworks/av","file:\".*/xmlparser/.*\"","project:platform/external/icu","file:\".*android_icu4j/api/legacy_platform/.*\"","project:platform/tools/base","file:\".*build-system/.*\""],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -89,7 +107,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-message:\"Import translations.\" AND message:\"DO NOT MERGE ANYWHERE\" AND -branch:refs/meta/config"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["message:\"Import translations.\"","message:\"DO NOT MERGE ANYWHERE\"","branch:refs/meta/config"]}
+        "value": {"expression":{"expressionString":"-message:\"Import translations.\" AND message:\"DO NOT MERGE ANYWHERE\" AND -branch:refs/meta/config"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["message:\"Import translations.\"","message:\"DO NOT MERGE ANYWHERE\"","branch:refs/meta/config"],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -119,10 +137,10 @@
       },
       "applicabilityExpressionResult": {},
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-label:Code-Review=MIN AND (label:Code-Review=MAX,user=non_uploader OR (label:Code-Review=MAX AND (label:Exempt=+1 OR (uploader:1474732 AND (project:platform/developers/docs OR project:platform/frameworks/support)))))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Code-Review=MAX,user=non_uploader","label:Code-Review=MAX"],"failingAtoms":["label:Code-Review=MIN","label:Exempt=+1","uploader:1474732","project:platform/developers/docs","project:platform/frameworks/support"]}
+        "value": {"expression":{"expressionString":"-label:Code-Review=MIN AND (label:Code-Review=MAX,user=non_uploader OR (label:Code-Review=MAX AND (label:Exempt=+1 OR (uploader:1474732 AND (project:platform/developers/docs OR project:platform/frameworks/support)))))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Code-Review=MAX,user=non_uploader","label:Code-Review=MAX"],"failingAtoms":["label:Code-Review=MIN","label:Exempt=+1","uploader:1474732","project:platform/developers/docs","project:platform/frameworks/support"],"atomExplanations":{"value":null}}
       },
       "overrideExpressionResult": {
-        "value": {"expression":{"expressionString":"is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers)"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers"]}
+        "value": {"expression":{"expressionString":"is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers)"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers"],"atomExplanations":{"value":null}}
       },
       "patchSetCommitId": "ac2f0c28b25ba95aff9fd540ced08b60cdb4cdd5",
       "legacy": {
@@ -153,7 +171,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"branch:refs/heads/oreo-cts-dev OR branch:refs/heads/oreo-mr1-cts-dev OR branch:refs/heads/oreo-vts-dev OR branch:refs/heads/oreo-mr1-vts-dev OR branch:refs/heads/nougat-cts-dev OR branch:refs/heads/nougat-mr1-cts-dev OR branch:refs/heads/pie-cts-dev OR branch:refs/heads/pie-vts-dev OR branch:refs/heads/android10-tests-dev OR branch:refs/heads/android11-tests-dev OR branch:refs/heads/android12-tests-dev OR branch:refs/heads/android12L-tests-dev OR branch:^refs/heads/.*-gsi"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/heads/oreo-cts-dev","branch:refs/heads/oreo-mr1-cts-dev","branch:refs/heads/oreo-vts-dev","branch:refs/heads/oreo-mr1-vts-dev","branch:refs/heads/nougat-cts-dev","branch:refs/heads/nougat-mr1-cts-dev","branch:refs/heads/pie-cts-dev","branch:refs/heads/pie-vts-dev","branch:refs/heads/android10-tests-dev","branch:refs/heads/android11-tests-dev","branch:refs/heads/android12-tests-dev","branch:refs/heads/android12L-tests-dev","branch:^refs/heads/.*-gsi"]}
+        "value": {"expression":{"expressionString":"branch:refs/heads/oreo-cts-dev OR branch:refs/heads/oreo-mr1-cts-dev OR branch:refs/heads/oreo-vts-dev OR branch:refs/heads/oreo-mr1-vts-dev OR branch:refs/heads/nougat-cts-dev OR branch:refs/heads/nougat-mr1-cts-dev OR branch:refs/heads/pie-cts-dev OR branch:refs/heads/pie-vts-dev OR branch:refs/heads/android10-tests-dev OR branch:refs/heads/android11-tests-dev OR branch:refs/heads/android12-tests-dev OR branch:refs/heads/android12L-tests-dev OR branch:^refs/heads/.*-gsi"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/heads/oreo-cts-dev","branch:refs/heads/oreo-mr1-cts-dev","branch:refs/heads/oreo-vts-dev","branch:refs/heads/oreo-mr1-vts-dev","branch:refs/heads/nougat-cts-dev","branch:refs/heads/nougat-mr1-cts-dev","branch:refs/heads/pie-cts-dev","branch:refs/heads/pie-vts-dev","branch:refs/heads/android10-tests-dev","branch:refs/heads/android11-tests-dev","branch:refs/heads/android12-tests-dev","branch:refs/heads/android12L-tests-dev","branch:^refs/heads/.*-gsi"],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -186,13 +204,13 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-branch:refs/meta/config"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/meta/config"]}
+        "value": {"expression":{"expressionString":"-branch:refs/meta/config"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/meta/config"],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-label:Lint=MIN AND (label:Lint=+2 OR -label:Lint=-1)"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Lint=MIN","label:Lint=+2","label:Lint=-1"]}
+        "value": {"expression":{"expressionString":"-label:Lint=MIN AND (label:Lint=+2 OR -label:Lint=-1)"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Lint=MIN","label:Lint=+2","label:Lint=-1"],"atomExplanations":{"value":null}}
       },
       "overrideExpressionResult": {
-        "value": {"expression":{"expressionString":"is:android_exemptedusers OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR label:Build-Cop-Override=+1"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1"]}
+        "value": {"expression":{"expressionString":"is:android_exemptedusers OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR label:Build-Cop-Override=+1"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1"],"atomExplanations":{"value":null}}
       },
       "patchSetCommitId": "ac2f0c28b25ba95aff9fd540ced08b60cdb4cdd5",
       "legacy": {
@@ -223,7 +241,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"file:\".*\\.map\\.txt$\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\".*\\.map\\.txt$\""]}
+        "value": {"expression":{"expressionString":"file:\".*\\.map\\.txt$\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["file:\".*\\.map\\.txt$\""],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -256,13 +274,13 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-branch:refs/meta/config"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/meta/config"]}
+        "value": {"expression":{"expressionString":"-branch:refs/meta/config"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["branch:refs/meta/config"],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"label:Open-Source-Licensing=0 OR (-label:Open-Source-Licensing=MIN AND ((label:Open-Source-Licensing=MAX AND label:Open-Source-Licensing=-1) OR -label:Open-Source-Licensing=-1))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Open-Source-Licensing=0","label:Open-Source-Licensing=MIN","label:Open-Source-Licensing=MAX","label:Open-Source-Licensing=-1","label:Open-Source-Licensing=-1"]}
+        "value": {"expression":{"expressionString":"label:Open-Source-Licensing=0 OR (-label:Open-Source-Licensing=MIN AND ((label:Open-Source-Licensing=MAX AND label:Open-Source-Licensing=-1) OR -label:Open-Source-Licensing=-1))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Open-Source-Licensing=0","label:Open-Source-Licensing=MIN","label:Open-Source-Licensing=MAX","label:Open-Source-Licensing=-1","label:Open-Source-Licensing=-1"],"atomExplanations":{"value":null}}
       },
       "overrideExpressionResult": {
-        "value": {"expression":{"expressionString":"is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR label:Build-Cop-Override=+1"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1"]}
+        "value": {"expression":{"expressionString":"is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR label:Build-Cop-Override=+1"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1"],"atomExplanations":{"value":null}}
       },
       "patchSetCommitId": "ac2f0c28b25ba95aff9fd540ced08b60cdb4cdd5",
       "legacy": {
@@ -290,10 +308,10 @@
       },
       "applicabilityExpressionResult": {},
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"-label:Presubmit-Verified=-2 AND (label:Bypass-Presubmit=+1 OR label:Presubmit-Verified-Together=+1 OR (-label:Presubmit-Verified=-1 AND (label:Presubmit-Verified=+2 OR label:Presubmit-Verified=+1)))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Presubmit-Verified=+2"],"failingAtoms":["label:Presubmit-Verified=-2","label:Bypass-Presubmit=+1","label:Presubmit-Verified-Together=+1","label:Presubmit-Verified=-1","label:Presubmit-Verified=+1"]}
+        "value": {"expression":{"expressionString":"-label:Presubmit-Verified=-2 AND (label:Bypass-Presubmit=+1 OR label:Presubmit-Verified-Together=+1 OR (-label:Presubmit-Verified=-1 AND (label:Presubmit-Verified=+2 OR label:Presubmit-Verified=+1)))"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Presubmit-Verified=+2"],"failingAtoms":["label:Presubmit-Verified=-2","label:Bypass-Presubmit=+1","label:Presubmit-Verified-Together=+1","label:Presubmit-Verified=-1","label:Presubmit-Verified=+1"],"atomExplanations":{"value":null}}
       },
       "overrideExpressionResult": {
-        "value": {"expression":{"expressionString":"label:Bypass-Presubmit=+2 OR is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR (label:Build-Cop-Override=+1 AND is:pure-revert AND -label:Presubmit-Verified=-2)"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Bypass-Presubmit=+2","is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1","is:pure-revert","label:Presubmit-Verified=-2"]}
+        "value": {"expression":{"expressionString":"label:Bypass-Presubmit=+2 OR is:android_exemptedusers OR uploader:1587862 OR (branch:\"^refs/heads/cherrypick-temp-.*\" AND is:android-cherry-pick_exemptedusers) OR (label:Build-Cop-Override=+1 AND is:pure-revert AND -label:Presubmit-Verified=-2)"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Bypass-Presubmit=+2","is:android_exemptedusers","uploader:1587862","branch:\"^refs/heads/cherrypick-temp-.*\"","is:android-cherry-pick_exemptedusers","label:Build-Cop-Override=+1","is:pure-revert","label:Presubmit-Verified=-2"],"atomExplanations":{"value":null}}
       },
       "patchSetCommitId": "ac2f0c28b25ba95aff9fd540ced08b60cdb4cdd5",
       "legacy": {
@@ -324,7 +342,7 @@
         "allowOverrideInChildProjects": true
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"authoremail:\"^.*@(qti\\.qualcomm\\.com|qca\\.qualcomm\\.com|quicinc\\.com|qualcomm\\.com)\" AND -project:\"^.*/vendor/(qcom|bsp).*\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["authoremail:\"^.*@(qti\\.qualcomm\\.com|qca\\.qualcomm\\.com|quicinc\\.com|qualcomm\\.com)\"","project:\"^.*/vendor/(qcom|bsp).*\""]}
+        "value": {"expression":{"expressionString":"authoremail:\"^.*@(qti\\.qualcomm\\.com|qca\\.qualcomm\\.com|quicinc\\.com|qualcomm\\.com)\" AND -project:\"^.*/vendor/(qcom|bsp).*\""},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["authoremail:\"^.*@(qti\\.qualcomm\\.com|qca\\.qualcomm\\.com|quicinc\\.com|qualcomm\\.com)\"","project:\"^.*/vendor/(qcom|bsp).*\""],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
@@ -353,7 +371,7 @@
         "allowOverrideInChildProjects": false
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"is:review-enforced_gerrit"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:review-enforced_gerrit"]}
+        "value": {"expression":{"expressionString":"is:review-enforced_gerrit"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:review-enforced_gerrit"],"atomExplanations":{"value":null}}
       },
       "submittabilityExpressionResult": {},
       "overrideExpressionResult": {},
