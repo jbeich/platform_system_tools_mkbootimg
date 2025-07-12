@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bb240db_752c09b9",
+        "filename": "unpack_bootimg.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 4224986
+      },
+      "writtenOn": "2025-07-12T18:37:22Z",
+      "side": 0,
+      "message": "https://android.googlesource.com/platform/system/tools/aidl",
+      "range": {
+        "startLine": 529,
+        "startChar": 0,
+        "endLine": 529,
+        "endChar": 20
+      },
+      "revId": "eb05d5f2ab51d632d4dc9c1b332e2a45976fe7dc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
