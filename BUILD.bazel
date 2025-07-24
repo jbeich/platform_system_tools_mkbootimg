@@ -15,6 +15,7 @@
 load("@rules_python//python:defs.bzl", "py_binary")
 
 exports_files([
+    "mkbootimg.py",
     "gki/testdata/testkey_rsa4096.pem",
 ])
 
