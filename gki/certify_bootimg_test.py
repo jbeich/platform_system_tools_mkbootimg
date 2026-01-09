@@ -238,7 +238,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            24576 bytes\n'
@@ -246,8 +246,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            '0dcbb90bc005403e79eef4209a5ac6fc'
-            '02c3d5c5f3abae9d07570ef8e4ca9b98\n'
+            '9c513a47172ff612fbee5209c92f53e4'
+            '48b8ce2ea069883ce73b969e740f0fb1\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -268,7 +268,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            24576 bytes\n'
@@ -276,8 +276,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            '54b0f4babe7f8fd1c204b6bfffbbe200'
-            'b9ccb8499776fc50f110344380cc1bf9\n'
+            'e8cac219e89c02865253b6dff825daeb'
+            'e6a33d078cfa3aabf5c6092a2f0de38d\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -298,7 +298,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            24576 bytes\n'
@@ -306,8 +306,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            '9501fb3e889f926976e1566bb748c891'
-            '0c0a0837108764262fa1ecc413056cf8\n'
+            'da95088d94fbf85874e161372a12c749'
+            '3f70c5e89be6e127d6f24b158f1a7673\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -330,7 +330,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            28672 bytes\n'
@@ -338,8 +338,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            '925ee1495c95d302c4a2c8c2edaf29c8'
-            '41b1c8ae2ae7bf5d46561d21b7494cb3\n'
+            'e9354bbd22ef8d304ee685e1bddf6f34'
+            'dff5487193d7bd31aaa1503838607887\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -362,7 +362,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            36864 bytes\n'
@@ -370,8 +370,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            'a390b4febe92d0331b44edacaad54ad8'
-            '972aaa05bb4ea427697c132b7e3741a2\n'
+            '6c310881eff5db11773d11b64ebac5b1'
+            'b3ce1dff3e1e4e3f0a05256ee9349b36\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -394,7 +394,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            28672 bytes\n'
@@ -402,8 +402,8 @@ class CertifyBootimgTest(unittest.TestCase):
             '      Partition Name:        boot\n'
             '      Salt:                  a11ba11b\n'
             '      Digest:                '
-            '3808076404808e468a0a9df34c6d9d7a'
-            '8dc8ae69fb03fa62f0f23aa5b65e3c66\n'
+            '54d3ef1e6a8b5e352a93fb89759f1a0b'
+            'cf65412841d09156a76044926c83a7ba\n'
             '      Flags:                 0\n'
             "    Prop: avb -> 'nice'\n"
             "    Prop: avb_space -> 'nice to meet you'\n"
@@ -420,7 +420,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            8192 bytes\n'
@@ -446,7 +446,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            4096 bytes\n'
@@ -472,7 +472,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            8192 bytes\n'
@@ -498,7 +498,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            4096 bytes\n'
@@ -524,7 +524,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            8192 bytes\n'
@@ -555,7 +555,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            4096 bytes\n'
@@ -586,7 +586,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            12288 bytes\n'
@@ -617,7 +617,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            8192 bytes\n'
@@ -648,7 +648,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            20480 bytes\n'
@@ -679,7 +679,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            16384 bytes\n'
@@ -710,7 +710,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            12288 bytes\n'
@@ -736,7 +736,7 @@ class CertifyBootimgTest(unittest.TestCase):
             'Rollback Index:           0\n'
             'Flags:                    0\n'
             'Rollback Index Location:  0\n'
-            "Release String:           'avbtool 1.3.0'\n"
+            "Release String:           'avbtool 1.4.0'\n"
             'Descriptors:\n'
             '    Hash descriptor:\n'
             '      Image Size:            8192 bytes\n'

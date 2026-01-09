@@ -133,7 +133,7 @@ class MkbootimgTest(unittest.TestCase):
                 'Rollback Index:           0\n'
                 'Flags:                    0\n'
                 'Rollback Index Location:  0\n'
-                "Release String:           'avbtool 1.3.0'\n"
+                "Release String:           'avbtool 1.4.0'\n"
                 'Descriptors:\n'
                 '    Hash descriptor:\n'
                 '      Image Size:            12288 bytes\n'
