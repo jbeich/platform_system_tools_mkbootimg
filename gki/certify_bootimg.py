@@ -256,8 +256,7 @@ def certify_bootimg(boot_img, output_img, algorithm, key, extra_args,
         erase_certificate_and_avb_footer(boot_tmp)
         add_certificate(boot_tmp, algorithm, key, extra_args)
 
-        avb_partition_size = get_avb_image_size(boot_img)
-        add_avb_footer(boot_tmp, avb_partition_size, extra_footer_args)
+        add_avb_footer(boot_tmp, None, extra_footer_args)
 
         # We're done, copy the temp image to the final output.
         shutil.copy2(boot_tmp, output_img)
